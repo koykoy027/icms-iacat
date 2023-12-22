@@ -1,0 +1,157 @@
+@import 'abstracts/_variable';
+
+a{
+    cursor: pointer;
+}
+.lbl{
+    white-space: nowrap;
+}
+btn-select-role{
+    white-space: nowrap;
+    display: inline
+}
+
+.div-form-footer{
+    padding-top: 5px;
+}
+
+.content-title{
+    /*color: #356397;*/
+    font-family: Source sans pro, sans-serif;
+}
+.content-sub-title{
+    font-size: 10px;
+}
+.txt_search{
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 8px;
+
+
+}
+input::-webkit-input-placeholder {
+    color: black; /*Change the placeholder color*/
+    opacity: 0.2; /*Change the opacity between 0 and 1*/
+    font-size: 12px;
+}
+
+.col-header{
+    white-space: nowrap;
+    background-color: #F5F6FA;  
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.col-body{
+    font-size: 12px;
+    padding:20px  10px;
+}
+.dropdown-item{
+    padding: 0.5em 8px;
+}
+
+.row-data:hover{
+    background-color: #f5f6fa;
+}
+
+.user-pic{
+    vertical-align: middle;
+    border-style: none;
+    height: 50px;
+}
+.form-control{
+    width: 75%;
+    /*    height: unset! important;*/
+}
+
+.msgmodal-body{
+    text-align: center;
+}
+
+.msgmodal-body .div-rdo-active{
+    display: block;
+    position: absolute;
+    margin-left: 100px;
+}
+.msgmodal-body .div-rdo-inactive{
+    display: block;
+    position: absolute;
+
+}
+.sel-orderby{
+    width: 107px;
+}
+.img_content{
+    /*background: #f5f6fa;*/
+    padding: 10px;
+    width: 80px;
+    img{
+        height: 50px;
+        width: 50px;
+    }
+}
+.agency-list_content li {
+    padding:0px !important;
+    .card{
+        border-bottom: 1px solid #dee2e6 !important;
+        border-radius: unset;
+        padding: 8px !important;
+    }
+}
+.nav-fill {
+    .nav-item > a {
+        color: #5e656f;
+        text-decoration: none;
+        background-color: transparent;
+    } 
+}
+
+.border-bottom{
+    border-bottom:1px solid #f5f6fa;
+}
+.ul-container{
+    border: 1px solid #f5f6fa;
+}
+/*--------------tabs----------------*/
+.tab-header{
+    z-index: 10;
+    position: relative;
+    top: 2px;
+
+    .nav-pills {
+        border: 1px solid #f5f6fa;
+        border-bottom: 0px;
+        font-family: Source sans pro, sans-serif !important;
+        .nav-tab.active{
+            font-size: 15px;
+            height: 28px;
+            border-bottom: 0px solid #e88f15 ! important;
+            background-color: #ffffff ! important;
+            color: #e88f15 ! important;
+            padding: 20px 20px;
+            font-weight: 500;
+            border-top: 3px solid #e88f15;
+            border-left: 1px solid #f5f6fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .nav-tab{
+            color: #5e656f;
+            text-decoration: none;
+            background-color: #eff3f7;
+            padding: 11px 20px;
+        }
+    } 
+}
+.card-tab-inner {
+    padding-bottom: 25px;
+    border: 1px solid #f5f6fa;
+    border-top: 0px;
+    z-index: 9;
+}
+.btn-update-user:disabled,
+.btn-update-user[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}

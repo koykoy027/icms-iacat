@@ -1,0 +1,62 @@
+
+
+@import 'abstracts/_variable';
+
+body{
+    background-color: #316298;
+}
+.icms-title {
+    font-size: 24px;
+    font-family: $font-family;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: $white;
+    text-transform: uppercase;
+}
+.icms-sub-title {
+    font-size: 22px;
+    font-family: $font-family;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: $white;
+    margin-top: -15px;
+}
+
+.login {
+    padding-top: 12%;
+    text-align: center;
+}
+.login-form {
+    margin: 24px 200px;
+    padding-left: 0%;
+}
+
+.login-form-action {
+    margin: 30px -30px -30px -30px;
+}
+.login-form-action .btn-login-submit {
+    padding: 10px 10px 10px;
+    background: #fff;
+    color: #005baa;
+    width: 200px;
+    margin-left: 0%;
+    font-family: $font-family;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+.login .content .form-control {
+    background-color: transparent! important;
+    height: 43px;
+    color: $white;
+    border: 3px solid #fff;
+    width:40%;
+}
+.icms-logo {
+    padding-bottom:10px;
+}
+.inp-username {
+    color: $white;
+}
+.TitleBreak{ // remove
+    margin-bottom:10px;
+}

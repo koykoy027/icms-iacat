@@ -1,0 +1,177 @@
+
+.btn-cancel {
+    font-size: 12px;
+    font-weight: 400;
+    height: 27px;
+    line-height: 1px;
+}
+.btn-cancel:hover {
+    border: 1px solid #ddd;
+    background: #eee;
+}
+.btn-flat {
+    box-shadow: none;
+    background-color: transparent;
+    color: #343434;
+    cursor: pointer;
+    transition: background-color .2s;
+}
+.btn-advSearch {
+    background-color: $orange;
+    color: $white;
+}
+.btn-save {
+    background-color: $orange;
+    color: $white;
+}
+.btn-update {
+    color: $white;
+    background-color: #415372;
+}
+.btn-reset {
+    color:$white;
+    background-color: $blue;
+}
+.btn-close {
+    color: #6c757d! important;
+    background-color: #fff;
+    border: none;
+}
+.btn-manage-address {
+    /*background-color:#eee;*/
+    border: 1px solid #dad5d5;
+}
+.btn{
+    height: 27px;
+    font-weight: 300;
+    font-size: 13px;
+    padding: 0px 30px;
+    font-family: $font-family;
+}
+.btn-light{
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0px 30px;
+    padding: 0px 30px;
+    height: 30px;
+    font-size: 12px;
+    border: 1px solid #ddd;
+    background: #adb5bd;
+    color: #fff;
+    i{
+        color: #ffffff;
+        font-size: 17px;
+        position: relative;
+        right: 17px;
+        top: 2px;
+    }
+}
+.btn-primary-orange{
+    background-color: #e88f15;
+    color: #fff;
+    margin-left: 645px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: Microsoft Yahei, sans-serif;
+    font-size: 13px;
+    height: 27px;
+    line-height: 1px;
+    font-weight: 400;
+
+}
+.btn-see-all-notif {
+    padding-left: 8%;
+    width: 100%;
+    color: #355f96;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.btn-secondary-light_blue{
+    background: #80a4e4;
+    border: 1px solid #80a4e4;
+    height: 30px;
+    font-size: 12px;
+    color:#fff;
+    i{
+        color:#fff;
+    }
+}
+.ellipse-action .ellipse-selected{
+    width: 43px;
+    background: #f5f6fa;
+    padding: 9px 19px;
+    border-radius: 50%;
+    color: #e88f15 !important;
+}
+
+.ellipse-action a.action_btn:hover{
+    width: 43px;
+    background: #f5f6fa;
+    padding: 9px 19px;
+    border-radius: 50%;
+    color: #e88f15 !important;
+}
+
+.ellipse-action{
+
+    a.action_btn{
+        width: 43px;
+        background: #fff;
+        padding: 9px 19px;
+        border-radius: 50%;
+        color: #356397;
+    }
+    a.action_btn:hover{
+        width: 43px;
+        background: #f5f6fa;
+        padding: 9px 19px;
+        border-radius: 50%;
+        color: #e88f15;
+    }
+}
+
+.btn-primary-orange:hover{
+    Background: #da8109;
+    color: #fff;
+}
+
+//---------------Modal Buttons-------------//
+.btn-close-confirm-modal{
+    color: #5e656f ! important;
+    background: transparent;
+    border: none;
+}
+.btn-close-confirm-modal:hover{
+    border: 1px solid #ddd;
+    background: #eee;
+    color: #495057 !important;
+}
+.btn-close-warning-modal:hover {
+/*    border: 1px solid #adb5bd;
+    background: #adb5bd;*/
+    color: #ffffff !important;
+}
+.btn-close-warning-modal{
+    color: #6c757d !important;
+    font-weight: 400;
+}
+.btn-success-action-back{
+    background: #dee2e6;
+    border-radius: 17px;
+    border: 1px solid #adb5bd;
+    color: #5e656f;
+    margin-left: 0px;
+}
+.btn-success-action-back:hover{
+    background: #adb5bd;
+}
+.btn-outline-secondary{
+    border: 1px solid #ced4da;
+}
+.btn-outline-secondary:hover{
+    color: #6c757d;
+    background-color: #dee2e6;
+    border-color: #6c757d;
+    border: 1px solid #ced4da;
+}

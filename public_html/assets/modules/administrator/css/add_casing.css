@@ -1,0 +1,110 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 21, 2019, 6:08:06 PM
+    Author     : lbs-imac-05
+*/
+.card-stats {
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .25);
+  padding-bottom: 25px;
+}
+.case-title {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 18px;
+  color: #356397;
+  margin-top: 20px;
+}
+.case-sub-title {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 16px;
+  color: #356397;
+  margin-top: 20px;
+}
+.case-title-header {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 18px;
+  color: #356397;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.case-ul .nav-link.active {
+  color: #fff;
+  background-color: #e88f15;
+}
+.intake-form-ul {
+  background-color: #f4f4f4;
+  font-size: 14px;
+  border-radius: 0.25rem;
+}
+.intake-form-ul li a {
+  color: #5e656f;
+  font-family: Microsoft Yahei, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 14px;
+}
+.intake-form-ul .nav-link.active {
+  border-bottom: 2px solid #e88f15 ! important;
+  color: #fff;
+}
+.card .intake-form-card {
+  padding-bottom: 25px;
+  border: 1px solid #f4f4f4;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.nav-pills .intake-nav.active {
+  color: #5e656f ! important;
+  background-color: #f4f4f4 ! important;
+}
+.form-row {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 14px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.relative-info-form {
+  padding-left: 60px;
+  margin-left: 34px;
+  margin-top: -27px;
+}
+.btn-add-relative {
+  background-color: #e88f15;
+  color: #fff;
+}
+.btn-next {
+  background-color: #e88f15;
+  color: #fff;
+  margin-left: 645px;
+  margin-top: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
+  font-family : Microsoft Yahei, sans-serif;
+}
+.btn-previous {
+  background-color: #356397;
+  color: #fff;
+  width: 75%;
+  margin-left: 530px;
+  font-family : Microsoft Yahei, sans-serif;
+  margin-top: 20px;
+}
+.fa-upload {
+  font-size: 35px;
+  color: #356397;
+  margin-left: 42%;
+}
+.summary-lbl {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333c48;
+}
+.summary-details {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 15px;
+  color: #5e656f;
+}

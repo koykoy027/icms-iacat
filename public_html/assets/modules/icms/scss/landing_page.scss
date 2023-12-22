@@ -1,0 +1,335 @@
+.bg-landing {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2a5555;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.masthead {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.masthead {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-icms {
+    width: 65vh;
+}
+
+// .masthead:before {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     right: 0;
+//     left: 0;
+//     height: 100%;
+//     width: 100%;
+//     background-color: rgba(0, 0, 0, 0.4);
+// }
+
+// .masthead:before {
+//     transform: skewX(-9deg);
+//     transform-origin: top right;
+// }
+
+.masthead_inner {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.masthead_inner {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.masthead .masthead-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 9rem;
+}
+
+.masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+}
+
+.fst-italic {
+    font-style: italic !important;
+}
+
+.card-body {
+    color: #343737;
+    border: 0;
+}
+
+.card-verify {
+    width: 28rem;
+    height: 22rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.fst-italic {
+    font-style: italic !important;
+}
+
+#wrapper {
+    font-family: Lato;
+    font-size: 1.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    color: #333;
+}
+
+#dialog {
+    border: solid 1px #ccc;
+    margin: 10px auto;
+    padding: 20px 30px;
+    display: inline-block;
+    box-shadow: 0 0 4px #ccc;
+    background-color: #faf8f8;
+    overflow: hidden;
+    position: relative;
+    max-width: 450px;
+}
+
+#form {
+    max-width: 240px;
+    margin: 25px auto 0;
+}
+
+.inp-code {
+    margin: 0 2px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 31px;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 5px #ccc inset;
+    outline: none;
+    width: 14%;
+    transition: all 0.2s ease-in-out;
+    border-radius: 3px;
+    margin-bottom: inherit;
+}
+.form-control {
+    width: 100%;
+}
+.card-file_complaint {
+    width: 600px;
+    height: 700px;
+}
+
+.header-title {
+    color: #000;
+    text-align: center;
+}
+.brand_logo {
+    display: flex;
+    margin: auto;
+    width: 140px;
+}
+
+.icms_txt {
+    // font-family: Marker Felt;
+    font-size: 56px;
+    color: #505d66;
+}
+
+.btn-search {
+    color: #fff;
+    background-color: #6abfaf;
+    border-color: #65d8c3;
+}
+
+.error {
+    color: rgb(255, 0, 0);
+}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .masthead .masthead-content {
+        max-width: 50rem;
+    }
+    .sub-heading {
+        font-size: 28px;
+    }
+
+    .small,
+    small {
+        font-size: 155%;
+    }
+    .form-control {
+        height: 55px;
+    }
+    .btn-search {
+        width: 100px;
+        height: 54px;
+    }
+    .card-icms {
+        width: 54vh;
+        height: auto;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .masthead .masthead-content {
+        max-width: 50rem;
+    }
+    .sub-heading {
+        font-size: 29px;
+        margin: 30px 0px;
+    }
+
+    .small,
+    small {
+        font-size: 170%;
+    }
+    .form-control {
+        height: 62px;
+        font-size: 24px;
+    }
+    .btn-search {
+        width: 120px;
+        height: 60px;
+    }
+    .card-icms {
+        width: 54vh;
+        height: auto;
+    }
+    .brand_logo {
+        width: 230px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .masthead .masthead-content {
+        position: relative;
+        max-width: 50rem;
+    }
+    .sub-heading {
+        font-size: 40px;
+        margin: 30px 0px;
+    }
+
+    .small,
+    small {
+        font-size: 30px;
+    }
+    .form-control {
+        height: 74px;
+        font-size: 30px;
+    }
+    .btn-search {
+        width: 120px;
+        height: 60px;
+        font-size: 24px;
+    }
+    .card-icms {
+        width: 54vh;
+        height: auto;
+    }
+    .brand_logo {
+        width: 335px;
+    }
+    .icms_txt {
+        font-size: 81px;
+    }
+    .btn-search {
+        height: 72px;
+        width: 157px;
+        font-size: 32px;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .masthead .masthead-content {
+        position: relative;
+        max-width: 40rem;
+    }
+    .card-icms {
+        width: 46vh;
+        height: auto;
+    }
+    .brand_logo {
+        width: 345px;
+    }
+    .sub-heading {
+        font-size: 43px;
+        margin: 30px 0px;
+    }
+    .icms_txt {
+        font-size: 84px;
+    }
+    .form-control {
+        height: 80px;
+        font-size: 32px;
+    }
+    .btn-search {
+        width: 180px;
+        height: 78px;
+        font-size: 32px;
+    }
+    .small,
+    small {
+        font-size: 30px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .masthead .masthead-content {
+        position: relative;
+        max-width: 40rem;
+    }
+    .card-icms {
+        width: 56vh;
+        height: auto;
+    }
+    .brand_logo {
+        width: 140px;
+    }
+    .sub-heading {
+        font-size: 21px;
+        margin: 15px 0px;
+    }
+    .icms_txt {
+        font-size: 40px;
+    }
+    .form-control {
+        height: 40px;
+        font-size: 16px;
+    }
+    .btn-search {
+        width: 108px;
+        height: 41px;
+        font-size: 16px;
+    }
+    .small,
+    small {
+        font-size: 16px;
+    }
+}

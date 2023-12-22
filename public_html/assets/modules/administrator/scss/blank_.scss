@@ -1,0 +1,68 @@
+
+.modal-info{
+    .modal-content{
+        .modal-header {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: start;
+            align-items: flex-start;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 1rem 1rem;
+            border-top-left-radius: .3rem;
+            border-top-right-radius: .3rem;
+
+
+            border-bottom: 1px solid #dee2e6 !important;
+            margin: 0 !important;
+
+            h5{
+                border-bottom: 0px !important;
+                margin: 0;
+                font-family: Source sans pro, sans-serif;
+                font-size: 20px;
+                margin: 0 0 !important;
+            }
+        }
+        .modal-footer{
+            border-top: 1px solid #dee2e6 !important;
+        }
+    }
+}
+.bd-example{
+    border: 1px solid #eee;
+    h5{
+        padding: 10px 10px 0px;
+    }
+    .card-figure{
+        border: 1px solid #eee !important;
+        padding: 0px 20px !important;
+        background: #f8f9fa;
+
+
+    }
+    .card-btn{
+        background: #ffff; 
+        padding: 10px 20px;
+    }
+}
+.nav-item .nav-link {
+    color: #6c757d;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 8px 25px;
+}
+.nav-tabs{
+    background: #fff;
+}
+.nav-item .nav-link.active{
+    font-size: 14px;
+    border-bottom: 3px solid #e88f15 !important;
+    color: #5e656f ! important;
+    background-color: #ffffff;
+    border-radius: 0px;
+    padding: 8px 25px;
+    height: 40px;
+    border: 0;
+}

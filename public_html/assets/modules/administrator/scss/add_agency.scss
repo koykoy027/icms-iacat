@@ -1,0 +1,41 @@
+
+
+
+@import 'abstracts/_variable';
+
+
+.sub-title {
+    color: #5a6363;
+    font-weight: 600;
+    font-family: $font-family;
+}
+.fa-upload {
+    font-size: 43px;
+}
+.btn-add-agency {
+    width: 201px;
+    text-align: center;
+}
+
+.form-control {
+    width: 100%;
+}
+.img-agency {
+    height: 110px;
+    width: 130px;
+}
+.div-image {
+    background-color: #FFF;
+    height: 170px;
+    bottom: 0px;
+}
+.div-agency {
+    background-color: #fff;
+    height: 170px;
+    bottom: 0px;
+}
+.div-agency-container {
+    background-color: #fff;
+    bottom: 0px;
+}
+

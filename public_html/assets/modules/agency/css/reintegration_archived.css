@@ -1,0 +1,66 @@
+.case-title {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 18px;
+  color: #356397;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+.tbl-cases {
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+}
+a {
+  cursor: pointer;
+}
+.lbl {
+  white-space: nowrap;
+}
+.content-title {
+  color: #356397;
+  font-family: Source sans pro, sans-serif;
+}
+.content-sub-title {
+  font-size: 10px;
+}
+.dropdown-item {
+  padding: 0.5em 8px;
+}
+.victim-number {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.choose-filter {
+  width: 190px !important;
+}
+button#dropdown_service {
+  color: #356397;
+  width: 41px;
+  height: 38px;
+  background: transparent;
+  padding: 10px 17px;
+  border-radius: 50%;
+}
+button#dropdown_service:hover {
+  width: 41px;
+  height: 38px;
+  background: #f5f6fa;
+  padding: 10px 17px;
+  border-radius: 50%;
+  color: #e88f15;
+}
+.list-action {
+  float: right;
+  margin-top: 20px;
+}
+.mdl-legal-title {
+  padding-top: 25px;
+  margin-left: 7%;
+}
+.content-sub-title {
+  margin-left: 7%;
+}
+.pl-25 {
+  padding-left: 25px;
+}

@@ -1,0 +1,29 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 16, 2019, 4:55:29 PM
+    Author     : lbs-imac-05
+*/
+
+@import 'abstracts/_variable';
+
+
+
+.news-sidebar {
+    font-family: $font-family;
+    font-size:14px;
+    color: $dark-blue;
+}
+.news-sidebar2 {
+    font-family: $font-family;
+    font-size: 16px;
+    color: $black;
+}
+.newsfeed-post-header {
+    padding: 19px 0px 0px 106px;
+    background-color: #f5f5f5;
+    padding-left: 30px;
+}

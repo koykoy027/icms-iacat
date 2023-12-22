@@ -1,0 +1,144 @@
+a {
+  cursor: pointer;
+}
+.lbl {
+  white-space: nowrap;
+}
+btn-select-role {
+  white-space: nowrap;
+  display: inline;
+}
+.div-form-footer {
+  padding-top: 5px;
+}
+.content-title {
+  color: #343a40;
+  font-family: Source sans pro, sans-serif;
+}
+.content-sub-title {
+  font-size: 10px;
+}
+input::-webkit-input-placeholder {
+  /*Change the placeholder color*/
+  color: black;
+  /*Change the opacity between 0 and 1*/
+  opacity: 0.2;
+  font-size: 12px;
+}
+.modal-body .card {
+  padding-bottom: 0px !important;
+}
+.modal-body .card-title {
+  margin-left: 0px !important;
+}
+.modal-body .lbl-agencies_contact_list {
+  line-height: 4px;
+}
+.modal-body .agencies_address {
+  line-height: 17px;
+}
+.modal-body .modal-title {
+  padding: 38px 0px;
+  text-align: center;
+}
+.agency_details .badge {
+  margin-left: 10px;
+}
+.agency_details .contact_details p {
+  margin-bottom: 0px !important;
+}
+.agency_details .contact_person i {
+  color: #e88f15;
+  margin-right: 10px;
+}
+.modal-dialog {
+  margin-top: unset;
+}
+.msgmodal-body .div-rdo-active {
+  display: block;
+  position: absolute;
+  margin-left: 100px;
+}
+.msgmodal-body .div-rdo-inactive {
+  display: block;
+  position: absolute;
+}
+.agency-list_content {
+  padding: 0px ! important;
+  font-family: Source sans pro, sans-serif;
+  background: #fff;
+}
+.agency-list_content li {
+  padding: 0px ! important;
+  /*    .nav-data_list{
+            li{
+                padding-right:10px;
+                .img_content{
+                    background: #f5f6fa;
+                    padding: 10px;
+                    img{
+                        height: 40px;width: auto;
+                    }
+                }
+            }
+            .desc_content{
+                padding-left:0px !important;
+                .desc_name{
+                    color: #356397;
+                }
+                .desc_sub_name{
+                    color: #e88f15;
+                    font-size: 13px;
+                }
+            }
+        }*/
+}
+.agency-list_content li .card {
+  border-bottom: 1px solid #dee2e6 !important;
+  border-radius: unset;
+  padding: 10px 0px 10px 20px !important;
+}
+.agency-list_content .nav-data_list .data_list_img {
+  padding-right: 10px;
+}
+.agency-list_content .nav-data_list .desc_content {
+  padding-left: 0px !important;
+}
+.agency-list_content .nav-data_list .desc_content .desc_abbr {
+  color: #356397;
+  font-weight: 400;
+  font-size: 17px;
+}
+.agency-list_content .nav-data_list .desc_content .desc_name {
+  color: #356397;
+  font-size: 15px;
+}
+.agency-list_content .nav-data_list .desc_content .desc_sub_name {
+  color: #e88f15;
+  font-size: 14px;
+}
+.agency-list_content .nav-data_list .desc_agency_description {
+  font-size: 11px;
+  color: #6c757d;
+}
+.agency-list_content .nav-data_list .desc_agency_description span a.view_more .ellipse-selected {
+  color: rgba(0, 123, 255, .5) !important;
+  text-decoration: none;
+}
+@media screen and (max-width: 991px) {
+  .list-action {
+    margin-top: 0px ! important;
+    margin-left: 30px;
+  }
+}
+#agency_branch_list-no-content {
+  height: 62vh;
+}
+.filter-wrap {
+  z-index: 1;
+  position: absolute;
+  will-change: transform;
+  top: 0px;
+  left: 0px;
+  transform: translate3d(537px, 57px, 0px);
+}

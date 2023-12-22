@@ -1,0 +1,46 @@
+////--- page pre loader ------//
+
+.loader {
+    position: relative;
+    text-align: center;
+    margin: 15px auto 35px auto;
+    z-index: 9999;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border: 10px solid rgba(255, 204, 16, 0.3);
+    border-radius: 50%;
+    border-top-color: #e88f15;
+    animation: spin 1s ease-in-out infinite;
+    -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+
+/** MODAL STYLING **/
+
+
+
+.modal-backdrop.show {
+    opacity: 0.75;
+}
+.modal-pre-loader{
+    .modal-content{
+        background: transparent;
+        box-shadow: unset !important;
+        border: 0px solid red !important;
+    }
+}
+
+///-------preloder2--------///

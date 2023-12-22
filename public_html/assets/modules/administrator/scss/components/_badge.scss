@@ -1,0 +1,118 @@
+
+.notif-badge {
+    background-color: $orange;
+    color: #fff !important;
+    font-size: 10px !important;
+    border-radius: 30px;
+    position: relative;
+    bottom: 14px;
+    left: -5px !important;
+    padding: 5px 5px !important;
+    min-height: 21px;
+    min-width: 21px;
+    border: 1px solid #e88f15;
+}
+.chat-badge {
+    background-color: $orange;
+    color: #fff !important;
+    font-size: 10px !important;
+    border-radius: 30px;
+    position: relative;
+    top: -10px !important;
+    left: -4px !important;
+    min-width: !important;
+    padding: 4px 5px !important;
+    height: 18px;
+    width: 21px;
+}
+.badge-warning{
+    background-color: #e88f15;
+    color: #fff;
+}
+.stat_inactive_badge{
+    background: #e85915;
+    padding: 1px 9px;
+    color: #fff;
+    font-size: 11px;
+    border-radius: 4px;
+    font-family: source sans pro;
+}
+.stat_inactive{
+    color: #6c757d;
+    background: #dee2e6;
+    border-radius: 4px;
+    padding: 1px 9px;
+    font-size: 11px;
+}
+.stat_{
+    color: #70bf82;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12px;
+
+}
+.tags{
+    width: 12px;
+    display: inline-block;
+    height: 13px;
+}
+.t_high{
+    background: #e84901 !important;
+}
+.t_medium{
+    background: #e88e14 !important;
+}
+.t_low{
+    background: #BCBCBC !important;
+}
+.badge-light {
+    background: #adb5bd;
+    font-size: 13px;
+    color: #fff !important;
+    border-radius: 4px;
+    margin: 3px;
+    font-weight: 400;
+    font-family: source sans pro,sans-serif;
+    text-transform: none;
+}
+.notif-type-badge{
+    padding: 10px 13px;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    border: 1px solid #eee;
+    color: #fff;
+    position: relative;
+    top: 3px;
+}
+.case_{
+    background: #aeb5bc;
+}
+.account_{
+    background: #e88f15;
+}
+.agency_{
+    background: #62ca79;
+}
+.agency-branch_{
+    background: #2fa2b8;
+}
+.settings_{
+    background: #8bb4ec;
+}
+.stat_1 {
+    background-color: #e88f15; // orange
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 6px;
+    font-size: 12px;
+}
+.badge_cc{
+    display: inline-block;
+    padding: 4px 4px;
+    border-radius: 50%;
+    font-size: 74px;
+    text-align: center;
+    background: #5abb70;
+    color: #fefefe;
+}

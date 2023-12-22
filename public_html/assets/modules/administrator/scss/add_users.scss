@@ -1,0 +1,20 @@
+
+
+@import 'abstracts/_variable';
+
+select .form-control {
+    height: calc(19px + 0.75rem + 0px)! important;
+}
+input {
+    .form-control {
+        height: calc(19px + 0.75rem + 0px)! important;
+    }
+}
+
+.container-inner-blue {
+    background-color: #eff3f7;
+    padding: 25px;
+}
+.form-control{
+    width:100%;
+}

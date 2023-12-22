@@ -1,0 +1,68 @@
+
+.nav-pills .nav-link.active {
+    border-bottom: 3px solid #E88F15;
+    background-color: #3E516A;
+}
+.nav-item > a {
+    color: #e9ecef;
+    text-decoration: none;
+    background-color: transparent;
+}
+.nav-items-tab {
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: 300;
+
+    .nav-item{
+        .nav-link{
+            border-radius: unset !important;
+            color: #e9ecef;
+        }
+    }
+}
+.agency-menu {
+    width: 670px;
+}
+.card-nav-ul {
+    background-color: $light-gray;
+    font-size: 14px;
+}
+.card-nav-ul li a {
+    color: #5e656f;
+    font-family: Microsoft Yahei, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px
+}
+.card-nav-ul .nav-link.active{
+    border-bottom: 3px solid $orange! important;
+    color: $white;
+}
+.nav-pills {
+    .nav-tab.active {
+        color: $gray ! important;
+        background-color: $light-gray ! important;
+    }
+}
+.card-nav {
+    padding-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+
+.nav-menu-item {
+    li{
+        a.dropdown-toggle.active {
+            border-bottom: 3px solid #e88f15;
+            background-color: #3e516a;
+        }
+
+    }
+}
+.nav-menu-item {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}

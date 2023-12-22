@@ -1,0 +1,307 @@
+a {
+  cursor: pointer;
+}
+.lbl {
+  white-space: nowrap;
+}
+btn-select-role {
+  white-space: nowrap;
+  display: inline;
+}
+.div-form-footer {
+  padding-top: 5px;
+}
+.content-title {
+  color: #356397;
+  font-family: Source sans pro, sans-serif;
+}
+.content-sub-title {
+  font-size: 10px;
+}
+input::-webkit-input-placeholder {
+  /*Change the placeholder color*/
+  color: black;
+  /*Change the opacity between 0 and 1*/
+  opacity: 0.2;
+  font-size: 12px;
+}
+.ellipse-selected {
+  color: #007bff !important;
+  text-decoration: none;
+}
+.dropdown-item {
+  padding: 0.5em 8px;
+}
+.modal-body .card {
+  border: 1px solid #ced4da !important;
+  padding: 25px !important;
+}
+.modal-body .card-title {
+  margin-left: 0px !important;
+}
+.modal-body .lbl-agencies_contact_list {
+  line-height: 4px;
+}
+.modal-body .agencies_address {
+  line-height: 17px;
+}
+.modal-body .modal-title {
+  padding: 20px 0px;
+}
+.agency-details {
+  line-height: 1.7 !important;
+  font-size: 15px !important;
+}
+.agency-details .content-title {
+  line-height: 20px;
+}
+.agency-details .content-title .badge {
+  margin-left: 10px;
+}
+.agency-details .agency_description p {
+  text-align: justify !important;
+  text-indent: 20px;
+  padding: 10px;
+}
+.agency-details .lbl-agency_desc {
+  line-height: 1.9;
+  font-size: 15px;
+  text-align: left;
+}
+.agency-details .agency_status, .agency-details .agency_type {
+  background: #ced4da;
+  color: #3c3d58 !important;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+}
+.agency-details .agency_status .stat_, .agency-details .agency_type .stat_ {
+  color: #3c3d58 !important;
+}
+.form-control {
+  width: 100%;
+}
+.img-manage {
+  height: 10vh;
+  width: 10vh;
+  margin: 0 auto;
+}
+@media screen and (max-width: 991px) {
+  .img-manage {
+    height: 100px;
+    width: 100px;
+    padding: 15px;
+  }
+}
+#description {
+  height: 200px !important;
+}
+.ellipse-action a.action_btn {
+  width: 43px;
+  background: #fff;
+  padding: 9px 19px;
+  /*color: #333c48;*/
+  border-radius: 50%;
+  color: #356397;
+}
+.ellipse-action a.action_btn:hover {
+  width: 43px;
+  background: #f5f6fa;
+  padding: 9px 19px;
+  border-radius: 50%;
+  color: #e88f15;
+}
+.agency-list_content li:hover {
+  background-color: #f5f6fa ! important;
+}
+.agency-list_content {
+  padding: 0px;
+  font-family: Source sans pro, sans-serif;
+  background: #fff;
+}
+.agency-list_content li {
+  padding: 0px ! important;
+}
+.agency-list_content li .card {
+  border-bottom: 1px solid #dee2e6 !important;
+  border-radius: unset;
+  padding: 5px 0px 5px 15px !important;
+}
+.agency-list_content .nav-data_list .data_list_img {
+  padding-right: 10px;
+}
+.agency-list_content .nav-data_list .desc_content {
+  padding-left: 0px !important;
+}
+.agency-list_content .nav-data_list .desc_content .desc_abbr {
+  color: #343c48;
+  font-weight: 500;
+  font-size: 15px;
+}
+.agency-list_content .nav-data_list .desc_content .desc_name {
+  color: #343c48;
+  font-size: 15px;
+  font-weight: 600;
+}
+.agency-list_content .nav-data_list .desc_content .desc_sub_name {
+  color: #495057;
+  font-size: 14px;
+}
+.agency-list_content .nav-data_list .desc_agency_description {
+  font-size: 11px;
+  color: #6c757d;
+}
+.agency-list_content .nav-data_list .desc_agency_description span a.view_more .ellipse-selected {
+  color: rgba(0, 123, 255, .5) !important;
+  text-decoration: none;
+}
+.mdl-body_view_agency {
+  font-family: Helvetica neue, sans-serif;
+}
+.mdl-body_view_agency .card-img-loc {
+  border: 1px solid #e9ecef !important;
+  height: 125px;
+  padding: 10px !important;
+}
+.mdl-body_view_agency .lbl-agency_desc {
+  font-size: 13px;
+  color: #6c757d;
+  text-align: justify;
+}
+.mdl-body_view_agency .tile_description {
+  margin: 9px 0px;
+  font-size: 14px;
+  color: #356397;
+}
+.mdl-body_view_agency .lbl-agency_name {
+  color: #356397;
+}
+.mdl-body_view_agency .lbl-agency_abbr {
+  font-size: 18px;
+  color: #e88f15;
+  font-weight: 500;
+}
+.mdl-body_view_agency .lbl-agency_typ {
+  color: #6c757d;
+  font-size: 13px;
+}
+.div-image {
+  /*box-shadow: 2px -3px 29px -13px rgba(133,129,112,1);*/
+  background: #fff;
+  box-shadow: 31px 45px 77px -57px #9c998b;
+  margin-bottom: 25px;
+  border: 1px solid #e9ecef;
+}
+.form-update textarea {
+  padding: 15px;
+  text-align: justify;
+}
+.fa-active {
+  color: #a6cc5a;
+  margin-top: 33px;
+}
+.fa-inactive {
+  color: #818181;
+  margin-top: 33px;
+}
+.tags_ {
+  font-weight: 600;
+  font-size: 12px;
+}
+.tags_item-label {
+  margin-left: 3px;
+  font-size: 12px;
+}
+.tags_item {
+  width: 12px;
+  display: inline-block;
+  height: 11px;
+}
+.agency_name {
+  text-transform: capitalize;
+  font-weight: 600;
+  font-size: 18px;
+}
+.msgmodal-header {
+  font-weight: 600;
+}
+@media screen and (max-width: 938px) {
+  .list-action {
+    float: left;
+  }
+  .txt_search_agency_list {
+    width: 119px;
+  }
+  .agency-details {
+    margin-left: 10px !important;
+  }
+}
+@media screen and (min-width: 576px) {
+  /*
+.div-agencies-list li .card:hover{
+    background-color: #F5F6FA;
+}
+.list_content li .card {
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: unset;
+    padding: 10px 0px 10px 20px !important;
+}*/
+  /*.list_content li .card {
+    border-bottom: 1px solid #dee2e6 !important;
+    border-radius: unset;
+    padding: 10px 0px 10px 20px !important;
+}*/  .list-action {
+    float: right !important;
+  }
+  .toggle_actions {
+    text-align: left !important;
+    /*    .modal-dialog{
+            max-width: 795px;
+            margin: 1.75rem auto;
+        }*/
+  }
+}
+.fa-question {
+  font-size: 20px;
+  color: #e88f15;
+}
+.fa-check-circle {
+  color: #e88f15;
+}
+.modal-img-details {
+  margin: 0 auto;
+}
+.details-col .inter-right--bottom2 {
+  width: 61%;
+  left: 312px;
+}
+.details-col .linear-background {
+  height: 52px;
+}
+.status-col .linear-background {
+  left: -21px;
+}
+.action-col .linear-background {
+  left: -17px;
+}
+.action-title {
+  color: #aeb5bc !important;
+}
+.dropdown_filter {
+  z-index: 1;
+  position: absolute;
+  will-change: transform;
+  top: 0px;
+  left: 0px;
+  transform: translate3d(537px, 57px, 0px);
+}
+.modal-img-details {
+  float: left;
+  height: 100px;
+  /*@media (max-width: 892px) and (min-width: 800px) {
+    .modal-img-details {
+        width: 50px;
+        height:50px;
+    }
+}*/
+}

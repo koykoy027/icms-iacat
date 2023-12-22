@@ -1,0 +1,43 @@
+
+// Typography
+// ==========================================================================
+$font-family: Microsoft Yahei, sans-serif;
+$font-family2: Source sans pro, sans-serif;
+$font-family3:  Helvetica neue, sans-serif;
+
+$font-weight: 400;
+$font-weight-normal: 300;
+$font-weight-semi-bold: 500;
+$font-weight-bold: 600;
+$font-size-heading: 15px;
+
+// Color 
+// ==========================================================================
+$orange : #E88F15;
+$gray : #5e656f;
+$black : #333c48;
+$dark-blue : #356397;
+$white : #ffffff;
+$green : #28a745;
+$red : #7C0A02;
+$light-gray : #f4f4f4;
+$blue: #356396;
+
+
+
+// Media Query Ranges
+// ==========================================================================
+$xsm-screen: 576px;
+$sm-screen: 768px;
+$m-screen: 992px;
+$l-screen: 1280px;
+$xl-screen: 1540px;
+
+
+// Card Size 
+// ==========================================================================
+$large-card: 80%;
+$medium-card: 600px;
+$small-card: 400px;
+
+

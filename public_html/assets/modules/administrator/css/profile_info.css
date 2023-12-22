@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : May 14, 2019, 12:08:39 PM
+    Author     : lbs-imac-05
+*/
+/*$font-family: Roboto, Helvetica, sans-serif;*/
+/*$font-family: Helvetica neue, sans-serif;*/
+.card-stats {
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .25);
+  height: 650px;
+}
+.profile-banner {
+  background-color: #356397;
+  height: 155px;
+}
+.profile-pic {
+  float: none;
+  margin: 80px 83px;
+  border-radius: 50% ! important;
+  width: 150px;
+  height: 150px;
+  border: 7px solid #265284;
+}
+.container-profile-sidebar {
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .25);
+  margin: 90px 40px 20px;
+}
+.profile-content {
+  color: #333c48;
+  font-family: Microsoft Yahei, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-right: 10px;
+}
+.bookmarks {
+  margin: 27px 35px;
+  font-size: 36px;
+  color: #356397;
+}
+.container-profile-main {
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, .25);
+  margin: 87px auto;
+  padding-top: 25px;
+  margin-right: 35px;
+}
+.profile-details {
+  width: 75%;
+  margin-left: 10%;
+}
+.profile-lbl {
+  font-family: Microsoft Yahei, sans-serif;
+  font-size: 14px;
+}

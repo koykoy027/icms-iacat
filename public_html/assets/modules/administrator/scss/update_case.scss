@@ -1,0 +1,249 @@
+@import "abstract/_variables";
+
+.rec-ul .nav-link.active {
+  font-size: 13px;
+  height: 28px;
+  line-height: 15px;
+  border-bottom: 3px solid #e88f15 !important;
+  color: #5e656f !important;
+  background-color: #f4f4f4 !important;
+  border-radius: 4px;
+  padding: 8px 25px;
+  height: 35px;
+}
+.nav-inner-item > a {
+  color: #333c48 !important;
+  text-decoration: none;
+  background-color: transparent;
+  font-size: 13px;
+}
+.card-stats-inner {
+  padding-bottom: 25px;
+  border: 1px solid #f4f4f4;
+}
+.fake-info-content {
+  background-color: #f8f9fc;
+  margin: 0;
+  padding: 10px 15px 35px 15px;
+  font-size: 14px;
+  margin-right: auto;
+
+  .card-sub-title {
+    font-size: 14px;
+    color: #333c48;
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  .fake-info-content_form {
+    padding: 10px;
+
+    .form-control {
+      width: 100% !important;
+    }
+  }
+}
+.sub-form-list {
+  .list-group-item.active {
+    span.float-right {
+      display: block;
+    }
+    /*        .list-group-item.active:hover{
+            z-index: 1;
+            color: #fff;
+            text-decoration: none;
+            background-color: #e88f15;
+        }*/
+  }
+  .list-group-item:hover {
+    z-index: 1;
+    color: #5e6578;
+    text-decoration: none;
+    background-color: #e9ecef;
+    span.float-right {
+      display: block;
+    }
+  }
+}
+.table {
+  border: 1px solid #eee !important;
+}
+.card_tbl-container {
+  padding: 0px !important;
+  position: relative;
+  /*left: 25px;*/
+  .card_tbl-action {
+    padding-bottom: 10px !important;
+  }
+}
+.checkBox_card {
+  padding: 10px 15px 0px 15px !important;
+  background: #333c48;
+  border-radius: 4px;
+}
+.check_label {
+  text-decoration: none;
+  color: #e88f15;
+  font-size: 13px;
+  display: inline-block;
+  /*position: relative;*/
+  bottom: 6px;
+}
+.emp_details_collapsedForm {
+  background: #f8f9fc;
+  padding: 15px;
+}
+.chosen-container-multi .chosen-choices {
+  width: 75% !important;
+}
+
+.card_tbl-container .card_tbl-action {
+  padding-bottom: 10px !important;
+}
+.tbl_info {
+  display: inline-block;
+  margin-bottom: 0px;
+}
+.tbl_info span {
+  color: #cc7702;
+  font-size: 13px;
+}
+.tbl-services-list tr:hover {
+  background-color: #f4f4f4;
+}
+.md-form .form-control:disabled,
+.md-form .form-control[readonly] {
+  border-bottom: 1px solid #bdbdbd;
+  background-color: transparent;
+}
+.select-wrapper input.select-dropdown {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  outline: 0;
+  height: 38px;
+  line-height: 2.9rem;
+  width: 100%;
+  font-size: 1rem;
+  margin: 0 0 0.94rem 0;
+  padding: 0;
+  display: block;
+  text-overflow: ellipsis;
+  z-index: 2;
+}
+.select-wrapper span.caret {
+  color: initial;
+  position: absolute;
+  right: 0;
+  top: 0.8rem;
+  font-size: 0.63rem;
+}
+.select-wrapper {
+  position: relative;
+}
+.md-form {
+  position: relative;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.action-menu-offender {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 900;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin-left: 10px;
+  margin-top: -20px;
+  font-size: 9px;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  display: none;
+}
+.action-menu-offender .action-title {
+  margin-top: -8px;
+  background-color: #f4f4f4;
+  font-size: 12px;
+  font-weight: 600;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.action-menu-docs {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 900;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin-left: 10px;
+  margin-top: -20px;
+  font-size: 9px;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  display: none;
+}
+.action-menu-docs .action-title {
+  margin-top: -8px;
+  background-color: #f4f4f4;
+  font-size: 12px;
+  font-weight: 600;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+.btn-update {
+  margin-left: 15px;
+}
+.tab-sub-info-content {
+  padding: 17px 20px;
+}
+.case-evaluation {
+  height: 180px !important;
+  width: 475px !important;
+}
+.case-risk-assessment {
+  height: 180px !important;
+  width: 475px !important;
+}
+.form-control {
+  width: 100% !important;
+}
+#tbl-services-list {
+  tr {
+    &:hover {
+      cursor: pointer;
+      background: #f4f8fa;
+    }
+  }
+}
+
+.fa-upload {
+    font-size: 35px;
+    color: #356397;
+}
+
+.tab-employment {
+    .tab-inner {
+        /*background: #f5f6fa;*/
+        .card-sub-title {
+            background: #f5f6fa;
+            padding: 10px;
+            border: 1px solid #eee;
+        }
+    }
+}

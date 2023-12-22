@@ -1,0 +1,32 @@
+
+
+@import 'abstracts/_variable';
+
+.notifications {
+    font-family:$font-family;
+    font-size: 14px;
+}
+.today-notif {
+    font-family:$font-family;
+    font-size: 20px;
+    color: $gray;
+    margin-left: 25px;
+}
+
+.notif-type {
+    white-space: nowrap;
+    background-color: #f5f6fa;
+    padding: 10px 44px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.notif-box {
+    border: 1px solid #dee2e6;
+    margin: 1.2em;
+    background-color: #fbfbfb;
+    padding: 16px;
+    text-align: center;
+}
+.fa-clock {
+    color: $orange;
+}

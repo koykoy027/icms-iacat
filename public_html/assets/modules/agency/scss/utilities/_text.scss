@@ -1,0 +1,164 @@
+
+
+.admin-name {
+    font-family: $font-family;
+    font-weight: normal; 
+    font-style: normal; 
+    font-size: 14px;
+    color: $white;
+    padding-left: 15px;
+}
+.lbl-name {
+    font-family: $font-family; 
+    font-weight: normal; 
+    font-style: normal; 
+    font-size: 14px;
+    color: #E88F15;
+}
+.user-name {
+    color: #333c48;
+    margin-bottom: 0px;
+    font-size: 12px;
+    margin-right: 18px;
+    font-weight: 500;
+    position: relative;
+    bottom: 3px;
+}
+.error{
+    font-size: 0.8rem;
+      color: #d6795b;
+}
+.agency-title-menu {
+    font-family: $font-family2;
+    font-size: 16px;
+    color: #ff9300;
+    margin-bottom: 8px;
+}
+.user-title-menu {
+    font-family: $font-family;
+    font-weight: 700;
+    font-size:16px;
+}
+.content-title{
+    color: #356397;
+    font-size: 18px !important;
+    font-family: $font-family2!important;
+}
+.content-sub-title {
+    font-size: 12px !important;
+    color: #49545f!important;
+}
+.tab-content-title{
+    color: rgba(0,0,0,.9) !important;
+    font-family: Source sans pro, sans-serif !important;
+    font-weight: 400;
+    font-size: 16px !important;
+}
+.text-normal {
+    font-family: $font-family2;
+    font-size:15px;
+    font-weight: 400;
+    color: #343a40 !important;
+}
+
+.text-semi-bold {
+    font-family: $font-family;
+    font-size:16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, .9) !important;
+}
+.text-bold {
+    font-family: $font-family;
+    font-size:16px;
+    font-weight: 700;
+    color: #495057 !important;
+}
+.header-count {
+    font-family: $font-family2;
+    font-size: 23px;
+}
+.text-capital {
+    text-transform: capitalize;
+}
+.case-number-ex {
+    padding-left: 65px;
+    padding-top: 16px;
+    color: #356397; 
+    font-family: $font-family; 
+    font-weight: normal; 
+    font-style: normal; 
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.date-expire {
+    color: #e88f15; 
+    font-family: $font-family; 
+    font-weight: normal; 
+    font-style: normal; 
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+.nature-case {
+    font-size: 14px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: #356397;
+    letter-spacing: 0;
+    margin-bottom: 1px;
+    text-transform: uppercase;
+}
+.victim-details {
+    font-size: 14px;
+    font-family: $font-family;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: #5e656f;
+    letter-spacing: 0;
+    margin-bottom: 1px;
+}
+.victim-name {
+    color: #333c48; 
+    font-family: $font-family; 
+    font-weight: normal; 
+    font-style: normal; 
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    margin-bottom: 2px;
+}
+
+.txt-justify{
+    text-align: justify;
+}
+.text-thin{
+    font-weight: 300;
+}
+.txt-orange{
+    color: #e88f15 !important;;
+
+}
+small {
+    font-size: 14px;
+}
+blue {
+    color: $blue;
+}
+orange {
+    color: $orange;
+}
+.txt-light{
+    color: #6c757d;
+}
+.txt-dark-grey{
+  color:#495057;
+}
+.txt-18{
+    font-size: 18px;
+}

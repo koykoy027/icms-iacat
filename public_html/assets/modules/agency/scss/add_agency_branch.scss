@@ -1,0 +1,81 @@
+
+
+@import 'abstracts/_variable';
+
+
+.form-control {
+    width: 63%! important;
+}
+
+.primary-contact {
+    color:$orange;
+}
+//ellipse css
+.action-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin-left: 10px;
+    margin-top: -20px;
+    font-size: 9px;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+    display: none;
+}
+.action-menu .action-title{
+    margin-top: -8px;
+    background-color: #f4f4f4;
+    font-size: 12px;
+    font-weight: 600;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+.ellipse-selected{
+    color: #007bff !important;
+    text-decoration: none; 
+}
+.dropdown-item{
+    padding: 6px 10px;
+}
+.dropdown-item:hover {
+    color: #16181b !important;
+    text-decoration: none;
+    background-color: #f5f6fa;
+    border-bottom: 0px solid #e98d14; 
+}
+//end of ellipse css
+
+.caret-dropdown{
+    position: relative;
+    left: -22px;
+    display: inline-block;
+}
+.sel-dropdown{
+    display: inline-block;
+}
+.table .thead-grey{
+    color: #A3A6B4;
+}
+#tbl-agency_contact_person{
+    padding: 25px 50px;
+    min-height: 200px;
+}
+.address_container{
+      border: 1px solid #ced4da;
+    min-height: 60px;
+    width: 63%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    padding: 10px;
+    color: #485057;
+    background: #e9ecef;
+}

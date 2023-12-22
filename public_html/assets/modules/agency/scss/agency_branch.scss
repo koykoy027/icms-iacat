@@ -1,0 +1,149 @@
+@import 'abstracts/_variable';
+
+a{
+    cursor: pointer;
+}
+.lbl{
+    white-space: nowrap;
+}
+btn-select-role{
+    white-space: nowrap;
+    display: inline
+}
+
+.div-form-footer{
+    padding-top: 5px;
+}
+
+.content-title{
+    color: #356397;
+    font-family: Source sans pro, sans-serif;
+}
+.content-sub-title{
+    font-size: 10px;
+}
+
+input::-webkit-input-placeholder {
+    color: black; /*Change the placeholder color*/
+    opacity: 0.2; /*Change the opacity between 0 and 1*/
+    font-size: 12px;
+}
+
+.col-header{
+    white-space: nowrap;
+    background-color: #F5F6FA;  
+    padding: 10px 10px;
+    font-weight: 600;
+    font-size: 12px;
+}
+.col-body{
+    font-size: 12px;
+    padding:20px  10px;
+}
+
+
+.modal-body{
+    .card{
+        padding-bottom: 0px !important;
+    }
+    .card-title{
+        margin-left: 0px !important;
+    }
+    .lbl-agencies_contact_list{
+        line-height: 4px;
+    }
+    .agencies_address{
+        line-height: 17px;
+    }
+    .modal-title{
+        padding: 43px 0px;
+    }
+}
+
+
+.agency_details{
+
+    .badge{
+        margin-left: 10px;
+    }
+    .contact_details{
+        p{
+            margin-bottom: 0px !important;
+        }  
+    }
+    .contact_person{
+        i{
+            color: $orange;
+            margin-right: 10px;
+        }
+    }
+
+}
+.modal-dialog{
+    margin-top: unset;
+}
+.msgmodal-body .div-rdo-active{
+    display: block;
+    position: absolute;
+    margin-left: 100px;
+}
+.msgmodal-body .div-rdo-inactive{
+    display: block;
+    position: absolute;
+
+}
+
+.agency-list_content{
+    padding: 15px 10px;
+    font-family: $font-family2;
+
+    li{
+        .card{
+            border-bottom: 1px solid #dee2e6 !important;
+            border-radius: unset;
+        }
+
+    }
+
+
+    .nav-data_list{
+        .data_list_img{
+            padding-right:10px;
+        }
+        .desc_content{
+            padding-left:0px !important;
+            .desc_abbr{
+                color: #356397;
+                font-weight: 400;
+                font-size: 17px;
+            }
+            .desc_name{
+                color: #356397;
+                font-size: 15px;
+            }
+            .desc_sub_name{
+                color: #e88f15;
+                font-size: 14px;
+            }
+        }
+        .desc_agency_description{
+            font-size: 11px;
+            color: #6c757d;
+
+            span{
+                a.view_more .ellipse-selected{
+                    color: rgba(0,123,255,.5) !important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
+@media screen and (max-width:991px) {
+    .list-action {
+        margin-top: 0px! important;
+        float: left! important;
+        margin-left: 30px;
+    }
+}

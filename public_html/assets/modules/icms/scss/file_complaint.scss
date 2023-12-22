@@ -1,0 +1,234 @@
+.site-logo-public {
+    margin-right: 0;
+    float: left;
+    font-size: 23px;
+    font-weight: 400;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.bg-landing {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2a5555;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.masthead {
+    width: 60vw;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.masthead {
+    position: absolute;
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.masthead:before {
+    transform: skewX(-9deg);
+    transform-origin: top right;
+}
+
+.masthead .masthead-content {
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 2rem;
+    padding-right: 9rem;
+}
+
+.masthead .masthead-content {
+    position: relative;
+    max-width: 40rem;
+}
+
+.fst-italic {
+    font-style: italic !important;
+}
+//
+.masthead_inner {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    padding-bottom: 0;
+}
+
+.masthead_inner {
+    overflow: hidden;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center !important;
+    // margin: 0 -75px 0;
+}
+
+.card-body {
+    color: #343737;
+    border: 0;
+}
+
+.card-verify {
+    width: 28rem;
+    height: 22rem;
+}
+
+.hidden {
+    display: none;
+}
+
+.fst-italic {
+    font-style: italic !important;
+}
+
+#wrapper {
+    font-family: Lato;
+    font-size: 1.5rem;
+    text-align: center;
+    box-sizing: border-box;
+    color: #333;
+}
+
+#dialog {
+    border: solid 1px #ccc;
+    margin: 10px auto;
+    padding: 20px 30px;
+    display: inline-block;
+    box-shadow: 0 0 4px #ccc;
+    background-color: #faf8f8;
+    overflow: hidden;
+    position: relative;
+    max-width: 450px;
+}
+
+#form {
+    max-width: 240px;
+    margin: 25px auto 0;
+}
+
+.inp-code {
+    margin: 0 2px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 31px;
+    border: solid 1px #ccc;
+    box-shadow: 0 0 5px #ccc inset;
+    outline: none;
+    width: 14%;
+    transition: all 0.2s ease-in-out;
+    border-radius: 3px;
+    margin-bottom: inherit;
+}
+.form-control {
+    width: 100%;
+}
+.card-file_complaint {
+    // width: 600px;
+    height: 700px;
+}
+.header-title {
+    display: inline-block;
+    vertical-align: middle;
+    /* margin-left: 10px; */
+    color: #66bcac;
+    /* font-weight: 600; */
+    font-family: Source sans pro, sans-serif;
+    /* background: #8fafd1; */
+    padding: 4px 122px;
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-submit_complaint {
+    color: #fff;
+    background-color: #6bc0b0;
+    border-color: #6bc0b0;
+}
+
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .masthead_inner {
+        position: relative;
+    }
+    .masthead-content {
+        margin-top: 30px;
+    }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .masthead_inner {
+        position: relative;
+    }
+    .masthead-content {
+        margin-top: 30px;
+    }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .masthead_inner {
+        position: relative;
+    }
+    .masthead-content {
+        margin-top: 30px;
+    }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .masthead_inner {
+        position: absolute;
+    }
+}
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .masthead_inner {
+        position: absolute;
+    }
+}
+.icms {
+    font-size: 21px;
+    color: #356397;
+    font-family: Source sans pro, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+label {
+    font-size: 16px;
+}
+
+select .form-control .error {
+    color: #5e6469;
+}
+.error {
+    color: #FF0000;
+}
+.text-danger {
+    font-size: 16px;
+}
+select .form-control .error
+{
+    color: #545a60 !important;
+}

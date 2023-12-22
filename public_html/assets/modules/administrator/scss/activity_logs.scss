@@ -1,0 +1,36 @@
+
+
+
+@import 'abstracts/_variable';
+
+
+.agency_ {
+    background: #62ca79;
+}
+.activity-logs-content {
+    font-family: $font-family;
+
+}
+.logs-details {
+    margin-top:5px;
+}
+.user-name {
+    font-size: 17px;
+    font-weight: 600;
+    color: #356396;
+}
+.date-frmt-text {
+    font-size: 15px;
+    /* font-weight: 600; */
+    color: #396798;
+}
+.time-frmt-text {
+    font-size: 14px;
+    color: #1a2f4c;
+    font-weight: 500;
+}
+.duration-frmt-text {
+    font-size: 14px;
+    color: #1a2f4c;
+    font-weight: 500;
+}

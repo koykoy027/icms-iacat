@@ -1,0 +1,65 @@
+@import 'abstracts/_variable';
+.access-container {
+    height: 765px;
+    width: 100%;
+    background-color: #ffae3f;
+    border: none;
+    border-radius: 0;
+    margin-top: 56px;
+}
+
+.four-o-one {
+    font-size: 225px;
+    color: #fff;
+    margin-top: 490px;
+    position: absolute;
+}
+
+.card-four-o-one {
+    width: 565px;
+    height: 618px;
+    -webkit-box-shadow: 2px 4px 13px -6px rgba(97, 97, 97, 1);
+    -moz-box-shadow: 2px 4px 13px -6px rgba(97, 97, 97, 1);
+    box-shadow: 2px 4px 13px -6px rgba(97, 97, 97, 1);
+    border-radius: 0;
+    margin-top: 147px;
+    padding: 28px;
+}
+
+.access-wrapper {
+    height: 1000px;
+}
+
+.img-access {
+    width: 100%;
+}
+
+.access-title {
+    color: #333c48;
+    font-size: 35px;
+}
+
+.access__p {
+    color: #333c48;
+}
+
+.text-align_center {
+    text-align: center;
+}
+
+.btn-go_back {
+    background-color: #2c5596;
+    color: #fff;
+    i {
+        color: #fff;
+    }
+}
+
+.btn-go_back:hover {
+    background-color: #2c5596;
+    color: #fff;
+}
+
+.iacat-logo {
+    width: 90px;
+}

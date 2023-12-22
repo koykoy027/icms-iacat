@@ -1,0 +1,29 @@
+
+
+@import 'abstracts/_variable';
+
+.linear-background{
+    height: 13px;
+    width:30%;
+}
+.linear-paragraph{
+    height: 13px;
+    width:100%;
+}
+table{
+
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table td, table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f5f6fa;
+}

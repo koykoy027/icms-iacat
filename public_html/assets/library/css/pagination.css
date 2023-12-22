@@ -1,0 +1,67 @@
+.jo-icon {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.jo-icon-pagination { background-image: url('../images/pagination/pagination_icons.svg');  }
+
+
+.jo-icon-12 { width: 12px; height: 12px; }
+.jo-icon-25 { width: 25px; height: 25px; }
+
+/* size 25 icons */
+.jo-first-black-25 {
+    background-position: 0 0;
+}
+.jo-previous-black-25 {
+    background-position: 0 -25px;
+}
+.jo-next-black-25 {
+    background-position: 0 -50px;
+}
+.jo-last-black-25 {
+    background-position: 0 -75px;
+}
+.jo-first-gray-25 {
+    background-position: 0 -100px;
+}
+.jo-previous-gray-25 {
+    background-position: 0 -125px;
+}
+.jo-next-gray-25 {
+    background-position: 0 -150px;
+}
+.jo-last-gray-25 {
+    background-position: 0 -175px;
+}
+
+
+/* size 12 icons */
+.jo-first-black-12 {
+    background-position: 0 0;
+}
+.jo-previous-black-12 {
+    background-position: 0 -12px;
+}
+.jo-next-black-12 {
+    background-position: 0 -24px;
+}
+.jo-last-black-12 {
+    background-image: url('../images/pagination/all/d.svg');
+    width: 12px; 
+    height: 12px;
+}
+.jo-first-gray-12 {
+    background-position: 0 -48px;
+}
+.jo-previous-gray-12 {
+    background-position: 0 -60px;
+}
+.jo-next-gray-12 {
+    background-position: 0 -72px;
+}
+.jo-last-gray-12 {
+    background-position: 0 -84px;
+}

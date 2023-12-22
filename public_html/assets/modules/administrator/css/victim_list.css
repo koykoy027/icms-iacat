@@ -1,0 +1,210 @@
+a {
+  cursor: pointer;
+}
+.lbl {
+  white-space: nowrap;
+}
+btn-select-role {
+  white-space: nowrap;
+  display: inline;
+}
+.div-form-footer {
+  padding-top: 5px;
+}
+.content-title {
+  color: #356397;
+  font-family: Source sans pro, sans-serif;
+}
+.content-sub-title {
+  font-size: 10px;
+}
+.txt_search {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  border-radius: 3px;
+  padding: 2px 8px;
+}
+input::-webkit-input-placeholder {
+  /*Change the placeholder color*/
+  color: black;
+  /*Change the opacity between 0 and 1*/
+  opacity: 0.2;
+  font-size: 12px;
+}
+.dropdown-item {
+  padding: 0.5em 8px;
+}
+.modal-body .card {
+  padding-bottom: 0px !important;
+}
+.modal-body .card-title {
+  margin-left: 0px !important;
+}
+.modal-body .lbl-agencies_contact_list {
+  line-height: 4px;
+}
+.modal-body .agencies_address {
+  line-height: 17px;
+}
+.modal-body .modal-title {
+  padding: 43px 0px;
+}
+.primary-victim-name {
+  color: #356397 !important;
+  font-size: 20px !important;
+  font-family: Source sans pro, sans-serif !important;
+}
+.form-group {
+  margin-bottom: 2px;
+  margin-bottom: -13px;
+}
+.col-form-label {
+  color: #356396;
+  font-family: Microsoft Yahei, sans-serif;
+  font-weight: 400;
+  font-size: 14px !important;
+}
+.associated-case {
+  border: 1px solid #f4f4f4;
+  background-color: #eee;
+  font-family: Microsoft Yahei, sans-serif;
+  padding: 10px;
+}
+.list_content {
+  padding: 0px;
+  font-family: Source sans pro, sans-serif;
+  color: #212529;
+}
+.list_content li {
+  list-style: none;
+}
+.list_content .nav-data_list .data_list_img {
+  padding-right: 10px;
+}
+.list_content .nav-data_list .data_list_img .img_content {
+  background: #f5f6fa;
+  padding: 10px;
+  width: 80px;
+}
+.list_content .nav-data_list .data_list_img .img_content img {
+  height: 60px;
+  width: auto;
+}
+.list_content .nav-data_list .desc_content {
+  padding-left: 0px !important;
+}
+.list_content .nav-data_list .desc_content .desc_abbr {
+  color: #356397;
+  font-weight: 400;
+  font-size: 17px;
+}
+.list_content .nav-data_list .desc_content .desc_name {
+  color: #356397;
+  font-size: 15px;
+}
+.list_content .nav-data_list .desc_content .desc_sub_name {
+  color: #e88f15;
+  font-size: 14px;
+}
+.list_content .nav-data_list .desc_agency_description {
+  font-size: 11px;
+  color: #6c757d;
+}
+.list_content .nav-data_list .desc_agency_description span a.view_more .ellipse-selected {
+  color: rgba(0, 123, 255, .5) !important;
+  text-decoration: none;
+}
+.desc_name {
+  font-weight: 600;
+}
+#vic-details-nav-content {
+  border: 1px solid #eee;
+}
+#vic-details-nav-content h5 {
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+  padding: 10px;
+  font-weight: 600;
+  background: #f5f6fa;
+}
+#vic-details-nav-content h5 a {
+  float: right;
+  color: #356396;
+  font-size: 16px;
+}
+#vic-details-nav-content p {
+  font-weight: 600;
+}
+#vic-details-nav-content h7 {
+  font-weight: 600;
+  font-size: 16px;
+}
+#vic-details-nav-content h6 {
+  font-weight: 600;
+  font-size: 16px;
+  margin: 15px 0;
+  display: block;
+}
+.vic-details-tab-content {
+  padding: 5px 20px 15px;
+}
+.vic-details-tab-content .list-group-item:hover .li-edit-btn {
+  display: inline-flex;
+}
+.vic-details-tab-content .list-group-item:hover .li-edit-btn a {
+  margin-right: 5px;
+}
+.vic-details-tab-content .list-group-item .li-edit-btn {
+  text-align: center;
+  margin: auto;
+  display: none;
+}
+.case-id {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 16px;
+}
+.victim-id {
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 15px;
+}
+.lbl-desc {
+  color: #e88f15;
+}
+.lbl-name {
+  color: #356397;
+}
+.linear-background {
+  height: 98px;
+}
+.details-col .inter-right--top {
+  left: 0px;
+}
+.details-col .inter-right--bottom {
+  left: 0px;
+}
+.details-col .inter-right--bottom5 {
+  left: 0px;
+}
+.details-col .inter-right--bottom8 {
+  left: 0;
+  width: 100%;
+}
+.details-col .inter-right--bottom9 {
+  display: none;
+}
+.details-col .inter-crop {
+  display: none;
+}
+.action-col .linear-background {
+  left: 78px;
+}
+@media only screen and (max-width: 780px) and (min-width: 634px) {
+  .col-header {
+    padding: 10px 15px;
+  }
+  .linear-background {
+    width: 50%;
+  }
+}

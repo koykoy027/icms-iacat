@@ -1,0 +1,155 @@
+
+
+
+@import 'abstracts/_variable';
+
+a{
+    cursor: pointer;
+}
+.lbl{
+    white-space: nowrap;
+    margin-top: 10px;
+}
+btn-select-role{
+    white-space: nowrap;
+    display: inline
+}
+
+.div-form-footer{
+    padding-top: 5px;
+}
+.primary-victim-name {
+    color: #356397 !important;
+    font-size: 20px !important;
+    font-family: $font-family2!important;
+}
+
+.associated-case {
+    border: 1px solid #f4f4f4;
+    background-color: #eee;
+    font-family: $font-family;
+    padding: 10px;
+}
+.form-group {
+    margin-bottom: -13px !important;
+}
+.card-stats-inner {
+    border: 1px solid #f4f4f4;
+}
+.rec-ul .nav-link.active {
+    font-size: 13px;
+    /*line-height: 15px;*/
+    border-bottom: 3px solid #e88f15 ! important;
+    color: #5e656f ! important;
+    background-color: #f4f4f4 ! important;
+    border-radius: 4px;
+    padding: 8px 25px;
+    height: 40px;
+}
+.nav-inner-item > a {
+    color: #333c48 ! important;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 8px 25px;
+    height: 40px;
+}
+.form-control {
+    width: 100%; 
+}
+.card-bg {
+    background:#F5F6FA;
+}
+/*--------------tabs----------------*/
+.tab-header{
+    z-index: 10;
+    position: relative;
+    top: 2px;
+
+    .nav-pills {
+        border: 1px solid #f5f6fa;
+        border-bottom: 0px;
+        font-family: Source sans pro, sans-serif !important;
+        .nav-tab.active{
+            font-size: 15px;
+            height: 28px;
+            border-bottom: 0px solid #e88f15 ! important;
+            background-color: #ffffff ! important;
+            color: #e88f15 ! important;
+            padding: 20px 20px;
+            font-weight: 500;
+            border-top: 3px solid #e88f15;
+            border-left:1px solid #f4f4f4;
+            border-right: 1px solid #f4f4f4;
+        }
+        .nav-tab{
+            color: #5e656f !important;
+            text-decoration: none;
+            background-color: #eff3f7;
+            padding: 10px 20px;
+            border-radius: 0px;
+            border-right: 1px solid #dee2e6;
+        }
+    } 
+}
+.content-title{
+    font-weight: 600;
+}
+.select-filter {
+    background: #8fafd1;
+    color: #ffffff;
+    border: 0px solid rgba(0, 0, 0, 0.1);
+}
+
+
+.card-header{
+    border:0px solid red;
+}
+.nav-inner-tab{
+    position: relative;
+    top: 4px;
+    float: right;
+    .nav-link.active {
+       font-weight: 600;
+    border-bottom: 1.5px solid #e88f13;
+    color: #376597;
+    text-transform: uppercase;
+    position: relative;
+    top: 2px;
+
+    }
+    .nav-link{
+        text-transform: uppercase;
+    }
+}
+.bg-grey{
+    background: rgba(239, 243, 247, 0.4);
+}
+@media only screen and (max-width: 780px) and (min-width: 634px){
+   
+    #myTabContent{
+        padding: 20px 0px;
+    }
+    .victim-list-header{
+        .col-header{
+            padding: 0px;
+                padding-top: 10px;
+        }
+    }
+    .bg-grey{
+            padding: 0px !important;
+            .tab-content {
+                    padding-top: 0px;
+            }
+    }
+    .list-action-filter{
+            margin-top: 20px !important;
+    }
+    .pagination{
+          text-align: center !important;
+    float: right !important;
+    }
+    .pagination-details{
+          text-align: center !important;
+    }
+}

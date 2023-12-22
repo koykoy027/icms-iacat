@@ -1,0 +1,133 @@
+
+
+
+@import 'abstracts/_variable';
+.feature-small {
+    float: left;
+    padding: 10px;
+    width: 22%;
+    text-align: center !important;
+    border: 1px solid #eee;
+    margin: 10px;
+}
+.subtitle__small {
+    font-size: 1rem;
+}
+.subtitle {
+    font-family: $font-family2; 
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+.description__small {
+    font-size: 13px;
+    text-align: center !important;
+}
+.description {
+    font-weight: 400;
+    line-height: 1.5;
+}
+.report_icon{
+    font-size: 30px;
+    color: #e88f15;
+    font-weight: 600;
+}
+.form-control {
+    width: 100%;
+    height: calc(19px + 0.75rem + 0px) !important;
+    font-size: 14px !important;
+    font-weight: 300;
+    color: #323c48;
+}
+label {
+    color: #333c48;
+    font-weight: 500;
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+strong{
+    font-weight: 600;
+    color: #333c48;
+    font-size: 13px;
+    font-family: source sans pro;
+}
+.card-sub-title {
+    color: #e88f15;
+    font-family: Source sans pro, sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 18px;
+    font-weight: 700;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.list-group-item{
+    border: 0px solid rgba(0, 0, 0, .125);
+    padding: 10px 0px;
+}
+.report_icon1 {
+    font-size: 18px;
+    color: #e88f15;
+    font-weight: 600;
+    margin-right: 20px;
+}
+
+.list-group-item:hover{
+    background:#f8f9fc;
+
+    .float-right hide{
+        display:block;
+    }
+}
+.btn-collapsible{
+    padding: 16px;
+    font-size: 14px;
+    text-decoration: none;
+    color: #495057;
+    font-weight: 600;
+}
+.card-header{
+    padding: 0px;
+    background: #fff;
+    border: none;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #e88f15;
+    text-decoration: none;
+}
+#chartdiv {
+    width: 100%;
+    height: 174px;
+}
+#piegraph {
+    width: 100%;
+    height: 174px;
+}
+#myChart{
+    width: 100%;
+    height: 174px !important;;
+    /*height: 300px !important;*/
+}
+#clusteredbarchart{
+    width: 100%;
+    height: 174px;
+}
+#columnchart{
+    width: 100%;
+    height: 174px;
+}
+.card-report{
+    border: 1px solid #adb5bd !important;
+    padding: 0px !important;
+}
+.dropdown-item {
+    padding-left: 20px;
+}
+.btn-primary-orange{
+    background-color: #e88f15;
+    color: #fff;
+    margin-left: 0px; 
+       padding: 12px 30px;
+    line-height: 0px !important;
+}

@@ -1,0 +1,254 @@
+@import 'abstracts/_variable';
+
+a{
+    cursor: pointer;
+}
+.lbl{
+    white-space: nowrap;
+}
+btn-select-role{
+    white-space: nowrap;
+    display: inline
+}
+
+.div-form-footer{
+    padding-top: 5px;
+}
+
+.content-title{
+    color: #356397;
+    font-family: Source sans pro, sans-serif;
+}
+.content-sub-title{
+    font-size: 10px;
+}
+.txt_search{
+    border:1px solid rgba(0,0,0,0.1);
+    border-radius: 3px;
+    border-radius: 3px;
+    padding: 2px 8px;
+
+
+}
+input::-webkit-input-placeholder {
+    color: black; /*Change the placeholder color*/
+    opacity: 0.2; /*Change the opacity between 0 and 1*/
+    font-size: 12px;
+}
+.dropdown-item{
+    padding: 0.5em 8px;
+}
+
+.modal-body{
+    .card{
+        padding-bottom: 0px !important;
+    }
+    .card-title{
+        margin-left: 0px !important;
+    }
+    .lbl-agencies_contact_list{
+        line-height: 4px;
+    }
+    .agencies_address{
+        line-height: 17px;
+    }
+    .modal-title{
+        padding: 43px 0px;
+    }
+}
+
+
+.primary-victim-name {
+    color: #356397 !important;
+    font-size: 20px !important;
+    font-family: $font-family2!important;
+}
+
+.form-group {
+    margin-bottom: 2px;
+    margin-bottom: -13px;
+}
+.col-form-label {
+    color: $blue;
+    font-family: $font-family;
+    font-weight: 400;
+    font-size: 14px !important;
+}
+
+.associated-case {
+    border: 1px solid #f4f4f4;
+    background-color: #eee;
+    font-family: $font-family;
+    padding: 10px;
+}
+
+
+
+
+.list_content{
+    padding: 0px;
+    font-family: $font-family2;
+    color: #212529;
+    li{
+        list-style: none;
+    }
+
+    .nav-data_list{
+        .data_list_img{
+            padding-right:10px;
+
+
+            .img_content{
+                background: #f5f6fa;
+                padding: 10px;
+                width: 80px;   
+                img{
+                    height: 60px;width: auto;
+                }
+            }
+        }
+        .desc_content{
+            padding-left:0px !important;
+            .desc_abbr{
+                color: #356397;
+                font-weight: 400;
+                font-size: 17px;
+            }
+            .desc_name{
+                color: #356397;
+                font-size: 15px;
+            }
+            .desc_sub_name{
+                color: #e88f15;
+                font-size: 14px;
+            }
+        }
+        .desc_agency_description{
+            font-size: 11px;
+            color: #6c757d;
+
+            span{
+                a.view_more .ellipse-selected{
+                    color: rgba(0,123,255,.5) !important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+}
+
+.desc_name {
+    font-weight: 600;
+}
+
+#vic-details-nav-content {
+    border: 1px solid #eee;
+
+    h5 {
+        font-size: 18px;
+        border-bottom: 1px solid #eee;
+        padding: 10px;
+        font-weight: 600;
+        background: #f5f6fa;
+        a {
+            float: right;
+            color: #356396;
+            font-size: 16px;
+        }
+    }
+
+    p {
+        font-weight: 600;
+    }
+
+    h7 {
+        font-weight: 600;
+        font-size: 16px;
+    }
+
+    h6 {
+        font-weight: 600;
+        font-size: 16px;
+        margin: 15px 0;
+        display: block;
+    }
+}
+
+.vic-details-tab-content {
+    padding: 5px 20px 15px;
+
+    .list-group-item {
+        &:hover {
+            .li-edit-btn { 
+                display: inline-flex;
+                a {
+                    margin-right: 5px;
+                }
+            }
+
+        }
+        .li-edit-btn {
+            text-align: center;
+            margin: auto;
+            display: none;
+
+        }
+    }
+}
+
+
+.case-id {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size:16px;
+}
+.victim-id {
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-size:15px;
+}
+.lbl-desc {
+    color: #e88f15;
+}
+.lbl-name {
+    color: #356397;
+}
+.linear-background{
+    height: 98px;
+}
+.details-col{
+    .inter-right--top{
+        left: 0px;
+    }
+    .inter-right--bottom{
+        left: 0px;
+    }
+    .inter-right--bottom5{
+        left: 0px;
+    }
+    .inter-right--bottom8{
+        left: 0;
+        width: 100%;
+    }
+    .inter-right--bottom9{
+        display:none;
+    }
+    .inter-crop{
+        display:none;
+    }
+}
+.action-col .linear-background {
+    left: 78px;
+}
+@media only screen and (max-width:780px) and (min-width:634px){
+    .col-header{
+        padding: 10px 15px;
+    }
+    .linear-background{
+        width: 50%;
+    }
+
+
+
+}

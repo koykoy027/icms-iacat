@@ -1,0 +1,118 @@
+
+/*.nav-pills .nav-link.active {
+    border-bottom: 3px solid #E88F15;
+    background-color: #3E516A;
+}*/
+/*.nav-item > a {
+    color: #e9ecef;
+    text-decoration: none;
+    background-color: transparent;
+}
+.nav-items-tab {
+    font-family: $font-family;
+    font-size: 14px;
+    font-weight: 300;
+
+    .nav-item{
+        .nav-link{
+            border-radius: unset !important;
+            color: #e9ecef;
+        }
+    }
+}*/
+.agency-menu {
+    width: 670px;
+}
+.card-nav-ul {
+    background-color: $light-gray;
+    font-size: 14px;
+}
+.card-nav-ul li a {
+    color: #5e656f;
+    font-family: Microsoft Yahei, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px
+}
+.card-nav-ul .nav-link.active{
+    border-bottom: 2px solid $orange! important;
+    color: $white;
+}
+.nav-pills {
+    .nav-tab.active {
+        font-size: 15px;
+        height: 28px;
+        line-height: 0px;
+        border-bottom: 3px solid #e88f15 ! important;
+        background-color: #f4f4f4 ! important;
+        color: #5e656f ! important;
+        padding: 20px 20px;
+        border-radius: 0px;
+        font-family: Source sans pro, sans-serif !important;
+        font-weight: 500;
+    }
+}
+.card-nav {
+    padding-bottom: 25px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+
+/*.dropdown-menu:after, .dropdown-menu:before{
+    bottom: 100%;
+    left: 18%;
+    border: solid #ffc107;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+.dropdown-menu:after {
+    border-color: rgba(136, 183, 213, 0);
+    border-bottom-color: #fff;
+    border-width: 11px;
+    margin-left: -29px;
+}
+.dropdown-menu:before {
+
+    border-color: rgba(194, 225, 245, 0);
+    border-bottom: 1px solid #d9d9d9;
+    border-width: 13px;
+    margin-left: -31px;
+
+}*/
+
+
+/*.nav-menu-item {
+    li{
+        a.dropdown-toggle.active {
+            border-bottom: 3px solid #e88f15;
+            background-color: #3e516a;
+        }
+
+    }
+}*/
+.nav-menu-item {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    padding: 0;
+}
+.nav-item .nav-link.active {
+    font-size: 14px;
+    border-bottom: 3px solid #e88f15;
+    color: #5e656f ! important;
+    background-color: #f4f4f4;
+    border-radius: 0px;
+    padding: 8px 25px;
+    height: 40px;
+}
+.nav-item .nav-link {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 14px;
+    padding: 8px 25px;
+}

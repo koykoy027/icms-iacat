@@ -1,0 +1,143 @@
+/*--------------------- Victime Legal Services Logs ---------------*/
+
+
+@import 'abstracts/_variable';
+
+.service_victim_name{
+    color: #455367;
+    font-weight: 500;
+    font-size: 15px;
+}
+.d-relative{
+    position: relative;
+    bottom: 10px;
+}
+.subremarks_details{
+    color: #828b94 !important;
+    font-size: 14px;
+    font-family: source sans pro;
+}
+.form-row-services{
+    display: flex;
+    .date-services{
+        flex: 2;
+    }
+    .details-services{
+        flex:10;
+    }
+}
+.victim-title{
+    font-family: source sans pro;
+    /*background: #f5f6fa;*/
+    margin-top: 10px;
+    color: #fff;
+    span{
+        color: #6c757d;
+        font-size: 14px;
+        font-family: source sans pro;
+    }
+}
+
+.truncate {
+    width: 250px;
+    /* need automatic multi-line height */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border:1px solid #999999;
+    float: left;
+    word-wrap: break-word;
+}
+.truncate.open {
+    width: 500px;
+    white-space: normal;
+    text-overflow: inherit;
+}
+
+.helpicon {
+    position: relative;
+    float:right;
+}
+
+.description_overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 57vw;
+    word-wrap: break-word;
+    max-width: 70vw; // width or max-width must be specified
+
+    &:hover {
+        /*background: #dee2e6;*/
+        cursor:pointer;
+        color: #e88f15;
+    }
+
+    // on a touch device, a click is equivalent to hover - text will expand and remain that way
+    line-height: 1.4;
+    border-radius: 0;
+    border: none;
+}
+.text_wrap_normal{
+    white-space: normal;
+}
+.divider_{
+    font-size: 25px;
+    color: #6c757d;
+    position: relative;
+    top: 3px;
+}
+.date-services{
+    span{
+        color: #212529;
+    }
+    .s_month{
+        font-weight: 700;
+        font-family: source sans pro;
+        font-size: 15px;
+        color: #212529;
+    }
+    font-weight: 500;
+}
+.col-header {
+    font-weight: 600;
+    color: #495057;
+    font-family: source sans pro;
+    font-size: 16px;
+    background-color: #f5f6fa;
+    padding: 10px 10px;
+    margin-bottom: 10px;
+    span{
+        font-weight:600;
+    }
+}
+.content-title{
+    color: #356397;
+    font-family: Source sans pro, sans-serif;
+}
+.content-sub-title{
+    font-size: 10px;
+}
+.task-date {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #a1a4a7;
+}
+.task-month {
+    font-family: impact;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: #5a5a5a;
+}
+
+.task-subj {
+    font-size: 18px;
+    color: #5a5a5a;
+    font-weight: 600;
+    font-family: sans-serif;
+}
+.card-wrapper-services {
+    height: 700px;
+    overflow-y: scroll;
+}
