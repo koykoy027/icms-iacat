@@ -1,3 +1,9 @@
+body{
+  overflow: hidden;
+  display: flex;
+
+  
+}
 .bg-landing {
   content: "";
   position: fixed;
@@ -35,7 +41,12 @@
 }
 .card-body {
   color: #343737;
-  border: 0;
+  border-radius: 5%;
+  background-color: white;
+  font-family: Lato;
+  font-size: 1.5rem;
+  text-align: center;
+  
 }
 .card-verify {
   width: 28rem;
@@ -94,6 +105,23 @@
   height: auto;
   /* Extra small devices (phones, 600px and down) */
 }
+
+.btn-send-verify{
+  color: #fff;
+  background-color: #6bc0b0;
+  border-color: #6bc0b0;
+  
+  
+}
+
+.btn-resend_btn{
+color: #6bc0b0;
+text-decoration: none;
+
+ 
+ 
+}
+
 @media only screen and (max-width: 600px) {
   /* Small devices (portrait tablets and large phones, 600px and up) */  .card-otp {
     padding: 70px;
@@ -109,10 +137,10 @@
     line-height: 80px;
     font-size: 55px;
   }
-  .btn-verify {
-    width: 155px;
-    height: 53px;
-    font-size: 24px;
+  .btn-send-verify {
+    color: #fff;
+  background-color: #6bc0b0;
+  border-color: #6bc0b0;
   }
 }
 @media only screen and (min-width: 600px) {
@@ -130,7 +158,7 @@
     line-height: 80px;
     font-size: 55px;
   }
-  .btn-verify {
+  .btn-send_verify {
     width: 155px;
     height: 53px;
     font-size: 24px;

@@ -291,6 +291,40 @@ _assetHeaderLibrary($libraries, $dir_asset);
                                             <a class="dropdown-item <?php echo $method == "add_case" ? "active" : "" ?>"   data-toggle="pill9" href="<?php echo SITE_URL ?>add_case" role="tab" aria-selected="false">&nbsp;&nbsp;Add New Case </a>-->
                                 </div>
                             </li>
+                            <li class="nav-item dropdown agency-dropdown lvl-ce lvl-ch lvl-ca lvl-ra">
+                                <a class=" nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Case Referral</a>
+
+                                <div class="dropdown-menu agency-menu menu-carret" aria-labelledby="navbarDropdown3">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-md-6 col-lg-6">
+                                            <div class="card-body">
+                                                <p class="agency-title-menu">Case Management</p>
+                                                <a class="dropdown-item lvl-ch <?php echo $method == "add_case" ? "active" : "" ?>"
+                                                    data-toggle="pill9" href="<?php echo ADMIN_SITE_URL ?>add_case" role="tab"
+                                                    aria-selected="false">&nbsp;&nbsp;Refer New Report </a>
+                                                <a class="dropdown-item <?php echo $method == "cases" ? "active" : "" ?>"
+                                                    data-toggle="pill8" href="<?php echo ADMIN_SITE_URL ?>cases" role="tab"
+                                                    aria-selected="false">&nbsp;&nbsp;Referred Report List</a>
+                                                <a class="dropdown-item <?php echo $method == "temporary_cases" ? "active" : "" ?>"
+                                                    data-toggle="pill8" href="<?php echo ADMIN_SITE_URL ?>temporary_cases" role="tab"
+                                                    aria-selected="false">&nbsp;&nbsp;Referred Temporary Case List</a>
+                                            </div>
+                                        </div>
+                                        <!--<div class="col-sm-6 col-md-6 col-lg-6  lvl-ce">
+                                            <div class="card-body">
+                                                <p class="agency-title-menu">Legal Case</p>
+                                                <a class="lvl-ce dropdown-item <?php echo $method == "criminal_case_list" ? "active" : "" ?>"
+                                                    data-toggle="pill9" href="<?php echo ADMIN_SITE_URL ?>criminal_case_list"
+                                                    role="tab" aria-selected="false">&nbsp;&nbsp;Criminal Case</a>
+                                                <a class="lvl-ce dropdown-item <?php echo $method == "admin_case" ? "active" : "" ?>"
+                                                    data-toggle="pill15" href="<?php echo ADMIN_SITE_URL ?>admin_case"
+                                                    role="tab" aria-selected="false">&nbsp;&nbsp;Administrative Case</a>
+                                            </div>
+                                        </div>-->
+                                    </div>
+                                </div>
+                            </li>
                             <li class="nav-item lvl-ra hide">
                                 <a class="nav-link <?php echo $method == "recruitment_and_employer" ? "active" : "" ?>"
                                     data-toggle="pill10" href="<?php echo ADMIN_SITE_URL ?>recruitment_and_employer"

@@ -46,8 +46,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </div>
                         </div>
                         <br>
-                        <a href="/file_complaint" class="d-flex justify-content-end">
-                            <small class="text-dark">Are you filling a complaint?</small></a>
+                        <div class="complain-design">
+                        <a href="/file_complaint" class="complain-design d-flex justify-content-center" style="text-decoration: none;">
+                            Are you filling a complaint?</a>
+                            </div>
                     </form>
                 </div>
             </div>
