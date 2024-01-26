@@ -15,7 +15,7 @@
      <img src="assets/global/images/public_bg.jpg" alt="Girl in a jacket" width="100%" height="100%" class="bg-landing">
 
      <div class="masthead">
-         <div class="masthead-content- masthead_inner text-white">
+         <div class="masthead-content masthead_inner text-white">
              <div class="container-fluid_ mb-5">
                  <div class="card card-icms px-5 pb-5 shadow-lg">
                      <div class="d-flex justify-content-end">
@@ -222,8 +222,8 @@
                                                      <span>Aug 31, 2021 </span>
                                                      <span>10:30 AM</span>
                                                  </div>
-                                             </li> -->
-                                         </ul>
+                                             </li> 
+                                          </ul> -->
 
                                          <!-- <script src="JavaScript/timeline-V2.js"></script> -->
                                      </div>
@@ -242,8 +242,8 @@
 
  </html>
 
- <!------------ Add Services Modal ------------->
- <div class="modal fade" id="mdl-view_notes" role="dialog" data-backdrop="static">
+ <!-- ---------- Add Services Modal ----------- -->
+ <!-- <div class="modal fade" id="mdl-view_notes" role="dialog" data-backdrop="static">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
              <div class="modal-header">
@@ -277,10 +277,10 @@
              </table>
          </div>
      </div>
- </div>
+ </div> -->
 
  <!-- Modal -->
- <div class="modal fade" id="mdl-set_notif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ <!-- <div class="modal fade" id="mdl-set_notif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -299,4 +299,4 @@
              </div>
          </div>
      </div>
- </div>
+ </div> -->

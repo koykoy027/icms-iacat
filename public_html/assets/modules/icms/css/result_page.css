@@ -24,7 +24,11 @@
   font-size: 17px;
 }
 .page-content {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
   background: #eff3f7;
+  overflow: hidden;
 }
 .card-title {
   font-family: Source sans pro, sans-serif;
@@ -114,6 +118,7 @@
   line-height: 20px;
   width: 50%;
   margin-bottom: 10px;
+ 
 }
 .box ul li > span {
   content: "";
@@ -218,6 +223,7 @@
   height: 100%;
   min-height: 0;
   padding-bottom: 0;
+  justify-content: center;
 }
 .masthead {
   position: absolute;
@@ -228,7 +234,8 @@
   overflow-y: scroll;
 }
 .card-icms {
-  background: #e9f5f9;
+  background: #fff;
+  border-radius: 1%;
 }
 .masthead_inner {
   position: absolute;
@@ -239,6 +246,15 @@
   top: 60px;
   /* Extra small devices (phones, 600px and down) */
 }
+
+a.site-logo{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
 @media only screen and (max-width: 600px) {
   /* Small devices (portrait tablets and large phones, 600px and up) */  .site-logo img {
     height: 65px;
@@ -250,7 +266,20 @@
     margin: 0px 275px;
     padding: 15px 32px;
     font-size: 25px;
+    
   }
+
+  .box ul li > span {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px solid #8eafd1;
+    position: absolute;
+    top: 0;
+    left: -30px;
+  }
+
   .box .time span {
     position: absolute;
     left: -171px;
@@ -268,6 +297,8 @@
     height: 99vh;
   }
 }
+
+
 @media only screen and (min-width: 600px) {
   /* Medium devices (landscape tablets, 768px and up) */  .site-logo img {
     height: 65px;
@@ -298,7 +329,8 @@
   }
 }
 @media only screen and (min-width: 768px) {
-  /* Large devices (laptops/desktops, 992px and up) */  .site-logo img {
+  /* Large devices (laptops/desktops, 992px and up) */ 
+   .site-logo img {
     height: 65px;
   }
   .header-title {
@@ -351,11 +383,28 @@
   .box ul li {
     font-size: 16px;
   }
+
+  .box ul li > span {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    border: 1px solid #8eafd1;
+    position: absolute;
+    top: 0;
+    left: -30px;
+  }
+
+
   .box .time span:last-child {
     top: 0%;
     font-size: 12px;
     font-weight: normal;
   }
+
+
+
+
 }
 @media only screen and (min-width: 1200px) {
   .header-title {
@@ -391,6 +440,7 @@
     position: absolute;
     left: -180px;
     width: 140px;
+
   }
 }
 .btn-set_notif {
