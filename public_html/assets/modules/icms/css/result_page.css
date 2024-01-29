@@ -30,6 +30,21 @@
   background: #eff3f7;
   overflow: hidden;
 }
+
+.card-stats1{
+padding-top: 150px;
+
+
+}
+
+.card-stats2{
+  padding-top: 150px;
+  align-content: center;
+  position: absolute;
+  top: 10px;
+  padding-right: 50%;
+  display: flex;
+  }
 .card-title {
   font-family: Source sans pro, sans-serif;
   font-size: 18px;
@@ -209,7 +224,7 @@
 }
 .bg-landing {
   content: "";
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   height: 100%;
