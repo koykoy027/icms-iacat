@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div> -->
                         <div class="row input-group-newsletter">
                             <div class="col-sm-9 col-md-9 col-lg-9">
-                                <input type="text" class="form-control cn-text" name="search_text" placeholder="Enter Temporary Case Number ">
+                                <input type="text" class="form-control cn-text text-center" name="search_text" placeholder="Enter Your Temporary Case Number">
                             </div>
                             <div class="col-sm-3 col-md-3 col-lg-3">
                            
