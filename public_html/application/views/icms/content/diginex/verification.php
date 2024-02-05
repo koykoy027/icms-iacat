@@ -61,6 +61,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     height="100px" alt="INTEGRATED CASE MANAGEMENT SYSTEM">
                                             </a>
                         <h4 class="card-title text-light">OTP Sending</h4>
+                        <div class="otp-container">
+        <p>Your OTP: <?php echo $fetchedOTP; ?></p>
+    </div>
                         <small>Please enter the 6-digit verification code we sent via email</small><br>
                         <form class="mt-1">
                             <div class="d-flex">
@@ -90,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="text-center">
                             Didn't receive the code?<br />
-                            <button class="btn btn-resend btn-link"><small>Send code again</small></a><br />
+                            <button class="btn btn-resend btn-link"><small>Send code again</small></a><br/>
                                 <!-- <a href="#"><small>Change phone number</small></a> -->
                         </div>
                     </div>
