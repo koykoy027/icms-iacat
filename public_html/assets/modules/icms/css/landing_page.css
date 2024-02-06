@@ -25,6 +25,7 @@
 }
 .card-icms {
   width: 65vh;
+  border-radius: 5%;
 }
 .masthead_inner {
   position: absolute;
@@ -131,6 +132,15 @@
   color: #f00;
   /* Extra small devices (phones, 600px and down) */
 }
+
+a.complain-design{
+  text-align: center;
+  text-decoration: none;
+  color: #65d8c3;
+  
+}
+
+
 @media only screen and (max-width: 600px) {
   /* Small devices (portrait tablets and large phones, 600px and up) */  .masthead .masthead-content {
     max-width: 50rem;

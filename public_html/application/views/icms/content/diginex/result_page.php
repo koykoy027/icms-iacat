@@ -3,7 +3,6 @@
  <head>
 
 
-
      <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/global/template/bootstrap/css/bootstrap.min.css">
      <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/library/fonts/fontawesome/css/fontawesome.min.css">
      <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/library/fonts/fontawesome/css/fontawesome.css">
@@ -15,10 +14,10 @@
      <img src="assets/global/images/public_bg.jpg" alt="Girl in a jacket" width="100%" height="100%" class="bg-landing">
 
      <div class="masthead">
-         <div class="masthead-content- masthead_inner text-white">
+         <div class="masthead-content masthead_inner text-white">
              <div class="container-fluid_ mb-5">
                  <div class="card card-icms px-5 pb-5 shadow-lg">
-                     <div class="d-flex justify-content-end">
+                     <div class="d-flex justify-content-start">
                          <button class="btn btn-primary btn-end-session px-5" type="button">
                              <i class="fas fa-arrow-left"></i> Back</button>
                      </div>
@@ -36,7 +35,7 @@
                                          </div>
                                      </div>
                                  </div>
-                                 <div class=" card-stats shadow-sm p-3 mb-2  bg-white rounded">
+                                 <div class="card-stats1 shadow-sm p-3 mb-2  bg-white rounded">
                                      <div class="row flex-column flex-md-row px-3">
                                          <div class="col-md-12 col-lg-6 col-xl-6 col-sm-12 mb-10">
                                              <p class="mb-1 fs-18 text-dark"> Date of Complaint:
@@ -73,14 +72,17 @@
                                      </div>
 
                                  </div>
+
+
+
                                  <div
-                                     class=" card-stats shadow-sm p-3 mb-2  bg-white rounded d-flex justify-content-lg-between">
+                                     class=" card-stats2 shadow-sm p-3 mb-2  bg-white rounded d-flex justify-content-lg-between">
                                      <p class="mb-0 fs-18 text-dark">Tracking Number : <span
                                              class="icms-btn-secondary t-num"><?= $resp['tracking_number'] ?></span>
-                                     </p>
+                                     <!-- </p>
                                      <button class="btn btn-set_notif btn-select-notif_method" hidden>
                                          <i class="fas fa-cogs"></i>
-                                     </button>
+                                     </button> -->
                                  </div>
                                  <div class=" card-stats shadow-sm p-3  bg-white rounded">
                                      <h6 class="header-title"> Updates </h6>
@@ -222,8 +224,8 @@
                                                      <span>Aug 31, 2021 </span>
                                                      <span>10:30 AM</span>
                                                  </div>
-                                             </li> -->
-                                         </ul>
+                                             </li> 
+                                          </ul> -->
 
                                          <!-- <script src="JavaScript/timeline-V2.js"></script> -->
                                      </div>
@@ -242,8 +244,8 @@
 
  </html>
 
- <!------------ Add Services Modal ------------->
- <div class="modal fade" id="mdl-view_notes" role="dialog" data-backdrop="static">
+ <!-- ---------- Add Services Modal ----------- -->
+ <!-- <div class="modal fade" id="mdl-view_notes" role="dialog" data-backdrop="static">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
              <div class="modal-header">
@@ -277,10 +279,10 @@
              </table>
          </div>
      </div>
- </div>
+ </div> -->
 
  <!-- Modal -->
- <div class="modal fade" id="mdl-set_notif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+ <!-- <div class="modal fade" id="mdl-set_notif" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
      <div class="modal-dialog" role="document">
          <div class="modal-content">
@@ -299,4 +301,4 @@
              </div>
          </div>
      </div>
- </div>
+ </div> -->

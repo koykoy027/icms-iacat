@@ -125,6 +125,21 @@ class Icms extends CI_Controller {
             }
         }
 
+
+        // Add this code after sending OTP
+// Initialize the variable to store fetched OTP
+$aRecordSet['fetchedOTP'] = 'otp_last_update';
+
+// Fetch the OTP for the temporary case number
+$fetchedOTP = $this->Web_public_model->getOTPByTemporaryCaseId($param['temp_case_info']['temporary_case_id']);
+
+// Check if OTP was fetched successfully
+if ($fetchedOTP) {
+    // Update the variable with the fetched OTP code
+    $aRecordSet['fetchedOTP'] = $fetchedOTP['otp_code'];
+}
+
+
         $lastOTPDetails =  $this->Web_public_model->getLastOtpRequestDetails($param);
         $aRecordSet['lastOTPDetails'] = $lastOTPDetails;
         $aRecordSet['contactDetails'] = $param['temp_case_info'];

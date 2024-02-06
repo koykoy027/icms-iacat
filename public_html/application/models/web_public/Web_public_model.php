@@ -195,22 +195,46 @@ Class Web_public_model extends CI_Model {
 
     public function getLatestOtpVerifiedCode($param) {
         $result = [];
-
+    
         $sql = "
             SELECT
                 *
             FROM `icms_temporary_case_otp`
-                WHERE 
-            `temporary_case_id` = '" . $param['temporary_case_id'] . "' AND
-            `otp_status` = '1' AND
-            `otp_code` = '" . $param['otp_v_code'] . "'
-            ORDER BY `otp_last_update` DESC LIMIT 1
+            WHERE 
+                `temporary_case_id` = '" . $param['temporary_case_id'] . "' AND
+                `otp_status` = '1' AND
+                `otp_code` = '" . $param['otp_v_code'] . "'
+            ORDER BY `otp_id` DESC
+            LIMIT 1
         ";
-
+    
         $result = $this->yel->GetRow($sql);
         return $result;
-
     }
+    
+
+    public function getOTPByTemporaryCaseId($temporaryCaseId) {
+        // Assuming you have a database table named 'otp_table'
+        $this->db->where('temporary_case_id', $temporaryCaseId);
+        $query = $this->db->get('icms_temporary_case_otp');
+
+        // Check if a row with the given temporary case ID exists
+        if ($query->num_rows() > 0) {
+            // Return the first row (assuming unique OTPs for each temporary case ID)
+            return $query->row_array();
+        } else {
+            // No OTP found for the given temporary case ID
+            return false;
+        }
+    }
+
+
+
+
+
+
+
+
 
     public function getLastOtpRequestDetails($param) {
         $rs = [];
