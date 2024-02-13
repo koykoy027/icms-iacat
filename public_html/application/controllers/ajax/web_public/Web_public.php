@@ -147,6 +147,7 @@ class Web_public extends CI_Controller {
         return $aResponse;
     }
 
+    //Email Verification
     public function verify_otp($aParam) {
 
         // if (isset($_GET['tcn']) == false) {
@@ -206,7 +207,7 @@ class Web_public extends CI_Controller {
         return $aRecordSet;
     }
 
-
+    //Submit Email OTP
     public function submitEmailOTP($param) {
         $rs = [];
         $rs['flag'] = self::FAILED_RESPONSE;
@@ -273,6 +274,7 @@ class Web_public extends CI_Controller {
         return $rs;
     }
 
+    //Resend Email OTP
     public function resendEmailOTP($param) {
         $aRecordSet = [];
         $aRecordSet['flag'] = self::FAILED_RESPONSE;
