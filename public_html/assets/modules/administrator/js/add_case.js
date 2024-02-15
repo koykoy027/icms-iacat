@@ -1963,20 +1963,20 @@ $(document).ready(function () {
     });
 
     //  continue to add new report 
-//    $('.btn-fr_validate').click(function () {
-//        icmsMessage({
-//            type: 'msgConfirmation',
-//            title: 'There is no existing report and victim, you are about to file a new report. ',
-//            body: 'Click continue button if you wish to continue.',
-//            LblBtnConfirm: 'Continue',
-//            LblBtnCancel: 'Cancel',
-//            onConfirm: function () {
-//                $('#victims-details-tab1').click();
-//                $('#victims-details-tab1').attr('disabled', false);
-//                setDetailsBasedOnValidate();
-//            },
-//        });
-//    });
+   $('.btn-fr_validate').click(function () {
+       icmsMessage({
+           type: 'msgConfirmation',
+           title: 'There is no existing report and victim, you are about to file a new report. ',
+           body: 'Click continue button if you wish to continue.',
+           LblBtnConfirm: 'Continue',
+           LblBtnCancel: 'Cancel',
+           onConfirm: function () {
+               $('#victims-details-tab1').click();
+               $('#victims-details-tab1').attr('disabled', false);
+               setDetailsBasedOnValidate();
+           },
+       });
+   });
 
     // change label in add victim contact type
     $('.a-vi-contact_type').change(function () {
