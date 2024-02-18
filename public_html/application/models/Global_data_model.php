@@ -951,5 +951,93 @@ Class Global_data_model extends CI_Model {
         return $aResponse;
     
     }
+
+    // i add this code
+    
+    public function getGlobalDataVictimInformation($aParam) {
+        $sql = "
+                SELECT  
+                   `iv`.`victim_id`,
+                   `iv`.`victim_number`, 
+                   (SELECT 
+                        `parameter_count_id`
+                     FROM 
+                        `icms_global_parameter`
+                     WHERE
+                        `parameter_type_id` = 3 
+                     AND `parameter_count_id` = `iv`.`victim_civil_status`
+                     LIMIT 1
+                     ) as `civil_status_name`, 
+                   (SELECT 
+                        `parameter_count_id`
+                     FROM 
+                        `icms_global_parameter`
+                     WHERE
+                        `parameter_type_id` = 9
+                     AND `parameter_count_id` = `iv`.`victim_gender`
+                     LIMIT 1                    
+                    ) as `gender_name`, 
+                    (SELECT 
+                        `parameter_count_id`
+                     FROM 
+                        `icms_global_parameter`
+                     WHERE
+                        `parameter_type_id` = 4
+                     AND `parameter_count_id` = `iv`.`victim_religion`
+                     LIMIT 1                    
+                    ) as `region_name`, 
+                   (SELECT 
+                      CONCAT(`vi`.`victim_info_first_name`, ' ', `vi`.`victim_info_middle_name`, ' ', `vi`.`victim_info_last_name`)
+                    FROM 
+                       `icms_victim_info` `vi`
+                    WHERE 
+                        `vi`.`victim_info_is_assumed` = 0
+                    AND 
+                        `vi`.`victim_id` = `iv`.`victim_id`
+                    LIMIT 1 
+                   ) as `real_full_name`, 
+                   (SELECT 
+                      CONCAT(`vi`.`victim_info_first_name`, ' ', `vi`.`victim_info_middle_name`, ' ', `vi`.`victim_info_last_name`)
+                    FROM 
+                       `icms_victim_info` `vi`
+                    WHERE 
+                        `vi`.`victim_info_is_assumed` = 1 
+                    AND 
+                        `vi`.`victim_id` = `iv`.`victim_id`
+                    LIMIT 1 
+                   ) as `assumed_full_name`, 
+                   (
+                    SELECT 
+                         DATE_FORMAT(`victim_info_dob`, '%M %d, %Y')
+                     FROM 
+                        `icms_victim_info` `vi`
+                     WHERE 
+                         `vi`.`victim_info_is_assumed` = 0
+                     AND 
+                         `vi`.`victim_id` = `iv`.`victim_id`
+                     LIMIT 1 
+                   ) as `real_dob`, 
+                   (
+                    SELECT 
+                         DATE_FORMAT(`victim_info_dob`, '%M %d, %Y')
+                     FROM 
+                        `icms_victim_info` `vi`
+                     WHERE 
+                         `vi`.`victim_info_is_assumed` = 1
+                     AND 
+                         `vi`.`victim_id` = `iv`.`victim_id`
+                     LIMIT 1 
+                   ) as `assumed_dob`
+                FROM 
+                   `icms_victim` as `iv`       
+                WHERE 
+                    `iv`.`victim_id` = " . $aParam['victim_id'] . "
+                LIMIT  1
+               ";
+
+        $aResponse = $this->yel->getRow($sql);
+
+        return $aResponse;
+    }
     
 }
