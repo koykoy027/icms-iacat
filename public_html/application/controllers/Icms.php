@@ -483,7 +483,35 @@ if ($fetchedOTP) {
         $this->setTemplate('diginex/file_complaint', $aRecordSet, null, false, true, false, false, false, $aLibraries, $aSEO);
     }
 
-  
+    function send() {
+        $this->load->library('email');
+
     
+        // Load email configuration dynamically
+        $config['protocol'] = 'smtp';
+        $config['smtp_host'] = 'smtp.gmail.com';
+        $config['smtp_port'] = 587;
+        $config['smtp_user'] = 'lalata.jhunriz.bscs2019@gmail.com'; // Update with your SMTP username
+        $config['smtp_pass'] = 'shsamihjjdkunaxs'; // Update with your SMTP password
+        $config['mailtype'] = 'html';
+        $config['charset'] = 'utf-8';
+        $config['newline'] = "\r\n";
+        $config['smtp_crypto'] = 'tls';
+    
+        $this->email->initialize($config);
+    
+        $this->email->from('lalata.jhunriz.bscs2019@gmail.com', 'Jhunriz');
+        $this->email->to('jhunriz14@gmail.com');
+        $this->email->cc('lalata.jhunriz.bscs2019@gmail.com');
+        $this->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
+        
+        $this->email->subject('Email Test');
+        
+        if ($this->email->send()) {
+            return redirect('/tracking');
+        } else {
+            echo 'Error sending email: ' . $this->email->print_debugger();
+        }    
+    }
     
 }
