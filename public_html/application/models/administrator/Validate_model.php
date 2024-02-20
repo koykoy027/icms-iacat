@@ -291,12 +291,13 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+    //Fetching Place of Birth Validate Function
     public function getTotalRelByVictimId($aParam, $count_id) {
         $sql = "SELECT `a`.`icms_validation_victim_id`, `a`.`icms_validation_victim_info_id`, SUM(`a`.`icms_validation_relevance`) as `total`,
                 (SELECT CONCAT(`victim_info_last_name`, ', ', `victim_info_first_name`, ' ', `victim_info_middle_name`) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `full_name`,
                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_dob`,
                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_city_pob`,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
                 (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
                 FROM `icms_case_victim_validation` `a` WHERE `a`.`icms_validation_victim_info_id` = '0' AND `a`.`icms_validation_victim_id` = '" . $aParam . "' AND `a`.`icms_validation_count` = '" . $count_id . "' GROUP BY `a`.`icms_validation_victim_info_id`";
 
