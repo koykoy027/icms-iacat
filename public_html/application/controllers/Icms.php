@@ -486,6 +486,7 @@ if ($fetchedOTP) {
     function send() {
         $this->load->library('email');
 
+        $fetchedOTP = $this->Web_public_model->getOTPByTemporaryCaseId($param['temp_case_info']['temporary_case_id']);
     
         // Load email configuration dynamically
         $config['protocol'] = 'smtp';
@@ -506,6 +507,7 @@ if ($fetchedOTP) {
         $this->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
         
         $this->email->subject('Email Test');
+        $this->email->message('Temporary Code:');
         
         if ($this->email->send()) {
             return redirect('/tracking');
