@@ -483,10 +483,60 @@ if ($fetchedOTP) {
         $this->setTemplate('diginex/file_complaint', $aRecordSet, null, false, true, false, false, false, $aLibraries, $aSEO);
     }
 
-    function send() {
-        $this->load->library('email');
+    // function send() {
+    //     $this->load->library('email');
 
-        $fetchedOTP = $this->Web_public_model->getOTPByTemporaryCaseId($param['temp_case_info']['temporary_case_id']);
+    //             // Initialize the variable to store fetched OTP
+    //     $aRecordSet['fetchedOTP'] = 'otp_last_update';
+
+    //     // Fetch the OTP for the temporary case number
+    //     $fetchedOTP = $this->Web_public_model->getOTPByTemporaryCaseId($param['temp_case_info']['temporary_case_id']);
+
+    //     // Check if OTP was fetched successfully
+    //     if ($fetchedOTP) {
+    //         // Update the variable with the fetched OTP code
+    //         $aRecordSet['fetchedOTP'] = $fetchedOTP['otp_code'];
+    //     }
+
+    //     // Load email configuration dynamically
+    //     $config['protocol'] = 'smtp';
+    //     $config['smtp_host'] = 'smtp.gmail.com';
+    //     $config['smtp_port'] = 587;
+    //     $config['smtp_user'] = 'lalata.jhunriz.bscs2019@gmail.com'; // Update with your SMTP username
+    //     $config['smtp_pass'] = 'shsamihjjdkunaxs'; // Update with your SMTP password
+    //     $config['mailtype'] = 'html';
+    //     $config['charset'] = 'utf-8';
+    //     $config['newline'] = "\r\n";
+    //     $config['smtp_crypto'] = 'tls';
+    
+    //     $this->email->initialize($config);
+    
+    //     $this->email->from('lalata.jhunriz.bscs2019@gmail.com', 'Jhunriz');
+    //     $this->email->to('jhunriz14@gmail.com');
+    //     $this->email->cc('lalata.jhunriz.bscs2019@gmail.com');
+    //     $this->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
+        
+    //     $this->email->subject('Email Test');
+    //     // Concatenate the fetched OTP value with the message
+    //     $message = 'Temporary Code: ';
+    //     $this->email->message($message);
+        
+    //     if ($this->email->send()) {
+    //         // return redirect('/tracking');
+    //         echo 'EMAIL SEND!';
+    //     } else {
+    //         echo 'Error sending email: ' . $this->email->print_debugger();
+    //     }    
+    // }
+
+    function send() {
+        // Load CodeIgniter instance
+        $CI = &get_instance();
+        $CI->load->library('email');
+    
+        // Fetch the OTP for the temporary case number
+        $param['otp_portal'] = 2; // Assuming you have this value somewhere
+        $fetchedOTP = $this->Web_public_model->getOTPByTemporaryCaseIdEmail($param['otp_portal']);
     
         // Load email configuration dynamically
         $config['protocol'] = 'smtp';
@@ -499,21 +549,34 @@ if ($fetchedOTP) {
         $config['newline'] = "\r\n";
         $config['smtp_crypto'] = 'tls';
     
-        $this->email->initialize($config);
+        $CI->email->initialize($config);
     
-        $this->email->from('lalata.jhunriz.bscs2019@gmail.com', 'Jhunriz');
-        $this->email->to('jhunriz14@gmail.com');
-        $this->email->cc('lalata.jhunriz.bscs2019@gmail.com');
-        $this->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
+        $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'Jhunriz');
+        $CI->email->to('lhattz.jhunriz@gmail.com');
+        $CI->email->cc('lalata.jhunriz.bscs2019@gmail.com');
+        $CI->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
+    
+        $CI->email->subject('Email Test');
         
-        $this->email->subject('Email Test');
-        $this->email->message('Temporary Code:');
-        
-        if ($this->email->send()) {
-            return redirect('/tracking');
+        // Check if OTP was fetched successfully
+        if ($fetchedOTP) {
+            // Concatenate the fetched OTP value with the message
+            $message = 'Temporary Code: ' . $fetchedOTP['otp_code'];
+            $CI->email->message($message);
         } else {
-            echo 'Error sending email: ' . $this->email->print_debugger();
-        }    
+            // Handle case where OTP fetching failed
+            echo 'Error fetching OTP';
+            return;
+        }
+    
+        if ($CI->email->send()) {
+            echo 'EMAIL SEND!';
+        } else {
+            echo 'Error sending email: ' . $CI->email->print_debugger();
+        }
     }
+    
+    
+    
     
 }
