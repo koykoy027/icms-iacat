@@ -551,23 +551,41 @@ if ($fetchedOTP) {
     
         $CI->email->initialize($config);
     
-        $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'Jhunriz');
+        $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'ICMS-IACAT');
         $CI->email->to('lhattz.jhunriz@gmail.com');
         $CI->email->cc('lalata.jhunriz.bscs2019@gmail.com');
         $CI->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
     
-        $CI->email->subject('Email Test');
-        
+        $CI->email->subject('Confirm Email');
         // Check if OTP was fetched successfully
+// Check if OTP was fetched successfully
         if ($fetchedOTP) {
             // Concatenate the fetched OTP value with the message
-            $message = 'Temporary Code: ' . $fetchedOTP['otp_code'];
+            $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
+            $message .= '<p>Hi <Name of the User>,</p>';
+            $message .= '<p>You recently added <a href="#">sample@gmail.com</a> to your ICMS.IACAT account.</p>';
+            $message .= '<p>Please confirm this email address so that we can update your Account. You may be asked to enter this confirmation code:</p>';
+            $message .= '<p style="font-weight: bold; font-size: 24px; margin-bottom: 20px; text-align:center;">' . $fetchedOTP['otp_code'] . '</p>';
+            $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
+            $message .= '<p style="font-size: 12px;">';
+            $message .= '<div style="text-align:center;">';
+            $message .= 'from<br>';
+            $message .= 'ICMS.IACAT<br>';
+            $message .= 'ICMS, Inc., Attention: Community Support, Philippines.<br>';
+            $message .= 'This message was sent to <ICMS.IACAT@gmail.com>.';
+            $message .= '</p>';
+            $message .= '<p style="font-size: 12px; text-align:center;">To help keep your account secure, please don\'t forward this email. Learn more</p>';
+            $message .= '</div>';
+            $message .= '</div>';
             $CI->email->message($message);
         } else {
             // Handle case where OTP fetching failed
             echo 'Error fetching OTP';
             return;
         }
+
+
+
     
         if ($CI->email->send()) {
             echo 'EMAIL SEND!';
