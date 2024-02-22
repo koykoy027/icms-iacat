@@ -553,8 +553,8 @@ if ($fetchedOTP) {
     
         $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'ICMS-IACAT');
         $CI->email->to('lhattz.jhunriz@gmail.com');
-        $CI->email->cc('lalata.jhunriz.bscs2019@gmail.com');
-        $CI->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
+        // $CI->email->cc('lalata.jhunriz.bscs2019@gmail.com');
+        // $CI->email->bcc('lalata.jhunriz.bscs2019@gmail.com');
     
         $CI->email->subject('Confirm Email');
         // Check if OTP was fetched successfully
