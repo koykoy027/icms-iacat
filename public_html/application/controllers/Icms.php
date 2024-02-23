@@ -542,8 +542,8 @@ class Icms extends CI_Controller {
     
                     // Send email
                     if ($CI->email->send()) {
-                        $response = array("success" => true);
-                        echo json_encode($response);
+                        // $response = array("success" => true);
+                        // echo json_encode($response);
                     } else {
                         $response = array("success" => false, "message" => $CI->email->print_debugger());
                         echo json_encode($response);
