@@ -294,10 +294,20 @@ class Web_public extends CI_Controller {
 
         $lastOTPDetails = $this->Web_public_model->getLastOtpRequestDetails($param);
 
-        if ($lastOTPDetails['resend_count'] > 3 && strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-30 minutes")) {
-            $aRecordSet['err_msg'] = 'You have reach the maximum resending limit of OTP';
-            return $aRecordSet; //resend send limit
-        } 
+        if ($lastOTPDetails['resend_count'] == 1 || $lastOTPDetails['resend_count'] == 2) {
+            // Check if it's the first or second attempt and if the last OTP was sent more than 180 seconds ago
+            if (strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-180 seconds")) {
+                $aRecordSet['err_msg'] = 'You can resend OTP after 180 seconds.';
+                return $aRecordSet;
+            }
+        } elseif ($lastOTPDetails['resend_count'] >= 3) {
+            // Check if it's the third or subsequent attempt and if the last OTP was sent more than 30 minutes ago
+            if (strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-30 minutes")) {
+                $aRecordSet['err_msg'] = 'You have reached the maximum resend limit of OTP';
+                return $aRecordSet;
+            }
+        }
+        
 
         $otp = [];
         $otp['otp_code'] = mt_rand(100000, 999999);
@@ -318,6 +328,8 @@ class Web_public extends CI_Controller {
         }
 
         $aRecordSet['flag'] = self::SUCCESS_RESPONSE;
+        $aRecordSet['resend_count'] = $lastOTPDetails['resend_count'];
+        $aRecordSet['last_update_time'] = $lastOTPDetails['otp_last_update'];
 
         return $aRecordSet;
     }
