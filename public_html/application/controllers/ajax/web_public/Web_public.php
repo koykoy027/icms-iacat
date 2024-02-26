@@ -294,6 +294,11 @@ class Web_public extends CI_Controller {
 
         $lastOTPDetails = $this->Web_public_model->getLastOtpRequestDetails($param);
 
+        // if ($lastOTPDetails['resend_count'] > 3 && strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-30 minutes")) {
+        //     $aRecordSet['err_msg'] = 'You have reach the maximum resending limit of OTP';
+        //     return $aRecordSet; //resend send limit
+        // } 
+
         if ($lastOTPDetails['resend_count'] == 1 || $lastOTPDetails['resend_count'] == 2) {
             // Check if it's the first or second attempt and if the last OTP was sent more than 180 seconds ago
             if (strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-180 seconds")) {
