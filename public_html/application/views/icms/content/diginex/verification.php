@@ -10,10 +10,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/library/fonts/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="<?= SITE_ASSETS ?>library/fonts/fontawesome/css/all.css">
     <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/modules/icms/css/verification.css">
-
-
-    
-
 </head>
 
 <body>
@@ -23,11 +19,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </div> -->
 
     <div class="masthead">
-        <div class="masthead-content masthead_inner text-dark">
+        <div class="masthead-content- masthead_inner text-white">
             <div class="container-fluid px-4 px-lg-0">
                 <div class="card pb-0">
 
-                    <!-- <div class="card-body card-verify card-email p-5 hidden">
+                    <div class="card-body card-verify card-email p-5 hidden">
                         <h4 class="card-title text-dark">OTP Verification</h4><br>
                         <form>
                             <div class="form-group">
@@ -38,9 +34,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <button type="" class="btn btn-primary d-flex m-auto px-5 btn-send">Send</button>
                         </form>
                         <br>
-                        <a href="#" class="text-blue btn-send_via_mobile d-flex justify-content-end">
-                            <small>Send OTP via mobile number</small></a>
-                    </div> -->
+                        <!-- <a href="#" class="text-blue btn-send_via_mobile d-flex justify-content-end">
+                            <small>Send OTP via mobile number</small></a> -->
+                    </div>
                     <!-- <div class="card-body card-verify card-mobile p-5 hidden">
                         <h4 class="card-title text-dark">OTP Verification</h4><br>
                         <form>
@@ -55,15 +51,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <a href="#" class="text-blue btn-send_via_email d-flex justify-content-end">
                             <small>Send OTP via email address</small></a>
                     </div> -->
-                    <div class="card-body card-otp p-5 text-center ">
-                    <a class="site-logo-public">
-                                                <img src="<?php echo SITE_ASSETS ?>global/images/iacat_logo.png"
-                                                    height="100px" alt="INTEGRATED CASE MANAGEMENT SYSTEM">
-                                            </a>
-                        <h4 class="card-title text-light">OTP Sending</h4>
-                        <div class="otp-container">
-        <p>Your OTP: <?php echo $fetchedOTP; ?></p>
-    </div>
+                    <div class="card-body card-otp p-5 ">
+                        <h4 class="card-title text-dark">OTP Sending</h4>
                         <small>Please enter the 6-digit verification code we sent via email</small><br>
                         <form class="mt-1">
                             <div class="d-flex">
@@ -85,7 +74,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
                             <br>
-                            <button type="button" class="btn btn-send-verify mt-3 d-flex m-auto px-5 ">Verify</button>
+                            <button type="button"
+                                class="btn btn-primary mt-3 d-flex m-auto px-5 btn-send-verify">Verify</button>
                         </form>
                         <br>
                         <!-- <a href="#" class="text-blue btn-send_via_email d-flex justify-content-end">
@@ -93,7 +83,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                         <div class="text-center">
                             Didn't receive the code?<br />
-                            <button class="btn btn-resend btn-link"><small>Send code again</small></a><br/>
+                            <button class="btn btn-resend btn-link"><small>Send code again</small></a><br />
                                 <!-- <a href="#"><small>Change phone number</small></a> -->
                         </div>
                     </div>

@@ -15,8 +15,6 @@
 <body>
     <img src="assets/global/images/public_bg.jpg" alt="Girl in a jacket" width="100%" height="100%" class="bg-landing">
 
-  
-  
     <div class="masthead">
     </div>
     <div class="masthead_inner">
