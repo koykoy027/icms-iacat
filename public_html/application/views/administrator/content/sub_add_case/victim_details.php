@@ -47,8 +47,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                 <label> Date of Birth </label>
-                                <input type="text" name="v_dob" class="form-control vi-dob datepicker"
-                                    placeholder="MM/DD/YYYY">
+                                <input type="text" name="v_dob" class="form-control vi-dob datepicker" placeholder="MM/DD/YYYY">
                             </div>
                         </div>
                         <div class="row">
@@ -61,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-12 col-sm-12 form-currency">
                                 <label>Sex <font color="red"> <b>*</b> </font> </label>
-                                <select class="form-control sel-sex vi_sex" name="">
+                                <select class="form-control sel-sex vi_sex" name="vi_sex">
                                     <option value="">Sex</option>
                                 </select>
                             </div>
@@ -86,10 +85,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="fake-info-content">
-                            <div class=" card-sub-title" style="font-size:14px;color:#333C48;"> Assumed Information of
-                                Victim<br>
-                                <small class="card-desc"> Fill in the details in case the victim has used assumed
-                                    information in the documents. </small>
+                            <div class=" card-sub-title" style="font-size:14px;color:#333C48;">
+                                Assumed Information of Victim <br>
+                                <small class="card-desc">
+                                    Fill in the details in case the victim has used assumed information in the documents. 
+                                </small>
                             </div>
                             <div class="fake-info-content_form">
                                 <div class="row">
@@ -113,8 +113,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <div class="row">
                                     <div class="form-group col-12">
                                         <label> Assumed Date of Birth </label>
-                                        <input type="text" name="v_adob" class="form-control datepicker vi-assumed_dob"
-                                            placeholder="MM/DD/YYYY">
+                                        <input type="text" name="v_adob" class="form-control datepicker vi-assumed_dob" placeholder="MM/DD/YYYY">
                                     </div>
                                 </div>
                             </div>
@@ -130,28 +129,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
             <div class="personal-info-sub_forms">
-                <div class="card-sub-title txt-W-500"> OTHER VICTIM INFORMATION
+                <div class="card-sub-title txt-W-500">
+                    OTHER VICTIM INFORMATION
                     <hr class="card-sub-title_border">
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-12">
                         <div class="list-group sub-form-list" id="list-tab" role="tablist">
-                            <a class="list-group-item list-group-item-action active" id="list-contact_info"
-                                data-toggle="list" href="#tab-contact_info" role="tab" aria-controls="home">Contact
-                                Information<span class="float-right hide"> <i class="fa fa-caret-right"
-                                        aria-hidden="true"></i></span></a>
-                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list"
-                                href="#tab-education" role="tab" aria-controls="profile">Educational Background<span
-                                    class="float-right hide"> <i class="fa fa-caret-right"
-                                        aria-hidden="true"></i></span></a>
-                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list"
-                                href="#tab-address_info" role="tab" aria-controls="messages">Address Information <font
-                                    color="red"> <b>*</b> </font> <span class="float-right hide"> <i
-                                        class="fa fa-caret-right" aria-hidden="true"></i></span></a>
-                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list"
-                                href="#tab-next_kin" role="tab" aria-controls="settings">Next of Kin<span
-                                    class="float-right hide"> <i class="fa fa-caret-right"
-                                        aria-hidden="true"></i></span></a>
+                        <a class="list-group-item list-group-item-action active" id="list-contact_info" data-toggle="list" href="#tab-contact_info" role="tab" aria-controls="home">Contact Information<span class="float-right hide"> <i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+                            <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#tab-education" role="tab" aria-controls="profile">Educational Background<span class="float-right hide"> <i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+                            <a class="list-group-item list-group-item-action" id="list-messages-list" data-toggle="list" href="#tab-address_info" role="tab" aria-controls="messages">Address Information <font color="red"> <b>*</b> </font> <span class="float-right hide"> <i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
+                            <a class="list-group-item list-group-item-action" id="list-settings-list" data-toggle="list" href="#tab-next_kin" role="tab" aria-controls="settings">Next of Kin<span class="float-right hide"> <i class="fa fa-caret-right" aria-hidden="true"></i></span></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8 col-sm-12">

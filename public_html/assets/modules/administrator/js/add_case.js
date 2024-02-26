@@ -83,77 +83,58 @@ function storeVictimContactInfo() {
 }
 
 function getVictimContactInfoList() {
-  var contacts = _getStorageData("victim_personal_contact_info");
-  var cnt = 0;
-  var t = "";
-  var l = "";
-  var r = 0;
+  var contacts = _getStorageData('victim_personal_contact_info');
+    var cnt = 0;
+    var t = '';
+    var l = '';
+    var r = 0;
 
-  // Non Data Content
-  l += "<tr>";
-  l +=
-    '<td colspan="3" class="text-center" style="text-align: center !important">No contact info added to list.</td>';
-  l += "</tr>";
+    // Non Data Content
+    l += '<tr>';
+    l += '<td colspan="3" class="text-center" style="text-align: center !important">No contact info added to list.</td>';
+    l += '</tr>';
 
-  if (contacts.length > 0) {
-    $.each(contacts, function (key, val) {
-      var conctact_details_id = "";
+    if (contacts.length > 0) {
+        $.each(contacts, function (key, val) {
 
-      if (val.conctact_details_id) {
-        conctact_details_id =
-          'data-conctact_details_id = "' + val.conctact_details_id + '"';
-      }
+            var conctact_details_id = '';
 
-      if (
-        val.status === undefined ||
-        (val.status !== undefined && val.status == "1")
-      ) {
-        t += "<tr>";
-        t += "<td>" + val.contact_type_name + "</td>";
-        t += "<td>" + val.contact_content + "</td>";
-        t +=
-          '<td> <div class="btn-group ellipse-action" data-id="vi-contact_info_list' +
-          cnt +
-          '" data-tab="">';
-        t +=
-          '<a class="a-ellipse a-ellipse-' +
-          cnt +
-          ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
-        t += '<div class="action-menu" id="vi-contact_info_list' + cnt + '">';
-        t +=
-          '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
-        t +=
-          '<a class="dropdown-item up-victim_contact_info" data-id="' +
-          cnt +
-          '" >Update</a>';
-        t +=
-          '<a class="dropdown-item rm-victim_contact_info" data-id="' +
-          cnt +
-          '" ' +
-          conctact_details_id +
-          ">Remove</a>";
-        t += "</div>";
-        t += "</div> </td>";
-        t += "</tr>";
-        r += 1;
-      }
+            if (val.conctact_details_id) {
+                conctact_details_id = 'data-conctact_details_id = "' + val.conctact_details_id + '"';
+            }
 
-      cnt++;
-    });
+            if ((val.status === undefined) || ((val.status !== undefined) && (val.status == '1'))) {
+                t += '<tr>';
+                t += '<td>' + val.contact_type_name + '</td>';
+                t += '<td>' + val.contact_content + '</td>';
+                t += '<td> <div class="btn-group ellipse-action" data-id="vi-contact_info_list' + cnt + '" data-tab="">';
+                t += '<a class="a-ellipse a-ellipse-' + cnt + ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
+                t += '<div class="action-menu" id="vi-contact_info_list' + cnt + '">';
+                t += '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
+                t += '<a class="dropdown-item up-victim_contact_info" data-id="' + cnt + '" >Update</a>';
+                t += '<a class="dropdown-item rm-victim_contact_info" data-id="' + cnt + '" ' + conctact_details_id + '>Remove</a>';
+                t += '</div>';
+                t += '</div> </td>';
+                t += '</tr>';
+                r += 1;
+            }
 
-    if (r == 0) {
-      // No Data
-      t += l;
+            cnt++;
+        });
+
+        if (r == 0) {
+            // No Data
+            t += l;
+        }
+    } else {
+        // No Data
+        t += l;
     }
-  } else {
-    // No Data
-    t += l;
-  }
 
-  if (contacts.length >= 10) {
-    $(".btn-add_contact").attr("disabled", true);
-  } else {
-    $(".btn-add_contact").attr("disabled", false);
+    if (contacts.length >= 10) {
+        $('.btn-add_contact').attr('disabled', true);
+    } else {
+        $('.btn-add_contact').attr('disabled', false);
   }
 
   $(".victim-contact_info_list").html(t);
@@ -167,9 +148,7 @@ function storeVictimContactInfoById() {
   });
 
   //get name of type
-  current[storedId]["contact_type_name"] = $(
-    ".u-vi-contact_type option:selected"
-  ).attr("data-name");
+  current[storedId]["contact_type_name"] = $(".u-vi-contact_type option:selected").attr("data-name");
 
   var address_id = $("#form-update_contact_info").attr("data-id");
   if (address_id) {
@@ -232,77 +211,55 @@ function storeVictimEducationInfo() {
 }
 
 function getVictimEducationInfoList() {
-  var educations = _getStorageData("victim_personal_education_info");
+  var educations = _getStorageData('victim_personal_education_info');
 
-  var cnt = 0;
-  var r = 0;
-  var t = "";
-  var l = "";
+    var cnt = 0;
+    var r = 0;
+    var t = '';
+    var l = '';
 
-  // Non Data Content
-  l += "<tr>";
-  l +=
-    '<td colspan="4" class="text-center"  style="text-align: center !important">No education info added to list.</td>';
-  l += "</tr>";
+    // Non Data Content
+    l += '<tr>';
+    l += '<td colspan="4" class="text-center"  style="text-align: center !important">No education info added to list.</td>';
+    l += '</tr>';
 
-  if (educations.length > 0) {
-    $.each(educations, function (key, val) {
-      var victim_education_id = "";
-      if (val.victim_education_id) {
-        victim_education_id =
-          'data-victim_education_id = "' + val.victim_education_id + '"';
-      }
-      if (
-        val.status === undefined ||
-        (val.status !== undefined && val.status == "1")
-      ) {
-        t += "<tr>";
-        t += "<td>" + val.education_type_name + "</td>";
-        t += "<td>" + val.education_school + "</td>";
-        //t += '<td>' + val.education_end + '</td>';
-        t +=
-          '<td> <div class="btn-group ellipse-action" data-id="vi-education_info_list' +
-          cnt +
-          '" data-tab="">';
-        t +=
-          '<a class="a-ellipse a-ellipse-' +
-          cnt +
-          ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
-        t += '<div class="action-menu" id="vi-education_info_list' + cnt + '">';
-        t +=
-          '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
-        t +=
-          '<a class="dropdown-item up-victim_education_info" data-edname="' +
-          val.education_type_name +
-          '" data-id="' +
-          cnt +
-          '" >Update</a>';
-        t +=
-          '<a class="dropdown-item rm-victim_education_info" data-id="' +
-          cnt +
-          '" ' +
-          victim_education_id +
-          ">Remove</a>";
-        t += "</div>";
-        t += "</div> </td>";
-        t += "</tr>";
-        r += 1;
-      }
-      cnt++;
-    });
-    if (r == 0) {
-      // No Data
-      t += l;
+    if (educations.length > 0) {
+        $.each(educations, function (key, val) {
+            var victim_education_id = '';
+            if (val.victim_education_id) {
+                victim_education_id = 'data-victim_education_id = "' + val.victim_education_id + '"';
+            }
+            if ((val.status === undefined) || ((val.status !== undefined) && (val.status == '1'))) {
+                t += '<tr>';
+                t += '<td>' + val.education_type_name + '</td>';
+                t += '<td>' + val.education_school + '</td>';
+                // t += '<td>' + val.education_end + '</td>';
+                t += '<td> <div class="btn-group ellipse-action" data-id="vi-education_info_list' + cnt + '" data-tab="">';
+                t += '<a class="a-ellipse a-ellipse-' + cnt + ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
+                t += '<div class="action-menu" id="vi-education_info_list' + cnt + '">';
+                t += '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
+                t += '<a class="dropdown-item up-victim_education_info" data-edname="' + val.education_type_name + '" data-id="' + cnt + '" >Update</a>';
+                t += '<a class="dropdown-item rm-victim_education_info" data-id="' + cnt + '" ' + victim_education_id + '>Remove</a>';
+                t += '</div>';
+                t += '</div> </td>';
+                t += '</tr>';
+                r += 1;
+            }
+            cnt++;
+        });
+        if (r == 0) {
+            // No Data
+            t += l;
+        }
+    } else {
+        // No Data
+        t += l;
     }
-  } else {
-    // No Data
-    t += l;
-  }
 
-  if (educations.length >= 10) {
-    $(".btn-add_education ").attr("disabled", true);
-  } else {
-    $(".btn-add_education ").attr("disabled", false);
+    if (educations.length >= 10) {
+        $('.btn-add_education ').attr('disabled', true);
+    } else {
+        $('.btn-add_education ').attr('disabled', false);
   }
 
   $(".victim-education_info_list").html(t);
@@ -345,54 +302,42 @@ function storeVictimEducationInfoById() {
 }
 
 function storeVictimAddressInfo() {
-  var storage = _getStorageData("victim_personal_address_info");
-  var l = "";
-  l += $(".a-vi-address_region option:selected").attr("data-name")
-    ? $(".a-vi-address_region option:selected").attr("data-name") + ", "
-    : "";
-  l += $(".a-vi-address_province option:selected").attr("data-name")
-    ? $(".a-vi-address_province option:selected").attr("data-name") + ", "
-    : "";
-  l += $(".a-vi-address_city option:selected").attr("data-name")
-    ? $(".a-vi-address_city option:selected").attr("data-name") + ", "
-    : "";
-  l += $(".a-vi-address_barangay option:selected").attr("data-name")
-    ? $(".a-vi-address_barangay option:selected").attr("data-name") + ", "
-    : "";
-  l += $(".a-vi-address_complete").val()
-    ? $(".a-vi-address_complete").val() + " "
-    : "";
+  var storage = _getStorageData('victim_personal_address_info');
+    var l = "";
+    l += $('.a-vi-address_region option:selected').attr('data-name') ? $('.a-vi-address_region option:selected').attr('data-name') + ", " : "";
+    l += $('.a-vi-address_province option:selected').attr('data-name') ? $('.a-vi-address_province option:selected').attr('data-name') + ", " : "";
+    l += $('.a-vi-address_city option:selected').attr('data-name') ? $('.a-vi-address_city option:selected').attr('data-name') + ", " : "";
+    l += $('.a-vi-address_barangay option:selected').attr('data-name') ? $('.a-vi-address_barangay option:selected').attr('data-name') + ", " : "";
+    l += $('.a-vi-address_complete').val() ? $('.a-vi-address_complete').val() + " " : "";
 
-  if (!storage) {
-    var victim_personal_address_info = [
-      {
-        address_region: $(".a-vi-address_region").val(),
-        address_province: $(".a-vi-address_province").val(),
-        address_city: $(".a-vi-address_city").val(),
-        address_barangay: $(".a-vi-address_barangay").val(),
-        address_complete: $(".a-vi-address_complete").val(),
-        address_overview: l,
-      },
-    ];
+    if (!storage) {
 
-    _setStorageData(
-      victim_personal_address_info,
-      "victim_personal_address_info"
-    );
-  } else {
-    var victim_personal_address_info = {
-      address_region: $(".a-vi-address_region").val(),
-      address_province: $(".a-vi-address_province").val(),
-      address_city: $(".a-vi-address_city").val(),
-      address_barangay: $(".a-vi-address_barangay").val(),
-      address_complete: $(".a-vi-address_complete").val(),
-      address_overview: l,
-    };
+        var victim_personal_address_info = [{
+                'address_region': $('.a-vi-address_region').val(),
+                'address_province': $('.a-vi-address_province').val(),
+                'address_city': $('.a-vi-address_city').val(),
+                'address_barangay': $('.a-vi-address_barangay').val(),
+                'address_complete': $('.a-vi-address_complete').val(),
+                'address_overview': l,
+            }];
 
-    storage.push(victim_personal_address_info);
+        _setStorageData(victim_personal_address_info, 'victim_personal_address_info');
+    } else {
 
-    _setStorageData(storage, "victim_personal_address_info");
-  }
+        var victim_personal_address_info = {
+            'address_region': $('.a-vi-address_region').val(),
+            'address_province': $('.a-vi-address_province').val(),
+            'address_city': $('.a-vi-address_city').val(),
+            'address_barangay': $('.a-vi-address_barangay').val(),
+            'address_complete': $('.a-vi-address_complete').val(),
+            'address_overview': l,
+        };
+
+        storage.push(victim_personal_address_info);
+
+        _setStorageData(storage, 'victim_personal_address_info');
+
+    }
 
   $("#form-add_address_info")[0].reset();
 
@@ -401,79 +346,62 @@ function storeVictimAddressInfo() {
 }
 
 function getVictimAddressInfoList() {
-  var address = _getStorageData("victim_personal_address_info");
+  var address = _getStorageData('victim_personal_address_info');
 
-  var cnt = 0;
-  var r = 0;
-  var t = "";
-  var l = "";
+    var cnt = 0;
+    var r = 0;
+    var t = '';
+    var l = '';
 
-  // Non Data Content
-  l += "<tr>";
-  l +=
-    '<td colspan="2" class="text-center"  style="text-align: center !important">No address info added to list.</td>';
-  l += "</tr>";
+    // Non Data Content
+    l += '<tr>';
+    l += '<td colspan="2" class="text-center"  style="text-align: center !important">No address info added to list.</td>';
+    l += '</tr>';
 
-  if (address.length > 0) {
-    $.each(address, function (key, val) {
-      var address_id = "";
+    if (address.length > 0) {
 
-      if (val.address_id) {
-        address_id = 'data-address_id = "' + val.address_id + '"';
-      }
+        $.each(address, function (key, val) {
 
-      var l_address = val.address_overview;
-      if (!l_address) {
-        l_address = val.address_complete;
-      }
+            var address_id = '';
 
-      if (
-        val.status === undefined ||
-        (val.status !== undefined && val.status == "1")
-      ) {
-        t += "<tr>";
-        t += "<td>" + l_address + "</td>";
-        t +=
-          '<td> <div class="btn-group ellipse-action" data-id="vi-address_info_list' +
-          cnt +
-          '" data-tab="">';
-        t +=
-          '<a class="a-ellipse a-ellipse-' +
-          cnt +
-          ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
-        t += '<div class="action-menu" id="vi-address_info_list' + cnt + '">';
-        t +=
-          '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
-        t +=
-          '<a class="dropdown-item up-victim_address_info" data-id="' +
-          cnt +
-          '" >Update</a>';
-        t +=
-          '<a class="dropdown-item rm-victim_address_info" data-id="' +
-          cnt +
-          '" ' +
-          address_id +
-          ">Remove</a>";
-        t += "</div>";
-        t += "</div> </td>";
-        t += "</tr>";
-        r += 1;
-      }
-      cnt++;
-    });
-    if (r == 0) {
-      // No Data
-      t = l;
+            if (val.address_id) {
+                address_id = 'data-address_id = "' + val.address_id + '"';
+            }
+
+            var l_address = val.address_overview
+            if (!l_address) {
+                l_address = val.address_complete;
+            }
+
+            if ((val.status === undefined) || ((val.status !== undefined) && (val.status == '1'))) {
+                t += '<tr>';
+                t += '<td>' + l_address + '</td>';
+                t += '<td> <div class="btn-group ellipse-action" data-id="vi-address_info_list' + cnt + '" data-tab="">';
+                t += '<a class="a-ellipse a-ellipse-' + cnt + ' " >  <i class="fa fa-ellipsis-v" aria-hidden="true"></i> </a>';
+                t += '<div class="action-menu" id="vi-address_info_list' + cnt + '">';
+                t += '<a class="dropdown-item disabled action-title" href="#">Select Action</a>';
+                t += '<a class="dropdown-item up-victim_address_info" data-id="' + cnt + '" >Update</a>';
+                t += '<a class="dropdown-item rm-victim_address_info" data-id="' + cnt + '" ' + address_id + '>Remove</a>';
+                t += '</div>';
+                t += '</div> </td>';
+                t += '</tr>';
+                r += 1;
+            }
+            cnt++;
+        });
+        if (r == 0) {
+            // No Data
+            t = l;
+        }
+    } else {
+        // No Data  
+        t = l;
     }
-  } else {
-    // No Data
-    t = l;
-  }
 
-  if (address.length >= 1) {
-    $(".btn-add_address").attr("disabled", true);
-  } else {
-    $(".btn-add_address").attr("disabled", false);
+    if (address.length >= 1) {
+        $('.btn-add_address').attr('disabled', true);
+    } else {
+        $('.btn-add_address').attr('disabled', false);
   }
 
   $(".victim-address_info_list").html(t);
