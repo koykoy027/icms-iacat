@@ -39,18 +39,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					</div> -->
                         <div class="row input-group-newsletter">
                             <div class="col-sm-9 col-md-9 col-lg-9">
-                                <input type="text" class="form-control cn-text text-center" name="search_text" placeholder="Enter Your Temporary Case Number">
+                                <input type="text" class="form-control cn-text" name="search_text" placeholder="Search Here">
                             </div>
                             <div class="col-sm-3 col-md-3 col-lg-3">
-                           
-                                <button class="btn btn-search" type="submit">  <img src="<?php echo SITE_ASSETS ?>global/images/icons8_search_32.png" height="75%" alt="icons">Track</button>
+                                <button class="btn btn-search" type="submit">Search</button>
                             </div>
                         </div>
                         <br>
-                        <div class="complain-design">
-                        <a href="/file_complaint" class="complain-design d-flex justify-content-center" style="text-decoration: none;">
-                            Are you filling a complaint?</a>
-                            </div>
+                        <a href="/file_complaint" class="d-flex justify-content-end">
+                            <small class="text-dark">Are you filling a complaint?</small></a>
                     </form>
                 </div>
             </div>
