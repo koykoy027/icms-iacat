@@ -410,4 +410,34 @@ Class Web_public_model extends CI_Model {
     }
 
 
+    public function getOTPByTemporaryCaseIdEmail($otpPortal) {
+        // Assuming you have a database table named 'otp_table'
+        $this->db->where('otp_portal', $otpPortal);
+        $this->db->order_by('otp_id', 'DESC'); // Order by otp_id in descending order
+        $query = $this->db->get('icms_temporary_case_otp');
+        
+        // Check if a row with the given OTP portal exists
+        if ($query->num_rows() > 0) {
+            // Return the first row (assuming unique OTPs for each OTP portal)
+            return $query->row_array();
+        } else {
+            // No OTP found for the given OTP portal
+            return false;
+        }
+    }
+
+    public function getAllTemporaryCases() {
+        // Assuming you have a database table named 'icms_temporary_case'
+        $query = $this->db->get('icms_temporary_case');
+        
+        // Check if any rows exist in the table
+        if ($query->num_rows() > 0) {
+            // Return all rows from the table
+            return $query->result_array();
+        } else {
+            // No data found in the table
+            return false;
+        }
+    }
+
 }
