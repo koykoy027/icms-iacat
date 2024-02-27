@@ -480,7 +480,7 @@ class Web_public extends CI_Controller {
     
                 $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'ICMS-IACAT');
                 $CI->email->to($tempCase['temporary_complainant_email_address']); // Use the fetched email address
-                $CI->email->subject('Confirm Email');
+                $CI->email->subject('ICMS-IACAT CASE');
     
                 // Construct email message
                 $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
