@@ -524,7 +524,7 @@ class Icms extends CI_Controller {
                     // Construct email message
                     $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
                     $message .= '<p>Hi ' . $tempCase['temporary_complainant_firstname'] . ',</p>'; // Use the fetched user name
-                    $message .= '<p>You recently added <a href="#">' . $tempCase['temporary_complainant_email_address'] . '</a> to your ICMS.IACAT account.</p>'; // Use the fetched email address
+                    $message .= '<p>You recently added <strong style"color:#3b5998;">' . $tempCase['temporary_complainant_email_address'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address
                     $message .= '<p>Please confirm this email address so that we can update your Account. You may be asked to enter this confirmation code:</p>';
                     $message .= '<p style="font-weight: bold; font-size: 24px; margin-bottom: 20px; text-align:center;">' . $fetchedOTP['otp_code'] . '</p>';
                     $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
