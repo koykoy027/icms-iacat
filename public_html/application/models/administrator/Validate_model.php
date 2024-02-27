@@ -197,44 +197,128 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
     
-    public function getAllValidateVictimWithDetails($aParam){
-        $aResponse = [];
+    //Fetching Place of Birth Validate
+//     public function getAllValidateVictimWithDetails($aParam){
+//         $aResponse = [];
 
-        $sList = " 
-             SELECT 
-                `a`.`icms_validation_victim_id`,
-                (SELECT `victim_info_id` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_id`,
-                ROUND(SUM(`a`.`icms_validation_content_rel`)/" .$aParam['total_fields']. ") as final_rel,
-                (SELECT CONCAT( `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', COALESCE(`victim_info_middle_name`, '')) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `full_name`,
-                (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_dob`,
-                (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_city_pob`,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
-                (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
-            FROM 
-                `icms_case_victim_validation` `a` 
-            WHERE 
-                `icms_validation_count` = '" .$aParam['count_id']. "'
-            GROUP BY `icms_validation_victim_id`
-            ORDER BY final_rel DESC
-            LIMIT  " . $aParam['start'] . "," . $aParam['limit'] . " 
-        ";
-//        echo $sList;
-        $aResponse['list'] = $this->yel->GetAll($sList);
+//         $sList = " 
+//              SELECT 
+//                 `a`.`icms_validation_victim_id`,
+//                 (SELECT `victim_info_id` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_id`,
+//                 ROUND(SUM(`a`.`icms_validation_content_rel`)/" .$aParam['total_fields']. ") as final_rel,
+//                 (SELECT CONCAT( `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', COALESCE(`victim_info_middle_name`, '')) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `full_name`,
+//                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_dob`,
+//                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_city_pob`,
+//                 (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+//                 (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
+//             FROM 
+//                 `icms_case_victim_validation` `a` 
+//             WHERE 
+//                 `icms_validation_count` = '" .$aParam['count_id']. "'
+//             GROUP BY `icms_validation_victim_id`
+//             ORDER BY final_rel DESC
+//             LIMIT  " . $aParam['start'] . "," . $aParam['limit'] . " 
+//         ";
+// //        echo $sList;
+//         $aResponse['list'] = $this->yel->GetAll($sList);
 
-        $sCount = "
-             SELECT 
-                COUNT(`icms_validation_id`) as `count`
-            FROM 
-                `icms_case_victim_validation`
-            WHERE 
-                `icms_validation_count` = '" .$aParam['count_id']. "'
-            GROUP BY `icms_validation_victim_id`
-                ";
+//         $sCount = "
+//              SELECT 
+//                 COUNT(`icms_validation_id`) as `count`
+//             FROM 
+//                 `icms_case_victim_validation`
+//             WHERE 
+//                 `icms_validation_count` = '" .$aParam['count_id']. "'
+//             GROUP BY `icms_validation_victim_id`
+//                 ";
         
-        $aResponse['count'] = $this->yel->GetAll($sCount);
+//         $aResponse['count'] = $this->yel->GetAll($sCount);
 
-        return $aResponse;
-    }
+//         return $aResponse;
+//     }
+
+//     public function getAllValidateVictimWithDetails($aParam){
+//         $aResponse = [];
+
+//         $sList = " 
+//              SELECT 
+//                 `a`.`icms_validation_victim_id`,
+//                 (SELECT `victim_info_id` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_id`,
+//                 ROUND(SUM(`a`.`icms_validation_content_rel`)/" .$aParam['total_fields']. ") as final_rel,
+//                 (SELECT CONCAT( `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', COALESCE(`victim_info_middle_name`, '')) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `full_name`,
+//                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_dob`,
+//                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_city_pob`,
+//                 (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
+//                 (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
+//             FROM 
+//                 `icms_case_victim_validation` `a` 
+//             WHERE 
+//                 `icms_validation_count` = '" .$aParam['count_id']. "'
+//             GROUP BY `icms_validation_victim_id`
+//             ORDER BY final_rel DESC
+//             LIMIT  " . $aParam['start'] . "," . $aParam['limit'] . " 
+//         ";
+// //        echo $sList;
+//         $aResponse['list'] = $this->yel->GetAll($sList);
+
+//         $sCount = "
+//              SELECT 
+//                 COUNT(`icms_validation_id`) as `count`
+//             FROM 
+//                 `icms_case_victim_validation`
+//             WHERE 
+//                 `icms_validation_count` = '" .$aParam['count_id']. "'
+//             GROUP BY `icms_validation_victim_id`
+//                 ";
+        
+//         $aResponse['count'] = $this->yel->GetAll($sCount);
+
+//         return $aResponse;
+//     }
+
+//Enhancement for Data Accuracy 02/26/2024
+public function getAllValidateVictimWithDetails($aParam){
+    $aResponse = [];
+
+    $sList = " 
+         SELECT 
+            `a`.`icms_validation_victim_id`,
+            (SELECT `victim_info_id` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_id`,
+            CASE
+                WHEN ROUND(SUM(`a`.`icms_validation_content_rel`)/" .$aParam['total_fields']. ") > 100 THEN 100
+                ELSE ROUND(SUM(`a`.`icms_validation_content_rel`)/" .$aParam['total_fields']. ")
+            END as final_rel,
+            (SELECT CONCAT( `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', COALESCE(`victim_info_middle_name`, '')) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `full_name`,
+            (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_dob`,
+            (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = 0) as `victim_info_city_pob`,
+            (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
+            (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
+        FROM 
+            `icms_case_victim_validation` `a` 
+        WHERE 
+            `icms_validation_count` = '" .$aParam['count_id']. "'
+        GROUP BY `icms_validation_victim_id`
+        ORDER BY final_rel DESC
+        LIMIT  " . $aParam['start'] . "," . $aParam['limit'] . " 
+    ";
+
+    $aResponse['list'] = $this->yel->GetAll($sList);
+
+    $sCount = "
+         SELECT 
+            COUNT(`icms_validation_id`) as `count`
+        FROM 
+            `icms_case_victim_validation`
+        WHERE 
+            `icms_validation_count` = '" .$aParam['count_id']. "'
+        GROUP BY `icms_validation_victim_id`
+            ";
+
+    $aResponse['count'] = $this->yel->GetAll($sCount);
+
+    return $aResponse;
+}
+
     
     public function getAllVictimWithInfoId($aParam) {
         $sql = " 
@@ -278,12 +362,26 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+    // public function getTotalRelByVictimInfoId($aParam, $count_id) {
+    //     $sql = "SELECT `a`.`icms_validation_victim_id`, `a`.`icms_validation_victim_info_id`,  SUM(`a`.`icms_validation_relevance`) as `total`,
+    //             (SELECT CONCAT_WS('', `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', `victim_info_middle_name`) FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `full_name`,
+    //             (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `victim_info_dob`,
+    //             (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `victim_info_city_pob`,
+    //             (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+    //             (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
+    //             FROM `icms_case_victim_validation` `a` WHERE `a`.`icms_validation_victim_info_id` = '" . $aParam . "' AND `a`.`icms_validation_count` = '" . $count_id . "' GROUP BY `a`.`icms_validation_victim_info_id`";
+    //     $aResponse = $this->yel->GetRow($sql);
+
+    //     return $aResponse;
+    // }
+
+    
     public function getTotalRelByVictimInfoId($aParam, $count_id) {
         $sql = "SELECT `a`.`icms_validation_victim_id`, `a`.`icms_validation_victim_info_id`,  SUM(`a`.`icms_validation_relevance`) as `total`,
                 (SELECT CONCAT_WS('', `victim_info_last_name`,', ',' ',  `victim_info_first_name`,' ', `victim_info_middle_name`) FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `full_name`,
                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `victim_info_dob`,
                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_info_id` = `a`.`icms_validation_victim_info_id`) as `victim_info_city_pob`,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
                 (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
                 FROM `icms_case_victim_validation` `a` WHERE `a`.`icms_validation_victim_info_id` = '" . $aParam . "' AND `a`.`icms_validation_count` = '" . $count_id . "' GROUP BY `a`.`icms_validation_victim_info_id`";
         $aResponse = $this->yel->GetRow($sql);
@@ -291,12 +389,28 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+
+    // public function getTotalRelByVictimId($aParam, $count_id) {
+    //     $sql = "SELECT `a`.`icms_validation_victim_id`, `a`.`icms_validation_victim_info_id`, SUM(`a`.`icms_validation_relevance`) as `total`,
+    //             (SELECT CONCAT(`victim_info_last_name`, ', ', `victim_info_first_name`, ' ', `victim_info_middle_name`) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `full_name`,
+    //             (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_dob`,
+    //             (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_city_pob`,
+    //             (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+    //             (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
+    //             FROM `icms_case_victim_validation` `a` WHERE `a`.`icms_validation_victim_info_id` = '0' AND `a`.`icms_validation_victim_id` = '" . $aParam . "' AND `a`.`icms_validation_count` = '" . $count_id . "' GROUP BY `a`.`icms_validation_victim_info_id`";
+
+    //     $aResponse = $this->yel->GetRow($sql);
+
+    //     return $aResponse;
+    // }
+
+
     public function getTotalRelByVictimId($aParam, $count_id) {
         $sql = "SELECT `a`.`icms_validation_victim_id`, `a`.`icms_validation_victim_info_id`, SUM(`a`.`icms_validation_relevance`) as `total`,
                 (SELECT CONCAT(`victim_info_last_name`, ', ', `victim_info_first_name`, ' ', `victim_info_middle_name`) FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `full_name`,
                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_dob`,
                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_id` = `a`.`icms_validation_victim_id` AND `victim_info_is_assumed` = '0' LIMIT 1) as `victim_info_city_pob`,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
                 (SELECT COUNT(`case_id`) FROM `icms_case_victim` WHERE `victim_id` = `a`.`icms_validation_victim_id`) as `cases`
                 FROM `icms_case_victim_validation` `a` WHERE `a`.`icms_validation_victim_info_id` = '0' AND `a`.`icms_validation_victim_id` = '" . $aParam . "' AND `a`.`icms_validation_count` = '" . $count_id . "' GROUP BY `a`.`icms_validation_victim_info_id`";
 
@@ -304,6 +418,9 @@ Class Validate_model extends CI_Model {
 
         return $aResponse;
     }
+
+
+
 
     public function getTotalRelByInfoToVictimId($aParam, $count_id) {
         $sql = "SELECT SUM(`icms_validation_relevance`) as `total` FROM `icms_case_victim_validation` WHERE `icms_validation_victim_info_id` = '0' AND `icms_validation_victim_id` = '" . $aParam . "' AND `icms_validation_count` = '" . $count_id . "'";
@@ -313,6 +430,7 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+    
     public function getVictimCaseList($aParam) {
         $sql = "SELECT `a`.`case_victim_id`, `a`.`case_id`, `a`.`victim_id`, DATE(`b`.`case_date_added`) as `date_added`, `b`.`case_added_by`,
                 (SELECT `agency_id` FROM `icms_agency_branch` WHERE `agency_branch_id` = (SELECT `agency_branch_id` FROM `icms_user` WHERE `user_id` = `b`.`case_added_by`)) as `agency_id`,
@@ -336,9 +454,20 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+    // public function getVictimDetails($aParam) {
+    //     $sql = "SELECT `a`.*,
+    //             (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `a`.`victim_info_city_pob` AND `location_type_id`='5') as `city`
+    //             FROM `icms_victim_info` `a` WHERE `a`.`victim_info_id` = '" . $aParam . "'";
+
+    //     $aResponse = $this->yel->GetRow($sql);
+
+    //     return $aResponse;
+    // }
+
+    // If you want to add another case report for existing case Place of Birth correction 
     public function getVictimDetails($aParam) {
         $sql = "SELECT `a`.*,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `a`.`victim_info_city_pob` AND `location_type_id`='5') as `city`
+                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `a`.`victim_info_city_pob` AND `location_type_id`='4') as `city`
                 FROM `icms_victim_info` `a` WHERE `a`.`victim_info_id` = '" . $aParam . "'";
 
         $aResponse = $this->yel->GetRow($sql);
@@ -370,6 +499,29 @@ Class Validate_model extends CI_Model {
         return $aResponse;
     }
 
+    // public function getCaseVictimDetails($aParam) {
+    //     $sql = "SELECT `a`.*, 
+    //             (SELECT `victim_info_first_name` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_first_name`,
+    //             (SELECT `victim_info_last_name` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_last_name`,
+    //             (SELECT `victim_info_middle_name` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_middle_name`,
+    //             (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_dob`,
+    //             (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_city_pob`,
+    //             (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+    //             (SELECT `case_offender_name` FROM `icms_case_offender` WHERE `case_id` = `a`.`case_id`) as `case_offender_name`,
+    //             (SELECT `employer_id` FROM `icms_case_victim_employment` WHERE `case_victim_id` = `a`.`case_victim_id`) as `employer_id`,
+    //             (SELECT `employer_name` FROM `icms_employer` WHERE `employer_id` = `employer_id` LIMIT 1) as `employer_name`,
+    //             (SELECT `recruitment_agency_id_local` FROM `icms_case_victim_employment` WHERE `case_victim_id` = `a`.`case_victim_id`  LIMIT 1) as `recruitment_agency_id_local`,
+    //             (SELECT `recruitment_agency_name` FROM `icms_recruitment_agency` WHERE `recruitment_agency_id` = `recruitment_agency_id_local` LIMIT 1) as `recruitment_agency_name`,
+    //             (SELECT `case_victim_deployment_date` FROM `icms_case_victim_deployment` WHERE `case_victim_id` = `a`.`case_victim_id`) as `case_victim_deployment_date`,
+    //             (SELECT `case_victim_deployment_country_destination` FROM `icms_case_victim_deployment` WHERE `case_victim_id` = `a`.`case_victim_id`) as `country`
+    //             FROM `icms_case_victim` `a`
+    //             WHERE `a`.`case_victim_id` = '" . $aParam['case_victim_id'] . "'";
+
+    //     $aResponse = $this->yel->GetRow($sql);
+
+    //     return $aResponse;
+    // }
+
     public function getCaseVictimDetails($aParam) {
         $sql = "SELECT `a`.*, 
                 (SELECT `victim_info_first_name` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_first_name`,
@@ -377,7 +529,7 @@ Class Validate_model extends CI_Model {
                 (SELECT `victim_info_middle_name` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_middle_name`,
                 (SELECT `victim_info_dob` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_dob`,
                 (SELECT `victim_info_city_pob` FROM `icms_victim_info` WHERE `victim_info_id` = '" . $aParam['victim_info_id'] . "') as `victim_info_city_pob`,
-                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='5') as `city`,
+                (SELECT `location_name` FROM `icms_global_location` WHERE `location_count_id`= `victim_info_city_pob` AND `location_type_id`='4') as `city`,
                 (SELECT `case_offender_name` FROM `icms_case_offender` WHERE `case_id` = `a`.`case_id`) as `case_offender_name`,
                 (SELECT `employer_id` FROM `icms_case_victim_employment` WHERE `case_victim_id` = `a`.`case_victim_id`) as `employer_id`,
                 (SELECT `employer_name` FROM `icms_employer` WHERE `employer_id` = `employer_id` LIMIT 1) as `employer_name`,
