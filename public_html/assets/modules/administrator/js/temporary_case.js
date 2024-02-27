@@ -219,11 +219,12 @@ function getData(fload = 0) {
         }
 
         getRemarkList();
-        getLogs(); 
+        getLogs();
 
     }, 'json');
 
 }
+
 function buildRemarkList() {
 
     let l = "";
@@ -424,6 +425,7 @@ $(document).ready(function () {
     // Get Data
     getData(1);
 
+
     // click add remarks 
     $("#btn-add_remarks").click(function () {
         $("#btn-add_remarks").removeAttr("data-id");
@@ -620,8 +622,62 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             manageComplainant();
+            UpdateConfirmationGmail();
         }
     });
+
+    // add update case email
+    function UpdateConfirmationGmail() {
+        icmsMessage({
+            type: 'msgPreloader',
+            visible: true
+        });
+        let form_data = dg__getFormValues({
+            type: "obj",
+            form: "#form-complainant"
+        });
+        let data = dg__objectAssign({
+            type: "UpdateConfirmationGmail",
+            temporary_case_id: temp_id
+        }, form_data);
+    
+        $.post(sAjaxTemporaryCase, data, function (rs) {
+
+            icmsMessage({
+                type: 'msgPreloader',
+                visible: false
+            });
+    
+            if (rs.data.flag !== '0') {
+                icmsMessage({
+                    type: 'msgSuccess'
+                });
+                tdata = Object.assign(tdata, form_data);
+                $("#form-complainant .btn-cancel").click();
+            } else {
+                icmsMessage({
+                    type: 'msgError'
+                });
+            }
+        }, 'json');
+    }
+
+    // function UpdateConfirmationGmail() {
+    //     $.ajax({
+    //         url: '/UpdateConfirmationGmail',
+    //         type: 'POST',
+    //         dataType: 'json',
+    //         success: function(response) {
+    //             console.log(response);
+    //         },
+    //         error: function(xhr, status, error) {
+    //             console.error(xhr.responseText);
+    //         }
+    //     });
+    // }
+    
+    
+
 
     // Manage Victim 
     $('#form-victim').validate({
