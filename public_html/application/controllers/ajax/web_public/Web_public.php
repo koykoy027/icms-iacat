@@ -460,4 +460,65 @@ class Web_public extends CI_Controller {
         return $aResponse;
     }
 
+    function ConfirmationGmail() {
+        // Load CodeIgniter instance
+        $CI = &get_instance();
+        $CI->load->library('email');
+    
+        // Fetch all temporary cases
+        $temporaryCases = $this->Web_public_model->getAllTemporaryCases();
+    
+        // Check if there are temporary cases fetched
+        if ($temporaryCases) {
+            // Iterate through each temporary case
+            foreach ($temporaryCases as $tempCase) {
+                // Load email configuration dynamically
+                $config['protocol'] = 'smtp';
+                $config['smtp_host'] = 'smtp.gmail.com';
+                $config['smtp_port'] = 587;
+                $config['smtp_user'] = 'lalata.jhunriz.bscs2019@gmail.com';
+                $config['smtp_pass'] = 'shsamihjjdkunaxs';
+                $config['mailtype'] = 'html';
+                $config['charset'] = 'utf-8';
+                $config['newline'] = "\r\n";
+                $config['smtp_crypto'] = 'tls';
+    
+                $CI->email->initialize($config);
+    
+                $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'ICMS-IACAT');
+                $CI->email->to($tempCase['temporary_complainant_email_address']); // Use the fetched email address
+                $CI->email->subject('ICMS-IACAT CASE');
+    
+                // Construct email message
+                $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
+                $message .= '<p>Your Case Mr/Mrs <b>'. $tempCase['temporary_complainant_lastname'] . ','. $tempCase['temporary_complainant_firstname'] .'</b> was added successfully with a case number of <strong style="color:#3b5998;">' . $tempCase['temporary_case_number'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address
+                $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
+                $message .= '<p style="font-size: 12px;">';
+                $message .= '<div style="text-align:center;">';
+                $message .= 'from<br>';
+                $message .= 'ICMS.IACAT<br>';
+                $message .= 'ICMS, Inc., Attention: Community Support, Philippines.<br>';
+                $message .= 'This message was sent to <ICMS.IACAT@gmail.com>.';
+                $message .= '</p>';
+                $message .= '<p style="font-size: 12px; text-align:center;">To help keep your account secure, please don\'t forward this email. Learn more</p>';
+                $message .= '</div>';
+                $message .= '</div>';
+                $CI->email->message($message);
+    
+                // Send email
+                if ($CI->email->send()) {
+                    // $response = array("success" => true);
+                    // echo json_encode($response);
+                } else {
+                    // $response = array("success" => false, "message" => $CI->email->print_debugger());
+                    // echo json_encode($response);
+                }
+            }
+        } else {
+            // Handle case where no temporary cases are found
+            $response = array("success" => false, "message" => "No temporary cases found");
+            echo json_encode($response);
+        }
+    }
+
 }

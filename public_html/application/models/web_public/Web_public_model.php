@@ -439,8 +439,5 @@ Class Web_public_model extends CI_Model {
         }
     }
     
-    
-    
-    
 
 }
