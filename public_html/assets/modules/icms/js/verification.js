@@ -158,9 +158,16 @@ $('.btn-resend').click(function () {
                 type: 'msgSuccess'
             });
         } else {
-            icmsMessage({
-                type: 'msgError'
-            });
+            console.log(rs.data.flag);
+            $('#otp_count').text(rs.data.err_msg);
+            $('#otp_count').addClass('error-message');
+            // Start countdown if there is remaining time
+            if (rs.data.remaining_time > 0) {
+                startCountdown(rs.data.remaining_time);
+            }
+            // icmsMessage({
+            //     type: 'msgError'
+            // });
         }
 
         $('.btn-resend').removeAttr('disabled');
@@ -169,3 +176,34 @@ $('.btn-resend').click(function () {
     }, 'json');
 
 });
+
+function startCountdown(remainingTime) {
+    var countdownInterval = setInterval(function() {
+        remainingTime--;
+        if (remainingTime <= 0) {
+            clearInterval(countdownInterval);
+            $('#otp_count').text('');
+            $('#otp_count').removeClass('error-message');
+        } else {
+            $('#otp_count').text('Resend OTP in: ' + remainingTime + ' seconds');
+        }
+    }, 1000);
+}
+
+function send() {
+    $.ajax({
+        url: 'your_api_endpoint.php', // Replace 'your_api_endpoint.php' with your actual API endpoint URL
+        type: 'POST',
+        dataType: 'json',
+        success: function(response) {
+            if (response.success) {
+                console.log('Email sent successfully');
+            } else {
+                console.error('Error:', response.message);
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX Error:', status, error);
+        }
+    });
+}

@@ -81,6 +81,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <!-- <a href="#" class="text-blue btn-send_via_email d-flex justify-content-end">
                             <small>Send OTP via email address</small></a> -->
 
+                        <div>
+                            <p id="otp_count"></p>
+                        </div>
+
+
                         <div class="text-center">
                             Didn't receive the code?<br />
                             <button class="btn btn-resend btn-link"><small>Send code again</small></a><br />
