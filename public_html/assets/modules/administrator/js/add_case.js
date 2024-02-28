@@ -773,7 +773,7 @@ function loadVictimInfoIfExist() {
             var aVDetails = rs.data.victim_details;
             var globalData = rs.data.Global_data;
 
-            console.log(aVDetails);
+            // console.log(aVDetails);
             
             $('.vi-first_name').val(aVContent.real.victim_info_first_name);
             $('.vi-middle_name').val(aVContent.real.victim_info_middle_name);
