@@ -60,7 +60,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <div class="row">
                             <div class="form-group col-lg-6 col-md-12 col-sm-12 form-currency">
                                 <label>Sex <font color="red"> <b>*</b> </font> </label>
-                                <select class="form-control sel-sex vi_sex" name="vi_sex">
+                                <select class="form-control sel-sex vi-sex" name="vi_sex">
                                     <option value="">Sex</option>
                                 </select>
                             </div>
