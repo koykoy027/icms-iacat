@@ -294,6 +294,10 @@ class Web_public extends CI_Controller {
 
         $lastOTPDetails = $this->Web_public_model->getLastOtpRequestDetails($param);
 
+        $current_time = time();
+        $last_otp_time = strtotime($lastOTPDetails['otp_last_update']);
+        $time_difference = $current_time - $last_otp_time;
+
         // if ($lastOTPDetails['resend_count'] > 3 && strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-30 minutes")) {
         //     $aRecordSet['err_msg'] = 'You have reach the maximum resending limit of OTP';
         //     return $aRecordSet; //resend send limit
@@ -301,14 +305,16 @@ class Web_public extends CI_Controller {
 
         if ($lastOTPDetails['resend_count'] == 1 || $lastOTPDetails['resend_count'] == 2) {
             // Check if it's the first or second attempt and if the last OTP was sent more than 180 seconds ago
-            if (strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-180 seconds")) {
-                $aRecordSet['err_msg'] = 'You can resend OTP after 180 seconds.';
+            $remaining_time = 180 - $time_difference;
+            if ($remaining_time > 0) {
+                $aRecordSet['remaining_time'] = $remaining_time; // Pass remaining time
                 return $aRecordSet;
             }
         } elseif ($lastOTPDetails['resend_count'] >= 3) {
             // Check if it's the third or subsequent attempt and if the last OTP was sent more than 30 minutes ago
-            if (strtotime($lastOTPDetails['otp_last_update']) >= strtotime("-30 minutes")) {
-                $aRecordSet['err_msg'] = 'You have reached the maximum resend limit of OTP';
+            $remaining_time = (30 * 60) - $time_difference;
+            if ($remaining_time > 0) {
+                $aRecordSet['remaining_time'] = $remaining_time; // Pass remaining time
                 return $aRecordSet;
             }
         }
@@ -337,6 +343,7 @@ class Web_public extends CI_Controller {
         $aRecordSet['last_update_time'] = $lastOTPDetails['otp_last_update'];
 
         return $aRecordSet;
+
     }
 
     public function searchCase($param) {
