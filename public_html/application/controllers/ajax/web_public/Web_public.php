@@ -504,21 +504,21 @@ class Web_public extends CI_Controller {
                 $message .= '</div>';
                 $message .= '</div>';
                 $CI->email->message($message);
-    
-                // Send email
-                if ($CI->email->send()) {
-                    // $response = array("success" => true);
-                    // echo json_encode($response);
-                } else {
-                    // $response = array("success" => false, "message" => $CI->email->print_debugger());
-                    // echo json_encode($response);
+        
+                    // Send email
+                    if ($CI->email->send()) {
+                        // $response = array("success" => true);
+                        // echo json_encode($response);
+                    } else {
+                        // $response = array("success" => false, "message" => $CI->email->print_debugger());
+                        // echo json_encode($response);
+                    }
                 }
+            } else {
+                // Handle case where no temporary cases are found
+                $response = array("success" => false, "message" => "No temporary cases found");
+                echo json_encode($response);
             }
-        } else {
-            // Handle case where no temporary cases are found
-            $response = array("success" => false, "message" => "No temporary cases found");
-            echo json_encode($response);
-        }
     }
 
 }
