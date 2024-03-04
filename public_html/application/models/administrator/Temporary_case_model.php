@@ -768,4 +768,23 @@ Class Temporary_case_model extends CI_Model {
         ";
         return $this->yel->GetOne($sql);
     }
+
+    public function getUpdateDataThatWillSend() {
+        // Assuming you have a database table named 'icms_temporary_case' and 'icms_temporary_case_otp'
+        $this->db->select('icms_temporary_case.temporary_complainant_email_address,icms_temporary_case.temporary_complainant_firstname,icms_temporary_case.temporary_complainant_middlename,icms_temporary_case.temporary_complainant_lastname,icms_temporary_case.temporary_case_number,icms_temporary_case_remarks.temporary_case_remarks_date_added');
+        $this->db->from('icms_temporary_case');
+        $this->db->join('icms_temporary_case_remarks', 'icms_temporary_case.temporary_case_id = icms_temporary_case_remarks.temporary_case_id', 'left');
+        $this->db->order_by('icms_temporary_case_remarks.temporary_case_remarks_date_added', 'DESC');
+        $this->db->limit(1);
+        $query = $this->db->get();
+    
+        // Check if any rows exist in the table
+        if ($query->num_rows() > 0) {
+            // Return all rows from the table
+            return $query->result_array();
+        } else {
+            // No data found in the table
+            return false;
+        }
+    }
 }

@@ -883,7 +883,7 @@ class Temporary_case extends CI_Controller {
         $CI->load->library('email');
     
         // Fetch all temporary cases
-        $temporaryCases = $this->Web_public_model->getAllTemporaryCases();
+        $temporaryCases = $this->Temporary_case_model->getUpdateDataThatWillSend();
     
         // Check if there are temporary cases fetched
         if ($temporaryCases) {
@@ -922,15 +922,11 @@ class Temporary_case extends CI_Controller {
                 $message .= '</div>';
                 $CI->email->message($message);
     
-                // Send email
-                if ($CI->email->send()) {
+                  // Send email
+                  if ($CI->email->send()) {
                     // $response = array("success" => true);
                     // echo json_encode($response);
                 } else {
-                    // Log error to a file
-                    $error_message = "Email sending failed: " . $CI->email->print_debugger();
-                    file_put_contents('/path/to/error_log.txt', $error_message, FILE_APPEND);
-    
                     // $response = array("success" => false, "message" => $CI->email->print_debugger());
                     // echo json_encode($response);
                 }
