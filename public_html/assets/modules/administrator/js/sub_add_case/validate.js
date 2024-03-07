@@ -405,7 +405,7 @@ $(document).ready(function () {
                 var l = '';
                 $('.validation-case-list').html(l);
 
-
+                // console.log(rs.data.test);
                 $.each(rs.data.test, function (key, val) {
 
                     l += '<div class="card">';

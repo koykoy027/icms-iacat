@@ -672,12 +672,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                                                         </select>
                                                     </div>
-                                                    <!--                                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
-                                                                                                                <label> Country of Destination </label>
-                                                                                                                <select id="emp-sel-country-dest" class="form-control text-capital emp-deployment_country">
-                                                    
-                                                                                                                </select>
-                                                                                                            </div>-->
+                                                    <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                                        <label> Country of Destination </label>
+                                                        <select id="emp-sel-country-dest" class="form-control text-capital emp-deployment_country" name="emp-deployment_country">
+
+                                                        </select>
+                                                    </div>
                                                     <div class="form-group col-lg-12 col-md-12 col-sm-12">
                                                         <label> <span class="lbl-emp_deployment_date">Deployment Date </span> <font color="red"> <b>*</b> </font> </label>
                                                         <input type="text" class="form-control datepicker emp-deployment_date" name="emp_deployment_date" id="emp_deployment_date" name="emp_deployment_date" placeholder="MM/DD/YYYY" >
