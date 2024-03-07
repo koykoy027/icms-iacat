@@ -479,7 +479,7 @@ $(document).ready(function () {
                     l += '                <div class="col-6">';
                     l += '                    <span class="input-tite">Filed by:</span><br>';
                     // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.filed_by_agency) + '  </span>';
-                    l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.encoded_agency_branch_name) + '  </span>';
+                    l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.filed_by_agency) + '  </span>';
                     l += '                </div>';
                     l += '            </div>';
 
@@ -487,7 +487,7 @@ $(document).ready(function () {
                     l += '                <div class="col-6">';
                     l += '                    <span class="input-tite">Date Complained: </span><br>';
                     // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.case_complainant_date_complained) + '  </span>';
-                    l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.date_added) + '  </span>';
+                    l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.case_complainant_date_complained) + '  </span>';
                     l += '                </div>';
                     l += '                <div class="col-6">';
                     l += '                    <span class="input-tite">Complained by:</span><br>';
