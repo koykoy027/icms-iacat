@@ -401,7 +401,7 @@ $(document).ready(function () {
             }
 
 
-            if (rs.data.test.length > 0) {
+            if (rs.data.test.length > 0) {   
                 var l = '';
                 $('.validation-case-list').html(l);
 
@@ -432,9 +432,11 @@ $(document).ready(function () {
                     l += '                </div>';
                     l += '                <div class="col-9">';
                     if (val.rel_agency_check == '1') {
-                        l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.recruitment_agency_local_name) + ' <i class="fas fa-check-circle text-success"></i> </span>';
+                        // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.recruitment_agency_local_name) + ' <i class="fas fa-check-circle text-success"></i> </span>';
+                        l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.agency_name) + ' <i class="fas fa-check-circle text-success"></i> </span>';
                     } else {
-                        l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.recruitment_agency_local_name) + ' </span>';
+                        // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.recruitment_agency_local_name) + ' </span>';
+                        l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.agency_name) + ' </span>';
                     }
                     l += '                </div>';
                     l += '            </div>';
@@ -476,6 +478,7 @@ $(document).ready(function () {
                     l += '                </div>';
                     l += '                <div class="col-6">';
                     l += '                    <span class="input-tite">Filed by:</span><br>';
+                    // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.filed_by_agency) + '  </span>';
                     l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.filed_by_agency) + '  </span>';
                     l += '                </div>';
                     l += '            </div>';
@@ -483,6 +486,7 @@ $(document).ready(function () {
                     l += '            <div class="row mt-2">';
                     l += '                <div class="col-6">';
                     l += '                    <span class="input-tite">Date Complained: </span><br>';
+                    // l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.case_complainant_date_complained) + '  </span>';
                     l += '                    <span  class="case-agency_name pl-1">' + checkIfStringExist(val.case_complainant_date_complained) + '  </span>';
                     l += '                </div>';
                     l += '                <div class="col-6">';

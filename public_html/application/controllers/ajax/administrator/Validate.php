@@ -861,11 +861,11 @@ class Validate extends CI_Controller {
             }
             
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
-//            foreach ($aResponse['test'] as $Tkey => $Tval) {
-//                $a = $this->Validate_model->getReportDetailsValidateById($Tval['case_id']);
-//                $a = array_merge($aResponse['test'][$Tkey], $a);
-//                $aResponse['test'][$Tkey] = $a;
-//            }
+           foreach ($aResponse['test'] as $Tkey => $Tval) {
+               $a = $this->Validate_model->getReportDetailsValidateById($Tval['case_id']);
+               $a = array_merge($aResponse['test'][$Tkey], $a);
+               $aResponse['test'][$Tkey] = $a;
+           }
         }
 
         return $aResponse;
