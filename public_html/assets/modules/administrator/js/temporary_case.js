@@ -662,6 +662,77 @@ $(document).ready(function () {
         }, 'json');
     }
 
+    function VictimUpdateConfirmationGmail() {
+        icmsMessage({
+            type: 'msgPreloader',
+            visible: true
+        });
+        let form_data = dg__getFormValues({
+            type: "obj",
+            form: "#form-complainant"
+        });
+        let data = dg__objectAssign({
+            type: "UpdateConfirmationGmail",
+            temporary_case_id: temp_id
+        }, form_data);
+    
+        $.post(sAjaxTemporaryCase, data, function (rs) {
+
+            icmsMessage({
+                type: 'msgPreloader',
+                visible: false
+            });
+    
+            if (rs.data.flag !== '0') {
+                icmsMessage({
+                    type: 'msgSuccess'
+                });
+                tdata = Object.assign(tdata, form_data);
+                $("#form-victim .btn-cancel").click();
+            } else {
+                icmsMessage({
+                    type: 'msgError'
+                });
+            }
+        }, 'json');
+    }
+
+    function StatusUpdateConfirmationGmail() {
+        icmsMessage({
+            type: 'msgPreloader',
+            visible: true
+        });
+        let form_data = dg__getFormValues({
+            type: "obj",
+            form: "#form-complainant"
+        });
+        let data = dg__objectAssign({
+            type: "UpdateConfirmationGmail",
+            temporary_case_id: temp_id
+        }, form_data);
+    
+        $.post(sAjaxTemporaryCase, data, function (rs) {
+
+            icmsMessage({
+                type: 'msgPreloader',
+                visible: false
+            });
+    
+            if (rs.data.flag !== '0') {
+                icmsMessage({
+                    type: 'msgSuccess'
+                });
+                tdata = Object.assign(tdata, form_data);
+                $("#form-victim .btn-cancel").click();
+            } else {
+                icmsMessage({
+                    type: 'msgError'
+                });
+            }
+        }, 'json');
+    }
+
+
     // function UpdateConfirmationGmail() {
     //     $.ajax({
     //         url: '/UpdateConfirmationGmail',
@@ -703,6 +774,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
+            VictimUpdateConfirmationGmail();
             manageVictim();
         }
     });
@@ -722,6 +794,8 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             $("#modal-manage_status").modal("hide");
+            console.log('Form submitted');
+            StatusUpdateConfirmationGmail();
             manageStatus();
         }
     });
