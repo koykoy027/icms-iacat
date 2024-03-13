@@ -160,6 +160,7 @@ function manageComplainant() {
         }
     }, 'json');
 }
+
 function getData(fload = 0) {
 
     icmsMessage({
@@ -217,6 +218,8 @@ function getData(fload = 0) {
         }else{
             $("#div-other-relationship").show();            
         }
+        
+        console.log(tdata);
 
         getRemarkList();
         getLogs();
