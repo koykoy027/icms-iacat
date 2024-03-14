@@ -891,7 +891,9 @@ class Temporary_case extends CI_Controller {
             foreach ($temporaryCases as $tempCase) {
 
                 $value = $tempCase['temporary_complainant_relation'];
+                $victimSex =$tempCase['temporary_victim_sex'];
                 $getGlobalValue = $this->Temporary_case_model->getGlobalData($value);
+                $getGlobalDataVictimSex = $this->Temporary_case_model->getGlobalDataVictimSex($victimSex);
 
                 // Load email configuration dynamically
                 $config['protocol'] = 'smtp';
@@ -942,7 +944,14 @@ class Temporary_case extends CI_Controller {
                 $message .= '<p style="font-size: 11px;">Birthday: ' . $tempCase['temporary_victim_dob']. '</p>';
                 $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_victim_email_address']. '</p>';
                 $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_victim_mobile_number']. '</p>';
-                $message .= '<p style="font-size: 11px;">Sex: ' . $tempCase['temporary_victim_sex']. '</p>';
+                if ($getGlobalDataVictimSex) {
+                    foreach ($getGlobalDataVictimSex as $globalDataSex) {
+                        $message .= '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>';
+                    }
+                } else {
+                    $message .= 'Relationship to the victim: ' . $victimSex . '</p>';
+                }
+                // $message .= '<p style="font-size: 11px;">Sex: ' . $tempCase['temporary_victim_sex']. '</p>';
                 $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $tempCase['temporary_victim_country_deployment']. '</p>';
                 $message .= '<p style="font-size: 11px;">Civil Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
                 $message .= '<p style="font-size: 11px;">Departure Type: ' . $tempCase['temporary_victim_departure_type']. '</p>';

@@ -793,5 +793,11 @@ Class Temporary_case_model extends CI_Model {
         $result = $this->yel->GetAll($sql);
         return $result;
     }
+
+    public function getGlobalDataVictimSex($value) {
+        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="9" and parameter_count_id="' . $value . '"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
     
 }
