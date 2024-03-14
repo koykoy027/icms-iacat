@@ -889,6 +889,10 @@ class Temporary_case extends CI_Controller {
         if ($temporaryCases) {
             // Iterate through each temporary case
             foreach ($temporaryCases as $tempCase) {
+
+                $value = $tempCase['temporary_complainant_relation'];
+                $getGlobalValue = $this->Temporary_case_model->getGlobalData($value);
+
                 // Load email configuration dynamically
                 $config['protocol'] = 'smtp';
                 $config['smtp_host'] = 'smtp.gmail.com';
@@ -920,7 +924,14 @@ class Temporary_case extends CI_Controller {
                 $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_complainant_mobile_number']. '</p>';
                 $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_complainant_email_address']. '</p>';
                 $message .= '<p style="font-size: 11px;">Complain: ' . $tempCase['temporary_complainant_complain']. '</p>';
-                $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $tempCase['temporary_complainant_relation']. '</p>';
+                if ($getGlobalValue) {
+                    foreach ($getGlobalValue as $globalData) {
+                        $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>';
+                    }
+                } else {
+                    $message .= 'Relationship to the victim: ' . $value . '</p>';
+                }
+                // $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $tempCase['temporary_complainant_relation']. '</p>';
                 $message .= '<p style="font-size: 11px;">Address: ' . $tempCase['temporary_complainant_address']. '</p>';
                 $message .= '</div>';
                 $message .= '<div style="width: 50%;">';

@@ -219,7 +219,7 @@ function getData(fload = 0) {
             $("#div-other-relationship").show();            
         }
         
-        console.log(tdata);
+        // console.log(tdata);
 
         getRemarkList();
         getLogs();
@@ -797,7 +797,7 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             $("#modal-manage_status").modal("hide");
-            console.log('Form submitted');
+            // console.log('Form submitted');
             StatusUpdateConfirmationGmail();
             manageStatus();
         }
