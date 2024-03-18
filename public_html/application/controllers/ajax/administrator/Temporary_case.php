@@ -892,8 +892,17 @@ class Temporary_case extends CI_Controller {
 
                 $value = $tempCase['temporary_complainant_relation'];
                 $victimSex =$tempCase['temporary_victim_sex'];
+                $victimCivilStatus =$tempCase['temporary_victim_civil_status'];
+                $victimDepartureType =$tempCase['temporary_victim_departure_type'];
+                $victimCountryDeloyment =$tempCase['temporary_victim_country_deployment'];
+                $victimStatus =$tempCase['temporary_victim_civil_status'];
+
                 $getGlobalValue = $this->Temporary_case_model->getGlobalData($value);
                 $getGlobalDataVictimSex = $this->Temporary_case_model->getGlobalDataVictimSex($victimSex);
+                $getGlobalDataVictimCivilStatus = $this->Temporary_case_model->getGlobalDataVictimCivilStatus($victimCivilStatus);
+                $getGlobalDataDepartureType = $this->Temporary_case_model->getGlobalDataVictimDepartureType($victimDepartureType);
+                $getGlobalDataCountryDeployment = $this->Temporary_case_model->getGlobalDataVictimCountryDeployment($victimCountryDeloyment);
+                $getGlobalDataStatus = $this->Temporary_case_model->getGlobalDataVictimStatus($victimStatus);
 
                 // Load email configuration dynamically
                 $config['protocol'] = 'smtp';
@@ -918,7 +927,10 @@ class Temporary_case extends CI_Controller {
                 $message .= '<div style="display: flex; flex-wrap: wrap;">';
                 $message .= '<div style="width: 50%;">';
                 $message .= '<p>Status: </p>';
-                $message .= '<p style="font-size: 11px;">Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
+                $message .= $getGlobalDataStatus ? 
+                implode('', array_map(function($globalDataStatus) { return '<p style="font-size: 11px;">Status: ' . $globalDataStatus['transaction_parameter_name']. '</p>'; }, $getGlobalDataStatus)) :
+                '<p style="font-size: 11px;">Status: ' . $victimStatus . '</p>';
+                // $message .= '<p style="font-size: 11px;">Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
                 $message .= '<p>Complainant Details: </p>';
                 $message .= '<p style="font-size: 11px;">Firstname: ' . $tempCase['temporary_complainant_firstname']. '</p>';
                 $message .= '<p style="font-size: 11px;">Middlename: ' . $tempCase['temporary_complainant_middlename']. '</p>';
@@ -926,13 +938,17 @@ class Temporary_case extends CI_Controller {
                 $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_complainant_mobile_number']. '</p>';
                 $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_complainant_email_address']. '</p>';
                 $message .= '<p style="font-size: 11px;">Complain: ' . $tempCase['temporary_complainant_complain']. '</p>';
-                if ($getGlobalValue) {
-                    foreach ($getGlobalValue as $globalData) {
-                        $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>';
-                    }
-                } else {
-                    $message .= 'Relationship to the victim: ' . $value . '</p>';
-                }
+                // if ($getGlobalValue) {
+                //     foreach ($getGlobalValue as $globalData) {
+                //         $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>';
+                //     }
+                // } else {
+                //     $message .= 'Relationship to the victim: ' . $value . '</p>';
+                // }
+                $message .= $getGlobalValue ? 
+                implode('', array_map(function($globalData) { return '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>'; }, $getGlobalValue)) :
+                '<p style="font-size: 11px;">Relationship to the victim: ' . $value . '</p>';
+
                 // $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $tempCase['temporary_complainant_relation']. '</p>';
                 $message .= '<p style="font-size: 11px;">Address: ' . $tempCase['temporary_complainant_address']. '</p>';
                 $message .= '</div>';
@@ -944,17 +960,41 @@ class Temporary_case extends CI_Controller {
                 $message .= '<p style="font-size: 11px;">Birthday: ' . $tempCase['temporary_victim_dob']. '</p>';
                 $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_victim_email_address']. '</p>';
                 $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_victim_mobile_number']. '</p>';
-                if ($getGlobalDataVictimSex) {
-                    foreach ($getGlobalDataVictimSex as $globalDataSex) {
-                        $message .= '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>';
+                // if ($getGlobalDataVictimSex) {
+                //     foreach ($getGlobalDataVictimSex as $globalDataSex) {
+                //         $message .= '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>';
+                //     }
+                // } else {
+                //     $message .= 'Relationship to the victim: ' . $victimSex . '</p>';
+                // }
+                $message .= $getGlobalDataVictimSex ? 
+                implode('', array_map(function($globalDataSex) { return '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>'; }, $getGlobalDataVictimSex)) :
+                '<p style="font-size: 11px;">Sex: ' . $victimSex . '</p>';
+
+
+                $message .= '';
+
+                if ($getGlobalDataCountryDeployment) {
+                    foreach ($getGlobalDataCountryDeployment as $globalDataDeployment) {
+                        $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $globalDataDeployment['country_name']. '</p>';
                     }
                 } else {
-                    $message .= 'Relationship to the victim: ' . $victimSex . '</p>';
+                    $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $victimCountryDeloyment . '</p>';
                 }
-                // $message .= '<p style="font-size: 11px;">Sex: ' . $tempCase['temporary_victim_sex']. '</p>';
-                $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $tempCase['temporary_victim_country_deployment']. '</p>';
-                $message .= '<p style="font-size: 11px;">Civil Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
-                $message .= '<p style="font-size: 11px;">Departure Type: ' . $tempCase['temporary_victim_departure_type']. '</p>';
+
+
+                // $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $getGlobalDataCountryDeployment. '</p>';
+
+
+                $message .= $getGlobalDataVictimCivilStatus ? 
+                implode('', array_map(function($globalDataCivilStatus) { return '<p style="font-size: 11px;">Civil Status: ' . $globalDataCivilStatus['parameter_name']. '</p>'; }, $getGlobalDataVictimCivilStatus)) :
+                '<p style="font-size: 11px;">Civil Status: ' . $victimCivilStatus . '</p>';
+                // $message .= '<p style="font-size: 11px;">Civil Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
+
+                $message .= $getGlobalDataDepartureType ? 
+                implode('', array_map(function($globalDataDepartureType) { return '<p style="font-size: 11px;">Departure Type: ' . $globalDataDepartureType['parameter_name']. '</p>'; }, $getGlobalDataDepartureType)) :
+                '<p style="font-size: 11px;">Departure Type: ' . $victimDepartureType . '</p>';
+                // $message .= '<p style="font-size: 11px;">Departure Type: ' . $tempCase['temporary_victim_departure_type']. '</p>';
                 $message .= '<p style="font-size: 11px;">Address: ' . $tempCase['temporary_victim_address']. '</p>';
                 $message .= '</div>';
                 $message .= '</div>';

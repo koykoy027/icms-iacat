@@ -799,5 +799,29 @@ Class Temporary_case_model extends CI_Model {
         $result = $this->yel->GetAll($sql);
         return $result;
     }
+
+    public function getGlobalDataVictimCivilStatus($value) {
+        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="3" and parameter_count_id="' . $value . '"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
+
+    public function getGlobalDataVictimDepartureType($value) {
+        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="5" and parameter_count_id="' . $value . '"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
+
+    public function getGlobalDataVictimCountryDeployment($value) {
+        $sql = 'SELECT country_id, country_name FROM icms_global_country WHERE country_id="'.$value.'"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
+
+        public function getGlobalDataVictimStatus($value) {
+        $sql = 'SELECT transaction_parameter_type_id,transaction_parameter_count_id, transaction_parameter_name FROM icms_transaction_parameter WHERE transaction_parameter_type_id="12" and transaction_parameter_count_id="' . $value . '"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
     
 }
