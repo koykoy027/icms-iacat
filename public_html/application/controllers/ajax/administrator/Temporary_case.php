@@ -922,7 +922,7 @@ class Temporary_case extends CI_Controller {
                 $CI->email->subject('ICMS-IACAT UPDATE CASE');
                 // Construct email message
                 $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
-                $message .= '<p>Hi! Mr/Mrs <b>'. $tempCase['temporary_complainant_lastname'] . ','. $tempCase['temporary_complainant_firstname'] .'</b> Your case data is been update!. <strong style="color:#3b5998;">' . $tempCase['temporary_case_number'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address
+                $message .= '<p>Hi! Mr/Mrs <b>'. $tempCase['temporary_complainant_lastname'] . ','. $tempCase['temporary_complainant_firstname'] .'</b> Your case data is been update!. <strong style="color:#3b5998;">' . $tempCase['temporary_case_number'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address   
                 $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
                 $message .= '<div style="display: flex; flex-wrap: wrap;">';
                 $message .= '<div style="width: 50%;">';

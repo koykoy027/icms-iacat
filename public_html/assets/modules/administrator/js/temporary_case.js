@@ -672,7 +672,7 @@ $(document).ready(function () {
         });
         let form_data = dg__getFormValues({
             type: "obj",
-            form: "#form-complainant"
+            form: "#form-victim"
         });
         let data = dg__objectAssign({
             type: "UpdateConfirmationGmail",
@@ -707,7 +707,7 @@ $(document).ready(function () {
         });
         let form_data = dg__getFormValues({
             type: "obj",
-            form: "#form-complainant"
+            form: "#form-status"
         });
         let data = dg__objectAssign({
             type: "UpdateConfirmationGmail",
@@ -726,7 +726,7 @@ $(document).ready(function () {
                     type: 'msgSuccess'
                 });
                 tdata = Object.assign(tdata, form_data);
-                $("#form-victim .btn-cancel").click();
+                $("#form-status .btn-cancel").click();
             } else {
                 icmsMessage({
                     type: 'msgError'

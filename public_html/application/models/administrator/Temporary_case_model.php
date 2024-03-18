@@ -788,34 +788,53 @@ Class Temporary_case_model extends CI_Model {
             return false;
         }
     }
+    // public function getGlobalData($value) {
+    //     $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="8" and parameter_count_id="' . $value . '"';
+    //     $result = $this->yel->GetAll($sql);
+    //     return $result;
+    // }
+
     public function getGlobalData($value) {
-        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="8" and parameter_count_id="' . $value . '"';
-        $result = $this->yel->GetAll($sql);
-        return $result;
-    }
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 8);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
+}
+
 
     public function getGlobalDataVictimSex($value) {
-        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="9" and parameter_count_id="' . $value . '"';
-        $result = $this->yel->GetAll($sql);
-        return $result;
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 9);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
     }
 
     public function getGlobalDataVictimCivilStatus($value) {
-        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="3" and parameter_count_id="' . $value . '"';
-        $result = $this->yel->GetAll($sql);
-        return $result;
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 3);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
     }
 
     public function getGlobalDataVictimDepartureType($value) {
-        $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="5" and parameter_count_id="' . $value . '"';
-        $result = $this->yel->GetAll($sql);
-        return $result;
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 5);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
     }
 
     public function getGlobalDataVictimCountryDeployment($value) {
         $sql = 'SELECT country_id, country_name FROM icms_global_country WHERE country_id="'.$value.'"';
         $result = $this->yel->GetAll($sql);
-        return $result;
+        return $result; 
     }
 
         public function getGlobalDataVictimStatus($value) {
