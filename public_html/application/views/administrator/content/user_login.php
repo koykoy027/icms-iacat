@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="g-recaptcha" data-sitekey="<?= GCAPTCHA_SITEKEY ?>"></div>
                             <div id="recaptcha-error" class="error" style="display: none;">This field is required.</div>
                         </div>
-                        <button type="submit" name="button" id="btn-login" class="btn login_btn">Login</button>
+                        <button type="submit" name="button" id="btn-login" class="btn login_btn" data-toggle="modal" data-target="#otpModal">Login</button>
                     </form>
                 </div>
                 <div class="mt-4 forgot-container" style="display: none;">
@@ -94,6 +94,65 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="user_card bg-card-orange"></div>
     <div class="user_card bg-card-orange bg-upper"></div>
     <div class="user_card bg-card-orange bg-upper"></div>
+
+    <!-- start of UI design modal for 2 factor auth -->
+    <!-- OTP Modal -->
+    <div class="modal fade" id="otpModal" tabindex="-1" role="dialog" aria-labelledby="otpModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <!-- OTP Input Field -->
+            <div class="card-body card-otp p-5">
+                <h4 class="card-title text-dark text-center">Two-Factor Authentication</h4>
+                <p>Please enter the 6-digit verification code we sent via email</p>
+                <small></small><br>
+                <form class="mt-1">
+                    <div class="d-flex">
+                        <div class="m-auto">
+                            <input class="inp-code-1 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                                max="9" pattern="[0-9]{1}" />
+                            <input class="inp-code-2 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                                max="9" pattern="[0-9]{1}" />
+                            <input class="inp-code-3 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                                max="9" pattern="[0-9]{1}" />
+                            <input class="inp-code-4 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                                max="9" pattern="[0-9]{1}" />
+                            <input class="inp-code-5 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                                max="9" pattern="[0-9]{1}" />
+                            <input class="inp-code-6 inp-cd mb-3 mr-1" type="text" maxLength="1" size="1"
+                                min="0" max="9" pattern="[0-9]{1}" />
+                        </div>
+                    </div>
+
+
+                    <br>
+                    <button type="button"
+                        class="btn btn-primary mt-3 d-flex m-auto px-5 btn-send-verify">Verify</button>
+                </form>
+                <br>
+                <!-- <a href="#" class="text-blue btn-send_via_email d-flex justify-content-end">
+                    <small>Send OTP via email address</small></a> -->
+
+                <div>
+                    <p id="otp_count"></p>
+                </div>
+
+
+                <div class="text-center">
+                    Didn't receive the code?<br />
+                    <button class="btn btn-resend btn-link"><small>Send code again</small></a><br />
+                        <!-- <a href="#"><small>Change phone number</small></a> -->
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
 
