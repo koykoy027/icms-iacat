@@ -160,6 +160,7 @@ function manageComplainant() {
         }
     }, 'json');
 }
+
 function getData(fload = 0) {
 
     icmsMessage({
@@ -217,6 +218,8 @@ function getData(fload = 0) {
         }else{
             $("#div-other-relationship").show();            
         }
+        
+        // console.log(tdata);
 
         getRemarkList();
         getLogs();
@@ -622,45 +625,116 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             manageComplainant();
-            UpdateConfirmationGmail();
+            // UpdateConfirmationGmail();
         }
     });
 
     // add update case email
-    function UpdateConfirmationGmail() {
-        icmsMessage({
-            type: 'msgPreloader',
-            visible: true
-        });
-        let form_data = dg__getFormValues({
-            type: "obj",
-            form: "#form-complainant"
-        });
-        let data = dg__objectAssign({
-            type: "UpdateConfirmationGmail",
-            temporary_case_id: temp_id
-        }, form_data);
+    // function UpdateConfirmationGmail() {
+    //     icmsMessage({
+    //         type: 'msgPreloader',
+    //         visible: true
+    //     });
+    //     let form_data = dg__getFormValues({
+    //         type: "obj",
+    //         form: "#form-complainant"
+    //     });
+    //     let data = dg__objectAssign({
+    //         type: "UpdateConfirmationGmail",
+    //         temporary_case_id: temp_id
+    //     }, form_data);
     
-        $.post(sAjaxTemporaryCase, data, function (rs) {
+    //     $.post(sAjaxTemporaryCase, data, function (rs) {
 
-            icmsMessage({
-                type: 'msgPreloader',
-                visible: false
-            });
+    //         icmsMessage({
+    //             type: 'msgPreloader',
+    //             visible: false
+    //         });
     
-            if (rs.data.flag !== '0') {
-                icmsMessage({
-                    type: 'msgSuccess'
-                });
-                tdata = Object.assign(tdata, form_data);
-                $("#form-complainant .btn-cancel").click();
-            } else {
-                icmsMessage({
-                    type: 'msgError'
-                });
-            }
-        }, 'json');
-    }
+    //         if (rs.data.flag !== '0') {
+    //             icmsMessage({
+    //                 type: 'msgSuccess'
+    //             });
+    //             tdata = Object.assign(tdata, form_data);
+    //             $("#form-complainant .btn-cancel").click();
+    //         } else {
+    //             icmsMessage({
+    //                 type: 'msgError'
+    //             });
+    //         }
+    //     }, 'json');
+    // }
+
+    // function VictimUpdateConfirmationGmail() {
+    //     icmsMessage({
+    //         type: 'msgPreloader',
+    //         visible: true
+    //     });
+    //     let form_data = dg__getFormValues({
+    //         type: "obj",
+    //         form: "#form-victim"
+    //     });
+    //     let data = dg__objectAssign({
+    //         type: "UpdateConfirmationGmail",
+    //         temporary_case_id: temp_id
+    //     }, form_data);
+    
+    //     $.post(sAjaxTemporaryCase, data, function (rs) {
+
+    //         icmsMessage({
+    //             type: 'msgPreloader',
+    //             visible: false
+    //         });
+    
+    //         if (rs.data.flag !== '0') {
+    //             icmsMessage({
+    //                 type: 'msgSuccess'
+    //             });
+    //             tdata = Object.assign(tdata, form_data);
+    //             $("#form-victim .btn-cancel").click();
+    //         } else {
+    //             icmsMessage({
+    //                 type: 'msgError'
+    //             });
+    //         }
+    //     }, 'json');
+    // }
+
+    // function StatusUpdateConfirmationGmail() {
+    //     icmsMessage({
+    //         type: 'msgPreloader',
+    //         visible: true
+    //     });
+    //     let form_data = dg__getFormValues({
+    //         type: "obj",
+    //         form: "#form-status"
+    //     });
+    //     let data = dg__objectAssign({
+    //         type: "UpdateConfirmationGmail",
+    //         temporary_case_id: temp_id
+    //     }, form_data);
+    
+    //     $.post(sAjaxTemporaryCase, data, function (rs) {
+
+    //         icmsMessage({
+    //             type: 'msgPreloader',
+    //             visible: false
+    //         });
+    
+    //         if (rs.data.flag !== '0') {
+    //             icmsMessage({
+    //                 type: 'msgSuccess'
+    //             });
+    //             tdata = Object.assign(tdata, form_data);
+    //             $("#form-status .btn-cancel").click();
+    //         } else {
+    //             icmsMessage({
+    //                 type: 'msgError'
+    //             });
+    //         }
+    //     }, 'json');
+    // }
+
 
     // function UpdateConfirmationGmail() {
     //     $.ajax({
@@ -703,6 +777,7 @@ $(document).ready(function () {
             }
         },
         submitHandler: function (form) {
+            // VictimUpdateConfirmationGmail();
             manageVictim();
         }
     });
@@ -722,6 +797,8 @@ $(document).ready(function () {
         },
         submitHandler: function (form) {
             $("#modal-manage_status").modal("hide");
+            // console.log('Form submitted');
+            // StatusUpdateConfirmationGmail();
             manageStatus();
         }
     });

@@ -159,6 +159,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -228,6 +229,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -507,6 +509,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -889,6 +892,21 @@ class Temporary_case extends CI_Controller {
         if ($temporaryCases) {
             // Iterate through each temporary case
             foreach ($temporaryCases as $tempCase) {
+
+                $value = $tempCase['temporary_complainant_relation'];
+                $victimSex =$tempCase['temporary_victim_sex'];
+                $victimCivilStatus =$tempCase['temporary_victim_civil_status'];
+                $victimDepartureType =$tempCase['temporary_victim_departure_type'];
+                $victimCountryDeloyment =$tempCase['temporary_victim_country_deployment'];
+                $victimStatus =$tempCase['temporary_case_status_id'];
+
+                $getGlobalValue = $this->Temporary_case_model->getGlobalData($value);
+                $getGlobalDataVictimSex = $this->Temporary_case_model->getGlobalDataVictimSex($victimSex);
+                $getGlobalDataVictimCivilStatus = $this->Temporary_case_model->getGlobalDataVictimCivilStatus($victimCivilStatus);
+                $getGlobalDataDepartureType = $this->Temporary_case_model->getGlobalDataVictimDepartureType($victimDepartureType);
+                $getGlobalDataCountryDeployment = $this->Temporary_case_model->getGlobalDataVictimCountryDeployment($victimCountryDeloyment);
+                $getGlobalDataStatus = $this->Temporary_case_model->getGlobalDataVictimStatus($victimStatus);
+
                 // Load email configuration dynamically
                 $config['protocol'] = 'smtp';
                 $config['smtp_host'] = 'smtp.gmail.com';
@@ -905,10 +923,84 @@ class Temporary_case extends CI_Controller {
                 $CI->email->from('lalata.jhunriz.bscs2019@gmail.com', 'ICMS-IACAT');
                 $CI->email->to($tempCase['temporary_complainant_email_address']); // Use the fetched email address
                 $CI->email->subject('ICMS-IACAT UPDATE CASE');
-    
                 // Construct email message
                 $message = '<div style="font-family: Arial, sans-serif; font-size:18px; max-width: 600px; margin: 0 auto; padding: 20px; text-align: left;">';
-                $message .= '<p>Hi! Mr/Mrs <b>'. $tempCase['temporary_complainant_lastname'] . ','. $tempCase['temporary_complainant_firstname'] .'</b> Your case data is been update!. <strong style="color:#3b5998;">' . $tempCase['temporary_case_number'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address
+                $message .= '<p>Hi! Mr/Mrs <b>'. $tempCase['temporary_complainant_lastname'] . ','. $tempCase['temporary_complainant_firstname'] .'</b> Your case data is been update!. <strong style="color:#3b5998;">' . $tempCase['temporary_case_number'] . '</strong> to your ICMS.IACAT account.</p>'; // Use the fetched email address   
+                $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
+                $message .= '<div style="display: flex; flex-wrap: wrap;">';
+                $message .= '<div style="width: 50%;">';
+                $message .= '<p>Status: </p>';
+                $message .= $getGlobalDataStatus ? 
+                implode('', array_map(function($globalDataStatus) { return '<p style="font-size: 11px;">Status: ' . $globalDataStatus['transaction_parameter_name']. '</p>'; }, $getGlobalDataStatus)) :
+                '<p style="font-size: 11px;">Status: ' . $victimStatus . '</p>';
+                // $message .= '<p style="font-size: 11px;">Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
+                $message .= '<p>Complainant Details: </p>';
+                $message .= '<p style="font-size: 11px;">Firstname: ' . $tempCase['temporary_complainant_firstname']. '</p>';
+                $message .= '<p style="font-size: 11px;">Middlename: ' . $tempCase['temporary_complainant_middlename']. '</p>';
+                $message .= '<p style="font-size: 11px;">Lastname: ' . $tempCase['temporary_complainant_lastname']. '</p>';
+                $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_complainant_mobile_number']. '</p>';
+                $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_complainant_email_address']. '</p>';
+                $message .= '<p style="font-size: 11px;">Complain: ' . $tempCase['temporary_complainant_complain']. '</p>';
+                // if ($getGlobalValue) {
+                //     foreach ($getGlobalValue as $globalData) {
+                //         $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>';
+                //     }
+                // } else {
+                //     $message .= 'Relationship to the victim: ' . $value . '</p>';
+                // }
+                $message .= $getGlobalValue ? 
+                implode('', array_map(function($globalData) { return '<p style="font-size: 11px;">Relationship to the victim: ' . $globalData['parameter_name']. '</p>'; }, $getGlobalValue)) :
+                '<p style="font-size: 11px;">Relationship to the victim: ' . $value . '</p>';
+
+                // $message .= '<p style="font-size: 11px;">Relationship to the victim: ' . $tempCase['temporary_complainant_relation']. '</p>';
+                $message .= '<p style="font-size: 11px;">Address: ' . $tempCase['temporary_complainant_address']. '</p>';
+                $message .= '</div>';
+                $message .= '<div style="width: 50%;">';
+                $message .= '<p>Victim Details: </p>';
+                $message .= '<p style="font-size: 11px;">Firstname: ' . $tempCase['temporary_victim_firstname']. '</p>';
+                $message .= '<p style="font-size: 11px;">Middlename: ' . $tempCase['temporary_victim_middlename']. '</p>';
+                $message .= '<p style="font-size: 11px;">Lastname: ' . $tempCase['temporary_victim_lastname']. '</p>';
+                $message .= '<p style="font-size: 11px;">Birthday: ' . $tempCase['temporary_victim_dob']. '</p>';
+                $message .= '<p style="font-size: 11px;">Email: ' . $tempCase['temporary_victim_email_address']. '</p>';
+                $message .= '<p style="font-size: 11px;">Mobile Number: ' . $tempCase['temporary_victim_mobile_number']. '</p>';
+                // if ($getGlobalDataVictimSex) {
+                //     foreach ($getGlobalDataVictimSex as $globalDataSex) {
+                //         $message .= '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>';
+                //     }
+                // } else {
+                //     $message .= 'Relationship to the victim: ' . $victimSex . '</p>';
+                // }
+                $message .= $getGlobalDataVictimSex ? 
+                implode('', array_map(function($globalDataSex) { return '<p style="font-size: 11px;">Sex: ' . $globalDataSex['parameter_name']. '</p>'; }, $getGlobalDataVictimSex)) :
+                '<p style="font-size: 11px;">Sex: ' . $victimSex . '</p>';
+
+
+                $message .= '';
+
+                if ($getGlobalDataCountryDeployment) {
+                    foreach ($getGlobalDataCountryDeployment as $globalDataDeployment) {
+                        $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $globalDataDeployment['country_name']. '</p>';
+                    }
+                } else {
+                    $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $victimCountryDeloyment . '</p>';
+                }
+
+
+                // $message .= '<p style="font-size: 11px;">Country of Deployment: ' . $getGlobalDataCountryDeployment. '</p>';
+
+
+                $message .= $getGlobalDataVictimCivilStatus ? 
+                implode('', array_map(function($globalDataCivilStatus) { return '<p style="font-size: 11px;">Civil Status: ' . $globalDataCivilStatus['parameter_name']. '</p>'; }, $getGlobalDataVictimCivilStatus)) :
+                '<p style="font-size: 11px;">Civil Status: ' . $victimCivilStatus . '</p>';
+                // $message .= '<p style="font-size: 11px;">Civil Status: ' . $tempCase['temporary_victim_civil_status']. '</p>';
+
+                $message .= $getGlobalDataDepartureType ? 
+                implode('', array_map(function($globalDataDepartureType) { return '<p style="font-size: 11px;">Departure Type: ' . $globalDataDepartureType['parameter_name']. '</p>'; }, $getGlobalDataDepartureType)) :
+                '<p style="font-size: 11px;">Departure Type: ' . $victimDepartureType . '</p>';
+                // $message .= '<p style="font-size: 11px;">Departure Type: ' . $tempCase['temporary_victim_departure_type']. '</p>';
+                $message .= '<p style="font-size: 11px;">Address: ' . $tempCase['temporary_victim_address']. '</p>';
+                $message .= '</div>';
+                $message .= '</div>';
                 $message .= '<hr style="border: none; border-top: 1px solid #ccc; margin: 20px 0;">';
                 $message .= '<p style="font-size: 12px;">';
                 $message .= '<div style="text-align:center;">';
