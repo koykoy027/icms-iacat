@@ -775,7 +775,7 @@ Class Temporary_case_model extends CI_Model {
         $this->db->select('*');
         $this->db->from('icms_temporary_case');
         $this->db->join('icms_temporary_case_remarks', 'icms_temporary_case.temporary_case_id = icms_temporary_case_remarks.temporary_case_id', 'left');
-        $this->db->order_by('icms_temporary_case_remarks.temporary_case_remarks_date_added', 'DESC');
+        $this->db->order_by('icms_temporary_case_remarks.temporary_case_remarks_date_updated', 'DESC');
         $this->db->limit(1);
         $query = $this->db->get();
     

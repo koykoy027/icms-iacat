@@ -159,6 +159,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -228,6 +229,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -507,6 +509,7 @@ class Temporary_case extends CI_Controller {
             $aResponse['log'] = $this->audit->create($aLog);
 
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
+            $this->UpdateConfirmationGmail();
         }
 
         return $aResponse;
@@ -895,7 +898,7 @@ class Temporary_case extends CI_Controller {
                 $victimCivilStatus =$tempCase['temporary_victim_civil_status'];
                 $victimDepartureType =$tempCase['temporary_victim_departure_type'];
                 $victimCountryDeloyment =$tempCase['temporary_victim_country_deployment'];
-                $victimStatus =$tempCase['temporary_victim_civil_status'];
+                $victimStatus =$tempCase['temporary_case_status_id'];
 
                 $getGlobalValue = $this->Temporary_case_model->getGlobalData($value);
                 $getGlobalDataVictimSex = $this->Temporary_case_model->getGlobalDataVictimSex($victimSex);
