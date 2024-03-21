@@ -231,4 +231,25 @@ Class User_access_model extends CI_Model {
         return $aResponse;
     }
 
+    // adding of two factor authentication - in the login pages of the icms.
+
+    public function addTwoFactorAuto($param){
+        $sql = "
+        INSERT INTO `icms_user_case_twofa` SET
+        `user_id`='" . $param['user_id'] . "',
+        `twofa_type`='" . $param['twofa_type'] . "',
+        `twofa_portal`='" . $param['twofa_portal'] . "',
+        `twofa_code`='" . $param['twofa_code'] . "'
+        ";
+
+        $rs = $this->yel->exec($sql);
+
+        return $rs;
+    }
+
+    public function getUserId(){
+        $sql = ""
+    }
+    
+
 }

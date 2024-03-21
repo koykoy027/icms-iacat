@@ -65,7 +65,7 @@ class User_access extends CI_Controller {
             // get login attempt 
             $login_attempt_user = $this->User_access_model->getLoginAttemptByUserName($aParam); 
             $login_attempt = $login_attempt_user['login_attempt']; 
-            $aResponse['login_attempt_user_is_exist'] = 1; 
+            $aResponse['login_attempt_user_is_exist'] = 1;
         }
 
         $aResponse['login_attempt'] =  $login_attempt;
@@ -282,6 +282,30 @@ class User_access extends CI_Controller {
         }
 
         return $aResponse;
+    }
+
+    public function addTwoFactorAuth() {
+        $user_id = 1;
+        $twofa_type = 2;
+        $twofa_portal = 2;
+        $twofactorcode = mt_rand(100000, 999999);
+
+        $param = array(
+            'user_id' => $user_id,
+            'twofa_type' => $twofa_type,
+            'twofa_portal' => $twofa_portal,
+            'twofa_code' => $twofactorcode
+        );
+
+        $result = $this->User_access_model->addTwoFactorAuto($param); // Replace 'Your_model_name' with the actual name of your model
+
+        if ($result) {
+            // Success
+            echo "Two-factor authentication record added successfully.";
+        } else {
+            // Failure
+            echo "Failed to add two-factor authentication record.";
+        }
     }
 
 }

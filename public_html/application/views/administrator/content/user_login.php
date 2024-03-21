@@ -77,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="g-recaptcha" data-sitekey="<?= GCAPTCHA_SITEKEY ?>"></div>
                             <div id="recaptcha-error" class="error" style="display: none;">This field is required.</div>
                         </div>
-                        <button type="submit" name="button" id="btn-login" class="btn login_btn" data-toggle="modal" data-target="#otpModal">Login</button>
+                        <button type="submit" name="button" id="btn-login" class="btn login_btn">Login</button>
+                        <button type="button" class="btn btn-primary px-5 2fa_btn" data-toggle="modal" data-target="#otpModal">2fa</button>
                     </form>
                 </div>
                 <div class="mt-4 forgot-container" style="display: none;">
@@ -111,20 +112,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <h4 class="card-title text-dark text-center">Two-Factor Authentication</h4>
                 <p>Please enter the 6-digit verification code we sent via email</p>
                 <small></small><br>
-                <form class="mt-1">
+                <form class="mt-1" id="twofactorauth">
                     <div class="d-flex">
                         <div class="m-auto">
-                            <input class="inp-code-1 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                            <input class="inp-code-1 inp-cd mr-1 text-center" type="text" maxLength="1" size="1" min="0"
                                 max="9" pattern="[0-9]{1}" />
-                            <input class="inp-code-2 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                            <input class="inp-code-2 inp-cd mr-1 text-center" type="text" maxLength="1" size="1" min="0"
                                 max="9" pattern="[0-9]{1}" />
-                            <input class="inp-code-3 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                            <input class="inp-code-3 inp-cd mr-1 text-center" type="text" maxLength="1" size="1" min="0"
                                 max="9" pattern="[0-9]{1}" />
-                            <input class="inp-code-4 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                            <input class="inp-code-4 inp-cd mr-1 text-center" type="text" maxLength="1" size="1" min="0"
                                 max="9" pattern="[0-9]{1}" />
-                            <input class="inp-code-5 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
+                            <input class="inp-code-5 inp-cd mr-1 text-center" type="text" maxLength="1" size="1" min="0"
                                 max="9" pattern="[0-9]{1}" />
-                            <input class="inp-code-6 inp-cd mb-3 mr-1" type="text" maxLength="1" size="1"
+                            <input class="inp-code-6 inp-cd mb-3 mr-1 text-center" type="text" maxLength="1" size="1"
                                 min="0" max="9" pattern="[0-9]{1}" />
                         </div>
                     </div>
@@ -132,7 +133,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <br>
                     <button type="button"
-                        class="btn btn-primary mt-3 d-flex m-auto px-5 btn-send-verify">Verify</button>
+                        class="btn btn-primary mt-3 d-flex m-auto px-5 btn-verify-twofa">Verify</button>
                 </form>
                 <br>
                 <!-- <a href="#" class="text-blue btn-send_via_email d-flex justify-content-end">
@@ -145,7 +146,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                 <div class="text-center">
                     Didn't receive the code?<br />
-                    <button class="btn btn-resend btn-link"><small>Send code again</small></a><br />
+                    <button class="btn btn-resend-twofa btn-link"><small>Send code again</small></a><br />
                         <!-- <a href="#"><small>Change phone number</small></a> -->
                 </div>
             </div>

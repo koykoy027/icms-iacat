@@ -176,3 +176,23 @@ $(document).ready(function () {
     checkCapsLock($(this)[0]);
   });
 });
+
+// sending of the twofactor authentication
+$('.2fa_btn').click(function(){
+  $.post(
+    sAjaxAccess,
+    {
+      type: "addTwoFactorAuth",
+    },
+    function (rs) {
+      icmsMessage({
+        type: "msgPreloader",
+        visible: false,
+      });
+    },
+    "json"
+  );
+});
+
+
+
