@@ -1,7 +1,12 @@
 <?php
 
 // page security
+
+use Aws\Sns\SnsClient;
+
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+require 'vendor/autoload.php';
 
 class Icms extends CI_Controller {
 
@@ -35,6 +40,37 @@ class Icms extends CI_Controller {
         // session destroy
         $this->sessionPushLogout('icms');
     }
+
+
+    public function send_sms() {
+        // Initialize AWS SDK SNS client
+        $snsClient = new SnsClient([
+            'version' => 'latest',
+            'region' => 'ap-southeast-1',
+            'credentials' => [
+                'key' => constant('AWS_ACCESS_KEY'),
+                'secret' => constant('AWS_SECRET_KEY'),
+            ]
+        ]);
+
+        
+
+        // Sending SMS
+        $result = $snsClient->publish([
+            'Message' => 'Test text',
+            'PhoneNumber' => '+639761401847', 
+            // 'MessageAttributes' => [], // If you need to specify any additional attributes
+        ]);
+
+        // Check for errors or log results
+        if ($result['@metadata']['statusCode'] === 200) {
+            echo "SMS Sent Successfully";
+        } else {
+            echo "Failed to send SMS";
+        }
+    }
+
+
 
     public function index() 
     {
@@ -104,8 +140,7 @@ class Icms extends CI_Controller {
             }
         }
 
-
-        if ($sendOTP == 1) {
+        if ($sendOTP == 1) { // email
             $otp = [];
             $otp['otp_code'] = mt_rand(100000, 999999);
             $otp['otp_type'] = 0; // Default 0 = no value
@@ -125,8 +160,9 @@ class Icms extends CI_Controller {
             }
             // $this->send(); 
         }
+        
 
-
+        $this->send_sms(); // send sms
                 // Add this code after sending OTP
         // Initialize the variable to store fetched OTP
         $aRecordSet['fetchedOTP'] = 'otp_last_update';
