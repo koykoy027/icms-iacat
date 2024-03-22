@@ -104,16 +104,16 @@ function loginUser() {
   );
 }
 
-// function validateCaptcha() {
-//   let captcha = grecaptcha.getResponse();
-//   if (captcha.length <= 0) {
-//     $("#recaptcha-error").html("This field is required.");
-//     $("#recaptcha-error").show();
-//     return false;
-//   }
-//   $("#recaptcha-error").hide();
-//   return true;
-// }
+function validateCaptcha() {
+  let captcha = grecaptcha.getResponse();
+  if (captcha.length <= 0) {
+    $("#recaptcha-error").html("This field is required.");
+    $("#recaptcha-error").show();
+    return false;
+  }
+  $("#recaptcha-error").hide();
+  return true;
+}
 
 $(document).ready(function () {
   $(".toggle-password_icon").hover(function () {
@@ -139,15 +139,15 @@ $(document).ready(function () {
       }
     },
     submitHandler: function (form) {
-      // var resCaptcha = validateCaptcha();
-      // if(resCaptcha){
+      var resCaptcha = validateCaptcha();
+      if(resCaptcha){
       icmsMessage({
         type: "msgPreloader",
         body: "Trying to log in... Please wait!",
         visible: true,
       });
       loginUser();
-      // }
+      }
     },
   });
 
