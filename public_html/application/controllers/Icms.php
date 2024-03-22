@@ -57,7 +57,7 @@ class Icms extends CI_Controller {
 
         // Sending SMS
         $result = $snsClient->publish([
-            'Message' => 'Test text',
+            'Message' => 'Your One Time Password: ',
             'PhoneNumber' => '+639761401847', 
             // 'MessageAttributes' => [], // If you need to specify any additional attributes
         ]);
