@@ -82,9 +82,12 @@ class User_access extends CI_Controller {
 
         if (isset($access['user_id']) == true) {
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
-
             #Update Login Attempt 
             $this->User_access_model->resetLoginAttempt($access);
+
+            // Call addTwoFactorAuth function after successful login
+            $this->addTwoFactorAuth($access['user_id']);
+            
 
             if (isset($_SESSION['login_ctr']) == true) {
                 $aResponse['login_ctr'] = $_SESSION['login_ctr'] + 1;
@@ -162,8 +165,7 @@ class User_access extends CI_Controller {
             $aResponse['access_msg'] = "Incorrect username or password";
         }
         
-        $aResponse['__session'] = $_SESSION; 
-        
+        $aResponse['__session'] = $_SESSION;
         return $aResponse;
     }
 
@@ -284,8 +286,7 @@ class User_access extends CI_Controller {
         return $aResponse;
     }
 
-    public function addTwoFactorAuth() {
-        $user_id = 1;
+    public function addTwoFactorAuth($user_id) {
         $twofa_type = 2;
         $twofa_portal = 2;
         $twofactorcode = mt_rand(100000, 999999);
@@ -296,16 +297,25 @@ class User_access extends CI_Controller {
             'twofa_portal' => $twofa_portal,
             'twofa_code' => $twofactorcode
         );
-
-        $result = $this->User_access_model->addTwoFactorAuto($param); // Replace 'Your_model_name' with the actual name of your model
-
-        if ($result) {
-            // Success
-            echo "Two-factor authentication record added successfully.";
-        } else {
-            // Failure
-            echo "Failed to add two-factor authentication record.";
-        }
+        $result = $this->User_access_model->addTwoFactorAuto($param);
+        return $result;
     }
+
+    public function getTwoFactorAuth() {
+    $user_id = 68;
+    $result = $this->User_access_model->getTwoFactorAuthentication($user_id);
+    
+    // Check if result is not empty
+    if (!empty($result)) {
+        // Get the twofa_code from the result
+        $twofa_code = $result[0]['twofa_code'];
+        
+        // Return the comparison result
+        return $twofa_code;
+    } else {
+        return false; // Or handle the case when no result is found
+    }
+    }
+    
 
 }
