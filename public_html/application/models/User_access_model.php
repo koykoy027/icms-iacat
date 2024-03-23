@@ -248,8 +248,8 @@ Class User_access_model extends CI_Model {
         return $data;
     }
 
-    public function getTwoFactorAuthentication($user_id) {
-        $data = $user_id;
+    public function getTwoFactorAuthentication($param) {
+        $data = $param;
         $sql = "SELECT user_id,twofa_code FROM icms_user_case_twofa WHERE user_id='".$data."' ORDER BY twofa_added DESC";
         
         $result = $this->yel->GetAll($sql);

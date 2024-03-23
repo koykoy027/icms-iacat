@@ -174,6 +174,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    // i add auto next input if the input fill was inputed
+    $(document).ready(function () {
+        $('.inp-cd').on('input', function () {
+            var maxLength = parseInt($(this).attr('maxLength'));
+            var inputValue = $(this).val();
+            if (inputValue.length >= maxLength) {
+                $(this).next('.inp-cd').focus();
+            }
+        });
+    });
+</script>
+
 
     <script src="<?= SITE_ASSETS ?>global/jquery/jquery.js"></script>
     <script src="<?= SITE_ASSETS ?>global/jquery/jquery.min.js"></script>

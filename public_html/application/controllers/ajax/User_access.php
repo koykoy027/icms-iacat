@@ -117,6 +117,7 @@ class User_access extends CI_Controller {
                 $aResponse['json'] = $this->yel->encrypt_param(json_encode($_SESSION['userData']));
 
                 if ($access['agency_is_admin'] == "1") {
+                    // login page return UI
                     $aResponse['link'] = ADMIN_SITE_URL;
                     $aResponse['link_type'] = 1;
                     $_SESSION['userData']['loginFrom'] = 'administrator';
@@ -302,15 +303,10 @@ class User_access extends CI_Controller {
     }
 
     public function getTwoFactorAuth() {
-    $user_id = 68;
     $result = $this->User_access_model->getTwoFactorAuthentication($user_id);
     
-    // Check if result is not empty
     if (!empty($result)) {
-        // Get the twofa_code from the result
         $twofa_code = $result[0]['twofa_code'];
-        
-        // Return the comparison result
         return $twofa_code;
     } else {
         return false; // Or handle the case when no result is found
