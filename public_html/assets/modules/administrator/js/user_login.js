@@ -178,21 +178,63 @@ $(document).ready(function () {
 });
 
 // sending of the twofactor authentication
-$('.2fa_btn').click(function(){
-  $.post(
-    sAjaxAccess,
-    {
-      type: "addTwoFactorAuth",
-    },
-    function (rs) {
-      icmsMessage({
-        type: "msgPreloader",
-        visible: false,
-      });
-    },
-    "json"
-  );
-});
+// $('.2fa_btn').click(function(){
+//   $.post(
+//     sAjaxAccess,
+//     {
+//       type: "getTwoFactorAuth",
+//     },
+//     function (rs) {
+//       icmsMessage({
+//         type: "msgPreloader",
+//         visible: false,
+//       });
+//     },
+//     "json"
+//   );
+// });
+
+
+function verifyTwoFactorAuth() {
+    var code1 = $('.inp-code-1').val().trim();
+    var code2 = $('.inp-code-2').val().trim();
+    var code3 = $('.inp-code-3').val().trim();
+    var code4 = $('.inp-code-4').val().trim();
+    var code5 = $('.inp-code-5').val().trim();
+    var code6 = $('.inp-code-6').val().trim();
+
+    if (code1.length > 0 && code2.length > 0 && code3.length > 0 && code4.length > 0 && code5.length > 0 && code6.length > 0 ) {
+        var code = code1 + code2 + code3 + code4 + code5 + code6;
+        
+        $.post(
+            sAjaxAccess,
+            {
+                type: "getTwoFactorAuth",
+            },
+            function (rs) {
+                console.log(rs);
+                console.log(code);
+                if (rs.data) {
+                    if (rs.data == code) {
+                        console.log("success");
+                        
+                    } else {
+                        console.error("errors");
+                    }
+                } else {
+                    console.log("try again");
+                }
+            },
+            "json"
+        );
+    } else {
+        icmsMessage({
+            type: 'msgError'
+        });
+    }
+}
+
+$('.btn-verify-twofa').click(verifyTwoFactorAuth);
 
 
 

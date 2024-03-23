@@ -77,7 +77,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <div class="g-recaptcha" data-sitekey="<?= GCAPTCHA_SITEKEY ?>"></div>
                             <div id="recaptcha-error" class="error" style="display: none;">This field is required.</div>
                         </div>
-                        <button type="submit" name="button" id="btn-login" class="btn login_btn">Login</button>
+                        <button type="submit" name="button" id="btn-login" class="btn login_btn" data-toggle="modal" data-target="#otpModal">Login</button>
                         <button type="button" class="btn btn-primary px-5 2fa_btn" data-toggle="modal" data-target="#otpModal">2fa</button>
                     </form>
                 </div>
@@ -129,8 +129,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 min="0" max="9" pattern="[0-9]{1}" />
                         </div>
                     </div>
-
-
                     <br>
                     <button type="button"
                         class="btn btn-primary mt-3 d-flex m-auto px-5 btn-verify-twofa">Verify</button>
