@@ -303,6 +303,7 @@ class User_access extends CI_Controller {
     }
 
     public function getTwoFactorAuth() {
+    $user_id = 27;
     $result = $this->User_access_model->getTwoFactorAuthentication($user_id);
     
     if (!empty($result)) {
