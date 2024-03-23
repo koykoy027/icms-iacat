@@ -771,10 +771,11 @@ Class Temporary_case_model extends CI_Model {
 
     public function getUpdateDataThatWillSend() {
         // Assuming you have a database table named 'icms_temporary_case' and 'icms_temporary_case_otp'
-        $this->db->select('icms_temporary_case.temporary_complainant_email_address,icms_temporary_case.temporary_complainant_firstname,icms_temporary_case.temporary_complainant_middlename,icms_temporary_case.temporary_complainant_lastname,icms_temporary_case.temporary_case_number,icms_temporary_case_remarks.temporary_case_remarks_date_added');
+        // $this->db->select('icms_temporary_case.temporary_complainant_email_address,icms_temporary_case.temporary_complainant_firstname,icms_temporary_case.temporary_complainant_middlename,icms_temporary_case.temporary_complainant_lastname,icms_temporary_case.temporary_complainant_mobile_number,icms_temporary_case.temporary_complainant_address,icms_temporary_case.temporary_complainant_complain,icms_temporary_case.temporary_case_number,icms_temporary_case_remarks.temporary_case_remarks_date_added');
+        $this->db->select('*');
         $this->db->from('icms_temporary_case');
         $this->db->join('icms_temporary_case_remarks', 'icms_temporary_case.temporary_case_id = icms_temporary_case_remarks.temporary_case_id', 'left');
-        $this->db->order_by('icms_temporary_case_remarks.temporary_case_remarks_date_added', 'DESC');
+        $this->db->order_by('icms_temporary_case_remarks.temporary_case_remarks_date_updated', 'DESC');
         $this->db->limit(1);
         $query = $this->db->get();
     
@@ -787,4 +788,59 @@ Class Temporary_case_model extends CI_Model {
             return false;
         }
     }
+    // public function getGlobalData($value) {
+    //     $sql = 'SELECT parameter_type_id, parameter_count_id, parameter_name FROM icms_global_parameter WHERE parameter_type_id="8" and parameter_count_id="' . $value . '"';
+    //     $result = $this->yel->GetAll($sql);
+    //     return $result;
+    // }
+
+    public function getGlobalData($value) {
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 8);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
+}
+
+
+    public function getGlobalDataVictimSex($value) {
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 9);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
+    }
+
+    public function getGlobalDataVictimCivilStatus($value) {
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 3);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
+    }
+
+    public function getGlobalDataVictimDepartureType($value) {
+    $this->db->select('parameter_type_id, parameter_count_id, parameter_name');
+    $this->db->from('icms_global_parameter');
+    $this->db->where('parameter_type_id', 5);
+    $this->db->where('parameter_count_id', $value);
+    $result = $this->db->get()->result_array();
+    return $result;
+    }
+
+    public function getGlobalDataVictimCountryDeployment($value) {
+        $sql = 'SELECT country_id, country_name FROM icms_global_country WHERE country_id="'.$value.'"';
+        $result = $this->yel->GetAll($sql);
+        return $result; 
+    }
+
+        public function getGlobalDataVictimStatus($value) {
+        $sql = 'SELECT transaction_parameter_type_id,transaction_parameter_count_id, transaction_parameter_name FROM icms_transaction_parameter WHERE transaction_parameter_type_id="12" and transaction_parameter_count_id="' . $value . '"';
+        $result = $this->yel->GetAll($sql);
+        return $result;
+    }
+    
 }

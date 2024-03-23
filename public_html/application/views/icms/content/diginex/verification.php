@@ -5,11 +5,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <html lang="en">
 
 <head>
-    <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/global/template/bootstrap/css/bootstrap.min.css">
+    
+    <!-- <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/global/template/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/library/fonts/fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/library/fonts/fontawesome/css/fontawesome.css">
     <link rel="stylesheet" href="<?= SITE_ASSETS ?>library/fonts/fontawesome/css/all.css">
-    <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/modules/icms/css/verification.css">
+    <link rel="stylesheet" href="<?= MAIN_SITE_URL ?>assets/modules/icms/css/verification.css"> -->
+
+    <link rel="stylesheet" href="http://iacat-icms.com/assets/global/template/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://iacat-icms.com/assets/library/fonts/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="http://iacat-icms.com/assets/library/fonts/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="<?= SITE_ASSETS ?>library/fonts/fontawesome/css/all.css">
+    <link rel="stylesheet" href="http://iacat-icms.com/assets/modules/icms/css/result_page.css">
 </head>
 
 <body>
@@ -57,18 +64,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <form class="mt-1">
                             <div class="d-flex">
                                 <div class="m-auto">
-                                    <input class="inp-code-1 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
-                                        max="9" pattern="[0-9]{1}" />
-                                    <input class="inp-code-2 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
-                                        max="9" pattern="[0-9]{1}" />
-                                    <input class="inp-code-3 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
-                                        max="9" pattern="[0-9]{1}" />
-                                    <input class="inp-code-4 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
-                                        max="9" pattern="[0-9]{1}" />
-                                    <input class="inp-code-5 inp-cd mr-1" type="text" maxLength="1" size="1" min="0"
-                                        max="9" pattern="[0-9]{1}" />
-                                    <input class="inp-code-6 inp-cd mb-3 mr-1" type="text" maxLength="1" size="1"
-                                        min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-1 inp-cd mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-2 inp-cd mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-3 inp-cd mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-4 inp-cd mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-5 inp-cd mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
+                                    <input class="inp-code-6 inp-cd mb-3 mr-1" type="text" maxLength="1" size="1" min="0" max="9" pattern="[0-9]{1}" />
                                 </div>
                             </div>
 
