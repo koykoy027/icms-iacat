@@ -78,7 +78,7 @@
                                                 <label for="">Contact Number </label><span class="text-danger"> *</span>
                                                 <input type="text" class="form-control"
                                                     id="inp-temporary_victim_mobile_number"
-                                                    name="temporary_victim_mobile_number" placeholder="">
+                                                    name="temporary_victim_mobile_number" placeholder="e.g. +639394567128">
                                             </div>
                                             <div class="form-group">
                                                 <label for="">Sex </label><span class="text-danger"> *</span>
@@ -171,7 +171,7 @@
                                                 <label for="">Contact Number </label><span class="text-danger"> *</span>
                                                 <input type="text" class="form-control c-dt"
                                                     id="inp-temporary_complainant_mobile_number"
-                                                    name="temporary_complainant_mobile_number" placeholder="">
+                                                    name="temporary_complainant_mobile_number" placeholder="e.g. +639394567128">
                                             </div>
                                                <!---Adding <span class="text-danger"> *</span> to show to the user it is required-->
                                             <div class="form-group">
