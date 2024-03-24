@@ -319,7 +319,7 @@ class Web_public extends CI_Controller
             }
         } elseif ($lastOTPDetails['resend_count'] >= 3) {
             // Check if it's the third or subsequent attempt and if the last OTP was sent more than 30 minutes ago
-            $remaining_time = (30 * 60) - $time_difference;
+            $remaining_time = 1800 - $time_difference;
             if ($remaining_time > 0) {
                 $aRecordSet['remaining_time'] = $remaining_time; // Pass remaining time
                 return $aRecordSet;
