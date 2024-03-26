@@ -78,7 +78,9 @@ function loginUser() {
         }
       } else {
         if (parseInt(rs.data.link_type) === 1) {
+          console.log(rs.data.link_type);
           var lnk = rs.data.link + "dashboard";
+          // var lnk = "http://administrator.iacat-icms.test/twofactorauth";
           if (typeof rs.data.__session.userData.user_id !== "undefined") {
             location.assign(lnk); // to dash board/homepage
           }
