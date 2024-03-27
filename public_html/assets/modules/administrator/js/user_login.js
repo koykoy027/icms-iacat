@@ -78,7 +78,7 @@ function loginUser() {
         }
       } else {
         if (parseInt(rs.data.link_type) === 1) {
-          var lnk = rs.data.link + "dashboard";
+          var lnk = rs.data.link + "twofactorauth";
           if (typeof rs.data.__session.userData.user_id !== "undefined") {
             location.assign(lnk); // to dash board/homepage
           }
@@ -176,3 +176,50 @@ $(document).ready(function () {
     checkCapsLock($(this)[0]);
   });
 });
+
+
+
+function verifyTwoFactorAuth() {
+    var code1 = $('.inp-code-1').val().trim();
+    var code2 = $('.inp-code-2').val().trim();
+    var code3 = $('.inp-code-3').val().trim();
+    var code4 = $('.inp-code-4').val().trim();
+    var code5 = $('.inp-code-5').val().trim();
+    var code6 = $('.inp-code-6').val().trim();
+
+    if (code1.length > 0 && code2.length > 0 && code3.length > 0 && code4.length > 0 && code5.length > 0 && code6.length > 0 ) {
+        var code = code1 + code2 + code3 + code4 + code5 + code6;
+        
+        $.post(
+            sAjaxAccess,
+            {
+                type: "searchTwoFactorAuth",
+            },
+            function (rs) {
+                console.log(rs);
+                console.log(code);
+                if (rs.data) {
+                    if (rs.data == code) {
+                      console.log("success");
+                      var lnk = "dashboard";
+                      location.assign(lnk);
+                    } else {
+                        console.error("errors");
+                    }
+                } else {
+                    console.log("try again");
+                }
+            },
+            "json"
+        );
+    } else {
+        icmsMessage({
+            type: 'msgError'
+        });
+    }
+}
+
+$('.btn-verify-twofa').click(verifyTwoFactorAuth);
+
+
+

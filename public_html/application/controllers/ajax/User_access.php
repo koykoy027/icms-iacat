@@ -65,7 +65,7 @@ class User_access extends CI_Controller {
             // get login attempt 
             $login_attempt_user = $this->User_access_model->getLoginAttemptByUserName($aParam); 
             $login_attempt = $login_attempt_user['login_attempt']; 
-            $aResponse['login_attempt_user_is_exist'] = 1; 
+            $aResponse['login_attempt_user_is_exist'] = 1;
         }
 
         $aResponse['login_attempt'] =  $login_attempt;
@@ -82,9 +82,12 @@ class User_access extends CI_Controller {
 
         if (isset($access['user_id']) == true) {
             $aResponse['flag'] = self::SUCCESS_RESPONSE;
-
             #Update Login Attempt 
             $this->User_access_model->resetLoginAttempt($access);
+
+            // Call addTwoFactorAuth function after successful login
+            $this->addTwoFactorAuth($access['user_id']);
+
 
             if (isset($_SESSION['login_ctr']) == true) {
                 $aResponse['login_ctr'] = $_SESSION['login_ctr'] + 1;
@@ -114,6 +117,7 @@ class User_access extends CI_Controller {
                 $aResponse['json'] = $this->yel->encrypt_param(json_encode($_SESSION['userData']));
 
                 if ($access['agency_is_admin'] == "1") {
+                    // login page return UI
                     $aResponse['link'] = ADMIN_SITE_URL;
                     $aResponse['link_type'] = 1;
                     $_SESSION['userData']['loginFrom'] = 'administrator';
@@ -162,8 +166,8 @@ class User_access extends CI_Controller {
             $aResponse['access_msg'] = "Incorrect username or password";
         }
         
-        $aResponse['__session'] = $_SESSION; 
-        
+        $aResponse['__session'] = $_SESSION;
+        $this->searchTwoFactorAuth($aResponse);
         return $aResponse;
     }
 
@@ -283,5 +287,34 @@ class User_access extends CI_Controller {
 
         return $aResponse;
     }
+
+    public function addTwoFactorAuth($user_id) {
+        $twofa_type = 2;
+        $twofa_portal = 2;
+        $twofactorcode = mt_rand(100000, 999999);
+
+        $param = array(
+            'user_id' => $user_id,
+            'twofa_type' => $twofa_type,
+            'twofa_portal' => $twofa_portal,
+            'twofa_code' => $twofactorcode
+        );
+        $result = $this->User_access_model->addTwoFactorAuto($param);
+        return $result;
+    }
+
+    public function searchTwoFactorAuth($aResponse) {
+        
+            $user_id = 27;
+            $result = $this->User_access_model->getTwoFactorAuthentication($user_id);
+            // $result = $this->User_access_model->getTwoFactorAuthentication($aResponse['user_id']);
+            if (!empty($result)) {
+                $twofa_code = $result[0]['twofa_code'];
+                return $twofa_code;
+            } else {
+                return false; // Or handle the case when no result is found
+            }
+    }
+    
 
 }
